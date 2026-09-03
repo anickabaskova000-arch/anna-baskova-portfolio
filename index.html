@@ -138,6 +138,7 @@
   .hero-name{
     font-size:clamp(58px, 12.5vw, 196px);
     font-weight:900; letter-spacing:-0.03em; line-height:0.88; margin-top:32px;
+    text-align:center;
   }
   .hero-name .serif-italic{
     display:block; color:var(--lila); font-weight:400; font-size:0.82em; line-height:1;
@@ -148,7 +149,9 @@
     font-size:clamp(16px,2vw,22px);
     color:var(--lila-deep);
     margin-top:40px;
+    text-align:center;
   }
+  .hero-cta-wrap{ text-align:center; }
   .hero-cta{
     display:inline-flex; align-items:center; gap:10px;
     margin-top:36px; font-size:14px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;
@@ -190,18 +193,19 @@
   .stat-card .lbl{ font-size:13px; opacity:0.75; margin-top:10px; }
 
   .about-sub{
-    font-size:20px; font-weight:900; margin-top:56px; margin-bottom:24px;
+    font-size:clamp(24px,3.4vw,36px); font-weight:900; letter-spacing:-0.02em;
+    margin-top:72px; margin-bottom:40px;
   }
   .feature-grid{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:48px 40px;
   }
-  .feature{ position:relative; padding-left:24px; }
-  .feature::before{
-    content:''; position:absolute; left:0; top:6px; width:10px; height:10px;
-    border-radius:50%; background:var(--lila);
+  .feature{ position:relative; }
+  .feature .fnum{
+    display:block; font-size:clamp(44px,5vw,64px); font-weight:900;
+    color:var(--lila); line-height:0.9; letter-spacing:-0.03em; margin-bottom:16px;
   }
-  .feature h4{ font-size:16px; font-weight:900; margin-bottom:8px; }
-  .feature p{ font-size:13.5px; line-height:1.5; opacity:0.65; }
+  .feature h4{ font-size:clamp(19px,2.2vw,24px); font-weight:900; margin-bottom:12px; letter-spacing:-0.01em; }
+  .feature p{ font-size:clamp(15px,1.6vw,17px); line-height:1.55; opacity:0.7; }
 
   .about-closing{
     font-size:clamp(16px,2vw,19px); color:var(--lila-deep); margin-top:48px; max-width:900px;
@@ -217,28 +221,137 @@
     overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
   }
   .service-row{
+    position:relative;
     display:grid; grid-template-columns:40px 1fr auto; align-items:baseline;
-    gap:20px; padding:22px 0; border-top:1px solid rgba(255,255,255,0.12);
+    gap:20px; padding:22px 44px 22px 0; border-top:1px solid rgba(255,255,255,0.12);
+    color:inherit; transition:padding-left .18s ease;
   }
   .service-row:first-of-type{ border-top:1px solid rgba(255,255,255,0.12); }
+  a.service-row:hover{ padding-left:10px; }
+  a.service-row:hover .service-title{ color:var(--lila); }
+  .service-go{
+    position:absolute; right:4px; top:22px; font-size:18px; color:var(--lila);
+    opacity:0; transform:translateX(-6px); transition:all .18s ease;
+  }
+  a.service-row:hover .service-go{ opacity:1; transform:translateX(0); }
   .service-num{ font-size:14px; color:var(--lila); opacity:0.9; }
-  .service-title{ font-size:clamp(20px,3vw,30px); font-weight:900; letter-spacing:-0.01em; }
-  .service-desc{ font-size:12.5px; opacity:0.55; text-align:right; max-width:280px; }
+  .service-title{ font-size:clamp(22px,3.6vw,38px); font-weight:900; letter-spacing:-0.01em; }
+  .service-desc{ font-size:13px; opacity:0.55; text-align:right; max-width:300px; }
+
+  .service-extras{
+    margin-top:40px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .service-extras-label{
+    font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--lila); margin-bottom:18px;
+  }
+  .service-chips{ display:flex; flex-wrap:wrap; gap:10px; }
+  .service-chips span, .service-chips a{
+    font-size:13.5px; font-weight:600; padding:9px 16px; border-radius:100px;
+    border:1px solid rgba(255,255,255,0.22); color:rgba(255,255,255,0.82);
+  }
+  .service-chips a{ transition:all .15s ease; }
+  .service-chips a::after{ content:' ↗'; opacity:0.6; }
+  .service-chips a:hover{ background:var(--lila); border-color:var(--lila); color:var(--white); }
+
+  /* ============ MANAGED PROFILES / IG MOCKUP ============ */
+  .profiles{ background:var(--white); padding:56px 0 64px; }
+  .profiles .section-heading{ font-size:clamp(26px,3.4vw,40px); font-weight:900; margin-top:8px; }
+  .profiles .section-heading .serif-italic{ color:var(--lila); }
+  .profiles-note{ font-size:15px; opacity:0.65; margin-top:16px; max-width:56ch; line-height:1.5; }
+
+  .profile-switch{ display:flex; flex-wrap:wrap; gap:10px; margin:32px 0 8px; }
+  .profile-switch button{
+    font-family:inherit; font-size:13px; font-weight:700; letter-spacing:0.02em;
+    padding:10px 18px; border-radius:100px; border:1px solid var(--ink);
+    background:transparent; color:var(--ink); cursor:pointer; transition:all .15s ease;
+  }
+  .profile-switch button.active{ background:var(--lila); border-color:var(--lila); color:var(--white); }
+
+  .phone-wrap{ display:flex; justify-content:center; margin-top:28px; }
+  .phone{
+    width:340px; max-width:92vw; aspect-ratio:340/720;
+    background:#111014; border-radius:52px; padding:12px;
+    box-shadow:0 30px 70px rgba(33,27,39,0.28);
+    position:relative; flex:none;
+  }
+  .phone-screen{
+    width:100%; height:100%; background:#fff; border-radius:42px; overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .phone-island{
+    position:absolute; top:22px; left:50%; transform:translateX(-50%);
+    width:96px; height:26px; background:#111014; border-radius:100px; z-index:5;
+  }
+  .ig-scroll{ overflow-y:auto; -webkit-overflow-scrolling:touch; height:100%; }
+  .ig-topbar{
+    display:flex; align-items:center; gap:8px; padding:34px 16px 10px;
+    font-weight:700; font-size:15px; color:#111;
+  }
+  .ig-topbar .ig-user{ display:flex; align-items:center; gap:5px; }
+  .ig-topbar .sp{ margin-left:auto; display:flex; gap:16px; opacity:0.85; font-weight:400; }
+  .ig-head{ display:flex; align-items:center; gap:22px; padding:6px 16px 0; }
+  .ig-avatar{
+    width:74px; height:74px; border-radius:50%; flex:none; padding:3px;
+    background:conic-gradient(from 0deg,#f9ce34,#ee2a7b,#6228d7,#f9ce34);
+  }
+  .ig-avatar div{
+    width:100%; height:100%; border-radius:50%; background:#fff; border:2px solid #fff;
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+  }
+  .ig-avatar img{ width:84%; height:84%; object-fit:contain; }
+  .ig-stats{ display:flex; flex:1; justify-content:space-around; text-align:center; }
+  .ig-stats b{ display:block; font-size:16px; color:#111; }
+  .ig-stats span{ font-size:12px; color:#555; }
+  .ig-bio{ padding:12px 16px 0; font-size:12.5px; line-height:1.5; color:#222; }
+  .ig-bio .n{ font-weight:700; }
+  .ig-btns{ display:flex; gap:6px; padding:12px 16px 0; }
+  .ig-btns a{ flex:1; text-align:center; font-size:12.5px; font-weight:700; padding:7px 0; border-radius:8px; }
+  .ig-btns .follow{ background:#0095f6; color:#fff; }
+  .ig-btns .msg{ background:#efefef; color:#111; }
+  .ig-hl{ display:flex; gap:16px; padding:16px 16px 12px; overflow-x:auto; }
+  .ig-hl div{ text-align:center; font-size:10.5px; color:#333; flex:none; }
+  .ig-hl div i{
+    display:block; width:52px; height:52px; border-radius:50%; margin-bottom:5px;
+    background:#f0f0f0; border:1px solid #dbdbdb;
+  }
+  .ig-tabs{ display:flex; border-top:1px solid #dbdbdb; }
+  .ig-tabs span{ flex:1; text-align:center; padding:9px 0; font-size:12px; }
+  .ig-tabs span:first-child{ border-top:2px solid #111; margin-top:-1px; }
+  .ig-feed{ padding-bottom:8px; }
+  .ig-feed img{ display:block; width:100%; height:auto; }
+  .profiles-disclaimer{ font-size:12px; opacity:0.5; text-align:center; margin-top:16px; }
 
   /* ============ PRICING ============ */
   .pricing{ background:var(--bg); padding:56px 0 64px; }
   .pricing .section-heading{ font-size:clamp(28px,3.6vw,40px); font-weight:900; margin-top:8px; }
   .pricing .section-heading .serif-italic{ color:var(--lila); font-size:0.85em; }
   .pricing-note{ font-size:15px; opacity:0.65; margin-top:16px; margin-bottom:40px; max-width:60ch; line-height:1.5; }
-  .price-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-  .price-card{
-    background:var(--white); border:1px solid var(--ink); border-radius:4px; padding:28px;
+  .price-list{ border-top:1px solid var(--ink); }
+  .price-block{ padding:28px 0; border-bottom:1px solid rgba(33,27,39,0.15); }
+  .price-head{
+    display:grid; grid-template-columns:40px 1fr auto; align-items:baseline; gap:20px;
   }
-  .price-card.highlight{ background:var(--ink); border:none; color:var(--white); }
-  .price-name{ font-size:15px; font-weight:900; letter-spacing:0.05em; margin-bottom:14px; opacity:0.7; }
-  .price-card.highlight .price-name{ color:var(--lila); opacity:1; }
-  .price-desc{ font-size:14.5px; opacity:0.7; line-height:1.6; }
-  .price-card.highlight .price-desc{ opacity:0.85; }
+  .price-head .price-num{ font-size:14px; font-weight:700; color:var(--lila); }
+  .price-head .price-name{
+    font-size:clamp(19px,2.6vw,27px); font-weight:900; letter-spacing:-0.01em; margin:0;
+  }
+  .price-head .price-tag{
+    font-size:clamp(17px,2.2vw,23px); font-weight:900; color:var(--lila-deep); white-space:nowrap;
+  }
+  .price-sub{
+    list-style:none; margin:16px 0 0 60px; display:grid; gap:9px; max-width:56ch;
+  }
+  .price-sub li{ position:relative; padding-left:20px; font-size:14.5px; line-height:1.5; opacity:0.72; }
+  .price-sub li::before{
+    content:''; position:absolute; left:0; top:8px; width:6px; height:6px;
+    border-radius:50%; background:var(--lila);
+  }
+  @media (max-width:640px){
+    .price-head{ grid-template-columns:1fr auto; gap:6px 14px; }
+    .price-head .price-num{ grid-column:1 / -1; }
+    .price-sub{ margin-left:0; }
+  }
 
   .pricing-factors{ margin-top:56px; }
   .pricing-factors-title{ font-size:18px; font-weight:900; margin-bottom:20px; }
@@ -277,12 +390,28 @@
   }
   .gallery-title{ font-size:clamp(28px,3.6vw,44px); font-weight:900; margin-top:8px; }
   .filters{ display:flex; flex-wrap:wrap; gap:10px; }
+  .filters-wrap{ display:flex; flex-direction:column; gap:12px; align-items:flex-end; }
+  @media (max-width:640px){ .filters-wrap{ align-items:flex-start; } }
   .filter-btn{
     font-family:inherit; font-size:12px; font-weight:600; padding:8px 16px;
     border-radius:4px; border:1px solid var(--ink); background:transparent; color:var(--ink);
     cursor:pointer; transition:all 0.15s ease;
   }
   .filter-btn.active, .filter-btn:hover{ background:var(--lila); border-color:var(--lila); color:var(--white); }
+  .filters.primary .filter-btn{
+    font-size:13px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;
+    padding:9px 20px; border-radius:100px; border-width:2px;
+  }
+  .filters.secondary .filter-btn{ opacity:0.9; }
+
+  .gallery-more{
+    display:block; margin:22px auto 0; font-family:inherit;
+    font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+    padding:12px 26px; border-radius:100px; border:1px solid var(--ink);
+    background:transparent; color:var(--ink); cursor:pointer; transition:all .15s ease;
+  }
+  .gallery-more:hover{ background:var(--ink); color:var(--white); }
+  .gallery-empty{ text-align:center; opacity:0.55; font-size:14px; padding:32px 0; display:none; }
   .gallery-grid{
     display:grid; grid-template-columns:repeat(4, 1fr); gap:2px;
   }
@@ -309,6 +438,7 @@
   .gallery-item.playing .play-icon{ opacity:0; }
   .gallery-item.playing::after{ opacity:0; }
   .gallery-item.hidden{ display:none; }
+  .gallery-item.collapsed-hidden{ display:none; }
 
   /* ============ CLIENTS ============ */
   .clients{ background:var(--white); padding:56px 0 64px; }
@@ -344,13 +474,13 @@
   @media (max-width: 900px){
     .about-grid{ grid-template-columns:1fr; }
     .feature-grid{ grid-template-columns:1fr; gap:24px; }
-    .price-grid{ grid-template-columns:1fr; }
     .pricing-factors-list{ grid-template-columns:1fr; }
     .step-grid{ grid-template-columns:1fr; gap:28px; }
     .gallery-grid{ grid-template-columns:repeat(2,1fr); }
     .stats-grid{ grid-template-columns:repeat(2,1fr); row-gap:28px; }
     .service-row{ grid-template-columns:1fr; gap:6px; }
     .service-desc{ text-align:left; max-width:100%; }
+    .service-go{ opacity:0.7; transform:none; }
     .stat-row{ flex-direction:column; }
   }
   @media (max-width: 560px){
@@ -396,7 +526,9 @@
     <h1 class="hero-name">ANNA <span class="serif-italic">Bašková</span></h1>
 
     <p class="hero-tagline serif-italic" data-cs="content &amp; UGC creator, Praha" data-en="content &amp; UGC creator, Prague">content &amp; UGC creator, Praha</p>
-    <a href="#contact" class="hero-cta" data-cs="napište mi ↓" data-en="get in touch ↓">napište mi ↓</a>
+    <div class="hero-cta-wrap">
+      <a href="#contact" class="hero-cta" data-cs="napište mi ↓" data-en="get in touch ↓">napište mi ↓</a>
+    </div>
   </div>
   <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,4 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
 </section>
@@ -418,14 +550,17 @@
     <h3 class="about-sub" data-cs="CO ODE MĚ MŮŽETE ČEKAT?" data-en="WHAT CAN YOU EXPECT FROM ME?">CO ODE MĚ MŮŽETE ČEKAT?</h3>
     <div class="feature-grid">
       <div class="feature">
+        <span class="fnum">1.</span>
         <h4 data-cs="Strategický přesah" data-en="Strategic thinking">Strategický přesah</h4>
         <p data-cs="Chápu, jak fungují sítě, co zastaví scrollování a jak vypadá silný call-to-action." data-en="I understand how social platforms work, what stops the scroll, and what a strong call-to-action looks like.">Chápu, jak fungují sítě, co zastaví scrollování a jak vypadá silný call-to-action.</p>
       </div>
       <div class="feature">
+        <span class="fnum">2.</span>
         <h4 data-cs="Flexibilitu" data-en="Flexibility">Flexibilitu</h4>
         <p data-cs="Zpracuji váš brief do puntíku, nebo přijdu s vlastním konceptem, který schválíte předem." data-en="I'll follow your brief to the letter, or bring my own concept for you to approve upfront.">Zpracuji váš brief do puntíku, nebo přijdu s vlastním konceptem, který schválíte předem.</p>
       </div>
       <div class="feature">
+        <span class="fnum">3.</span>
         <h4 data-cs="Spolehlivost a férovost" data-en="Reliability and fairness">Spolehlivost a férovost</h4>
         <p data-cs="Transparentní komunikace, dodržování deadlinů a partnerský přístup založený na důvěře." data-en="Transparent communication, deadlines that hold, and a partner-like approach built on trust.">Transparentní komunikace, dodržování deadlinů a partnerský přístup založený na důvěře.</p>
       </div>
@@ -442,28 +577,92 @@
     <div class="eyebrow on-dark" data-cs="CO DĚLÁM" data-en="WHAT I DO">CO DĚLÁM</div>
     <h2 class="visually-hidden" data-cs="Co dělám" data-en="What I do">Co dělám</h2>
 
-    <div class="service-row">
+    <a class="service-row" href="#work" data-jump="video">
       <div class="service-num">01</div>
       <h3 class="service-title" data-cs="UGC VIDEA" data-en="UGC VIDEOS">UGC VIDEA</h3>
-      <div class="service-desc" data-cs="pro Ads i organiku — testimonial, unboxing, GRWM" data-en="for Ads and organic — testimonials, unboxing, GRWM">pro Ads i organiku — testimonial, unboxing, GRWM</div>
-    </div>
-    <div class="service-row">
+      <div class="service-desc" data-cs="pro Ads i organiku — testimonial, unboxing, GRWM, recenze" data-en="for Ads and organic — testimonials, unboxing, GRWM, reviews">pro Ads i organiku — testimonial, unboxing, GRWM, recenze</div>
+      <span class="service-go" aria-hidden="true">↗</span>
+    </a>
+    <a class="service-row" href="#profiles">
       <div class="service-num">02</div>
-      <h3 class="service-title" data-cs="PRODUKTOVÁ FOTOGRAFIE" data-en="PRODUCT PHOTOGRAPHY">PRODUKTOVÁ FOTOGRAFIE</h3>
-      <div class="service-desc" data-cs="lifestylová i studiová, cit pro detail a světlo" data-en="lifestyle and studio, an eye for detail and light">lifestylová i studiová, cit pro detail a světlo</div>
-    </div>
-    <div class="service-row">
+      <h3 class="service-title" data-cs="SPRÁVA SOCIÁLNÍCH SÍTÍ" data-en="SOCIAL MEDIA MANAGEMENT">SPRÁVA SOCIÁLNÍCH SÍTÍ</h3>
+      <div class="service-desc" data-cs="social media manager — strategie, obsahový plán, publikování a komunikace s komunitou" data-en="social media manager — strategy, content calendar, publishing and community management">social media manager — strategie, obsahový plán, publikování a komunikace s komunitou</div>
+      <span class="service-go" aria-hidden="true">↗</span>
+    </a>
+    <a class="service-row" href="#work" data-jump="foto">
       <div class="service-num">03</div>
-      <h3 class="service-title" data-cs="SCÉNÁŘE A KONCEPTY" data-en="SCRIPTS & CONCEPTS">SCÉNÁŘE A KONCEPTY</h3>
-      <div class="service-desc" data-cs="kreativní nápady, co zastaví scrollování" data-en="creative ideas that stop the scroll">kreativní nápady, co zastaví scrollování</div>
-    </div>
-    <div class="service-row">
-      <div class="service-num">04</div>
-      <h3 class="service-title" data-cs="RAW MATERIÁLY" data-en="RAW FOOTAGE">RAW MATERIÁLY</h3>
-      <div class="service-desc" data-cs="syrové záběry ke stříhání, pokud chcete editovat sami (za příplatek)" data-en="unedited footage for you to cut yourselves (add-on)">syrové záběry ke stříhání, pokud chcete editovat sami (za příplatek)</div>
+      <h3 class="service-title" data-cs="FOTOGRAFIE" data-en="PHOTOGRAPHY">FOTOGRAFIE</h3>
+      <div class="service-desc" data-cs="produktová i lifestylová, studiová i v terénu — cit pro detail a světlo" data-en="product and lifestyle, studio and on location — an eye for detail and light">produktová i lifestylová, studiová i v terénu — cit pro detail a světlo</div>
+      <span class="service-go" aria-hidden="true">↗</span>
+    </a>
+
+    <div class="service-extras">
+      <div class="service-extras-label" data-cs="A dále" data-en="Also">A dále</div>
+      <div class="service-chips">
+        <a href="#profiles" data-cs="Spolupráce na můj profil" data-en="Content on my profile">Spolupráce na můj profil</a>
+        <a href="#profiles" data-cs="Ambasadorství" data-en="Ambassadorships">Ambasadorství</a>
+        <span data-cs="Scénáře a koncepty" data-en="Scripts &amp; concepts">Scénáře a koncepty</span>
+        <span data-cs="Copywriting" data-en="Copywriting">Copywriting</span>
+        <span data-cs="Paid Ads (Meta)" data-en="Paid Ads (Meta)">Paid Ads (Meta)</span>
+      </div>
     </div>
   </div>
   <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,4 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
+</section>
+
+<!-- ============ MANAGED PROFILES ============ -->
+<section class="section profiles" id="profiles">
+  <div class="section-inner">
+    <div class="eyebrow" data-cs="SPRÁVA PROFILŮ" data-en="MANAGED PROFILES">SPRÁVA PROFILŮ</div>
+    <h2 class="section-heading" data-html="1" data-cs="PROFILY, &lt;span class=&quot;serif-italic&quot;&gt;které jsem vedla&lt;/span&gt;" data-en="PROFILES &lt;span class=&quot;serif-italic&quot;&gt;I've managed&lt;/span&gt;">PROFILY, <span class="serif-italic">které jsem vedla</span></h2>
+    <p class="profiles-note" data-cs="V letech 2023–2024 jsem měla na starosti obsah, vizuální styl feedu a komunikaci s komunitou pro tyto značky na Instagramu." data-en="In 2023–2024 I was responsible for content, feed aesthetics and community management for these brands on Instagram.">V letech 2023–2024 jsem měla na starosti obsah, vizuální styl feedu a komunikaci s komunitou pro tyto značky na Instagramu.</p>
+
+    <div class="profile-switch" id="profileSwitch">
+      <button class="active" data-profile="sebamed">@sebamedcz</button>
+      <button data-profile="mam">@mambaby_cz</button>
+      <button data-profile="korff">@korff_czsk</button>
+    </div>
+
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-island" aria-hidden="true"></div>
+        <div class="phone-screen">
+          <div class="ig-scroll">
+            <div class="ig-topbar">
+              <span class="ig-user">← <b id="igUser">sebamedcz</b> ▾</span>
+              <span class="sp">＋ ≡</span>
+            </div>
+            <div class="ig-head">
+              <div class="ig-avatar"><div><img id="igAvatar" src="assets/logos/sebamed.svg" alt=""></div></div>
+              <div class="ig-stats">
+                <div><b id="igPosts">460</b><span data-cs="příspěvků" data-en="posts">příspěvků</span></div>
+                <div><b id="igFollowers">13,2 tis.</b><span data-cs="sledujících" data-en="followers">sledujících</span></div>
+                <div><b id="igFollowing">610</b><span data-cs="sleduje" data-en="following">sleduje</span></div>
+              </div>
+            </div>
+            <div class="ig-bio">
+              <span class="n" id="igName">sebamed Česko</span><br>
+              <span id="igBio">Dermatologicky testovaná péče s pH 5,5. 🧴 Obsah &amp; správa profilu: Anna Bašková</span>
+            </div>
+            <div class="ig-btns">
+              <a class="follow" data-cs="Sledovat" data-en="Follow">Sledovat</a>
+              <a class="msg" data-cs="Zpráva" data-en="Message">Zpráva</a>
+            </div>
+            <div class="ig-hl" id="igHighlights">
+              <div><i></i>Novinky</div>
+              <div><i></i>Tipy</div>
+              <div><i></i>Recenze</div>
+              <div><i></i>Akné</div>
+            </div>
+            <div class="ig-tabs"><span>▦</span><span>▷</span><span>♁</span></div>
+            <div class="ig-feed"><img id="igFeed" src="assets/instagram/feed-sebamed.jpg" alt="Instagram feed" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="profiles-disclaimer" data-cs="Ilustrační náhled feedu z období spolupráce. Přesné dosahy a statistiky doplním." data-en="Illustrative feed preview from the collaboration period. Exact reach and analytics to be added.">Ilustrační náhled feedu z období spolupráce. Přesné dosahy a statistiky doplním.</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,44 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
 </section>
 
 <!-- ============ PRICING ============ -->
@@ -471,20 +670,44 @@
   <div class="section-inner">
     <div class="eyebrow" data-cs="SPOLUPRÁCE" data-en="COLLABORATION">SPOLUPRÁCE</div>
     <h2 class="section-heading" data-html="1" data-cs="KOLIK TO &lt;span class=&quot;serif-italic&quot;&gt;stojí?&lt;/span&gt;" data-en="HOW MUCH DOES IT &lt;span class=&quot;serif-italic&quot;&gt;cost?&lt;/span&gt;">KOLIK TO <span class="serif-italic">stojí?</span></h2>
-    <p class="pricing-note" data-cs="Cena se vždy odvíjí od konkrétního zadání, ceník proto nepublikuji — napište mi a pošlu nabídku na míru do 48 hodin." data-en="The price always depends on the specific brief, so I don't publish a fixed price list — get in touch and I'll send a tailored quote within 48 hours.">Cena se vždy odvíjí od konkrétního zadání, ceník proto nepublikuji — napište mi a pošlu nabídku na míru do 48 hodin.</p>
+    <p class="pricing-note" data-cs="Orientační ceny pro představu o rozpočtu. Finální nabídku sestavím na míru konkrétnímu zadání a pošlu do 48 hodin." data-en="Guide prices to help you plan a budget. I'll build the final quote around your specific brief and send it within 48 hours.">Orientační ceny pro představu o rozpočtu. Finální nabídku sestavím na míru konkrétnímu zadání a pošlu do 48 hodin.</p>
 
-    <div class="price-grid">
-      <div class="price-card">
-        <div class="price-name" data-cs="UGC NÁRAZOVÁ" data-en="ONE-OFF UGC">UGC NÁRAZOVÁ</div>
-        <div class="price-desc" data-cs="Jednorázové video nebo fotky k jednomu produktu či launchi. Rychlé zadání, jasný výstup." data-en="A single video or photo set for one product or launch. Fast turnaround, clear deliverable.">Jednorázové video nebo fotky k jednomu produktu či launchi. Rychlé zadání, jasný výstup.</div>
+    <div class="price-list">
+      <div class="price-block">
+        <div class="price-head">
+          <span class="price-num">01</span>
+          <h3 class="price-name" data-cs="UGC &amp; video obsah" data-en="UGC &amp; video content">UGC &amp; video obsah</h3>
+          <div class="price-tag" data-cs="od 3 500 Kč" data-en="from 3,500 CZK">od 3 500 Kč</div>
+        </div>
+        <ul class="price-sub">
+          <li data-cs="jedno vertikální video (15–45 s) — testimonial, unboxing, GRWM, recenze" data-en="one vertical video (15–45 s) — testimonial, unboxing, GRWM, review">jedno vertikální video (15–45 s) — testimonial, unboxing, GRWM, recenze</li>
+          <li data-cs="scénář a koncept na míru, nebo zpracování vašeho briefu" data-en="a custom script and concept, or working from your brief">scénář a koncept na míru, nebo zpracování vašeho briefu</li>
+          <li data-cs="balíček více videí najednou — nižší cena za kus" data-en="bundle of several videos at once — lower price per piece">balíček více videí najednou — nižší cena za kus</li>
+        </ul>
       </div>
-      <div class="price-card highlight">
-        <div class="price-name" data-cs="KAMPAŇ" data-en="CAMPAIGN">KAMPAŇ</div>
-        <div class="price-desc" data-cs="Ucelená sada obsahu na míru kampani — koncept, natáčení i produkce více kusů najednou." data-en="A full content set tailored to a campaign — concept, filming and production of multiple pieces at once.">Ucelená sada obsahu na míru kampani — koncept, natáčení i produkce více kusů najednou.</div>
+      <div class="price-block">
+        <div class="price-head">
+          <span class="price-num">02</span>
+          <h3 class="price-name" data-cs="Fotografie" data-en="Photography">Fotografie</h3>
+          <div class="price-tag" data-cs="od 4 000 Kč" data-en="from 4,000 CZK">od 4 000 Kč</div>
+        </div>
+        <ul class="price-sub">
+          <li data-cs="produktová i lifestylová sada, studio i v terénu" data-en="product and lifestyle set, studio and on location">produktová i lifestylová sada, studio i v terénu</li>
+          <li data-cs="retuš a příprava záběrů rovnou k publikaci" data-en="retouching and shots prepared ready to publish">retuš a příprava záběrů rovnou k publikaci</li>
+          <li data-cs="cena podle počtu záběrů a náročnosti stylingu" data-en="price by number of shots and styling complexity">cena podle počtu záběrů a náročnosti stylingu</li>
+        </ul>
       </div>
-      <div class="price-card">
-        <div class="price-name" data-cs="DLOUHODOBÁ SPOLUPRÁCE" data-en="LONG-TERM PARTNERSHIP">DLOUHODOBÁ SPOLUPRÁCE</div>
-        <div class="price-desc" data-cs="Pravidelný obsah po měsících nebo ambasadorská spolupráce se značkou." data-en="Regular monthly content or an ongoing brand ambassador partnership.">Pravidelný obsah po měsících nebo ambasadorská spolupráce se značkou.</div>
+      <div class="price-block">
+        <div class="price-head">
+          <span class="price-num">03</span>
+          <h3 class="price-name" data-cs="Správa sociálních sítí" data-en="Social media management">Správa sociálních sítí</h3>
+          <div class="price-tag" data-cs="od 12 000 Kč / měsíc" data-en="from 12,000 CZK / month">od 12 000 Kč / měsíc</div>
+        </div>
+        <ul class="price-sub">
+          <li data-cs="strategie, obsahový plán a tvorba příspěvků i stories" data-en="strategy, content calendar and creation of posts and stories">strategie, obsahový plán a tvorba příspěvků i stories</li>
+          <li data-cs="publikace příspěvků a měsíční reporting" data-en="publishing and monthly reporting">publikace příspěvků a měsíční reporting</li>
+          <li data-cs="doplňkově copywriting a správa Paid Ads na Meta" data-en="optionally copywriting and Meta Paid Ads management">doplňkově copywriting a správa Paid Ads na Meta</li>
+        </ul>
       </div>
     </div>
 
@@ -539,15 +762,22 @@
         <div class="eyebrow" data-cs="UKÁZKY" data-en="SAMPLES">UKÁZKY</div>
         <h2 class="gallery-title" data-cs="MOJE PRÁCE" data-en="MY WORK">MOJE PRÁCE</h2>
       </div>
-      <div class="filters" id="filters">
-        <button class="filter-btn active" data-filter="all" data-cs="vše" data-en="all">vše</button>
-        <button class="filter-btn" data-filter="beauty" data-cs="beauty" data-en="beauty">beauty</button>
-        <button class="filter-btn" data-filter="wellness" data-cs="wellness" data-en="wellness">wellness</button>
-        <button class="filter-btn" data-filter="moda" data-cs="móda" data-en="fashion">móda</button>
-        <button class="filter-btn" data-filter="sport" data-cs="sport" data-en="sport">sport</button>
-        <button class="filter-btn" data-filter="travel" data-cs="travel" data-en="travel">travel</button>
-        <button class="filter-btn" data-filter="event" data-cs="event" data-en="events">event</button>
-        <button class="filter-btn" data-filter="media" data-cs="média" data-en="media">média</button>
+      <div class="filters-wrap">
+        <div class="filters primary" id="filters-media">
+          <button class="filter-btn active" data-media="all" data-cs="vše" data-en="all">vše</button>
+          <button class="filter-btn" data-media="video" data-cs="video" data-en="video">video</button>
+          <button class="filter-btn" data-media="foto" data-cs="fotografie" data-en="photography">fotografie</button>
+        </div>
+        <div class="filters secondary" id="filters">
+          <button class="filter-btn active" data-filter="all" data-cs="vše téma" data-en="all topics">vše téma</button>
+          <button class="filter-btn" data-filter="beauty" data-cs="beauty" data-en="beauty">beauty</button>
+          <button class="filter-btn" data-filter="wellness" data-cs="wellness" data-en="wellness">wellness</button>
+          <button class="filter-btn" data-filter="moda" data-cs="móda" data-en="fashion">móda</button>
+          <button class="filter-btn" data-filter="sport" data-cs="sport" data-en="sport">sport</button>
+          <button class="filter-btn" data-filter="travel" data-cs="travel" data-en="travel">travel</button>
+          <button class="filter-btn" data-filter="event" data-cs="event" data-en="events">event</button>
+          <button class="filter-btn" data-filter="media" data-cs="média" data-en="media">média</button>
+        </div>
       </div>
     </div>
 
@@ -596,6 +826,11 @@
         <span class="tag" data-cs="Média · časopis Heroine" data-en="Media · Heroine magazine">Média · časopis Heroine</span>
         <span class="play-icon" aria-hidden="true"><svg width="52" height="52" viewBox="0 0 52 52"><circle cx="26" cy="26" r="26" fill="rgba(0,0,0,0.35)"/><path d="M21 16.5v19l16-9.5z" fill="#fff"/></svg></span>
       </div>
+      <div class="gallery-item is-video" data-cat="media">
+        <video src="assets/videos/media-magaziny.mp4" preload="metadata" playsinline loop></video>
+        <span class="tag" data-cs="Média · magazíny" data-en="Media · magazines">Média · magazíny</span>
+        <span class="play-icon" aria-hidden="true"><svg width="52" height="52" viewBox="0 0 52 52"><circle cx="26" cy="26" r="26" fill="rgba(0,0,0,0.35)"/><path d="M21 16.5v19l16-9.5z" fill="#fff"/></svg></span>
+      </div>
       <div class="gallery-item is-video" data-cat="wellness">
         <video src="assets/videos/heroine-ecce-vita.mp4" preload="metadata" playsinline loop></video>
         <span class="tag" data-cs="Wellness · heroine × Ecce Vita" data-en="Wellness · heroine × Ecce Vita">Wellness · heroine × Ecce Vita</span>
@@ -613,6 +848,11 @@
       </div>
       <div class="gallery-item is-video" data-cat="wellness">
         <video src="assets/videos/sleepy-girl.mp4" preload="metadata" playsinline loop></video>
+        <span class="tag" data-cs="Wellness · InSync" data-en="Wellness · InSync">Wellness · InSync</span>
+        <span class="play-icon" aria-hidden="true"><svg width="52" height="52" viewBox="0 0 52 52"><circle cx="26" cy="26" r="26" fill="rgba(0,0,0,0.35)"/><path d="M21 16.5v19l16-9.5z" fill="#fff"/></svg></span>
+      </div>
+      <div class="gallery-item is-video" data-cat="wellness">
+        <video src="assets/videos/insync-ovulace.mp4" preload="metadata" playsinline loop></video>
         <span class="tag" data-cs="Wellness · InSync" data-en="Wellness · InSync">Wellness · InSync</span>
         <span class="play-icon" aria-hidden="true"><svg width="52" height="52" viewBox="0 0 52 52"><circle cx="26" cy="26" r="26" fill="rgba(0,0,0,0.35)"/><path d="M21 16.5v19l16-9.5z" fill="#fff"/></svg></span>
       </div>
@@ -651,7 +891,62 @@
         <span class="tag" data-cs="Travel · Praha" data-en="Travel · Prague">Travel · Praha</span>
         <span class="play-icon" aria-hidden="true"><svg width="52" height="52" viewBox="0 0 52 52"><circle cx="26" cy="26" r="26" fill="rgba(0,0,0,0.35)"/><path d="M21 16.5v19l16-9.5z" fill="#fff"/></svg></span>
       </div>
+
+      <div class="gallery-item" data-cat="beauty">
+        <img src="assets/photos/beauty-sebamed-olive.jpg" alt="Sebamed Olive Cleansing Bar" loading="lazy">
+        <span class="tag" data-cs="Beauty · Sebamed" data-en="Beauty · Sebamed">Beauty · Sebamed</span>
+      </div>
+      <div class="gallery-item" data-cat="beauty">
+        <img src="assets/photos/beauty-sebamed-shampoo.jpg" alt="Sebamed Detangling Shampoo" loading="lazy">
+        <span class="tag" data-cs="Beauty · Sebamed" data-en="Beauty · Sebamed">Beauty · Sebamed</span>
+      </div>
+      <div class="gallery-item" data-cat="beauty">
+        <img src="assets/photos/beauty-sebamed-styling.jpg" alt="Sebamed produkty" loading="lazy">
+        <span class="tag" data-cs="Beauty · Sebamed" data-en="Beauty · Sebamed">Beauty · Sebamed</span>
+      </div>
+      <div class="gallery-item" data-cat="beauty">
+        <img src="assets/photos/beauty-sebamed-bed.jpg" alt="Sebamed péče" loading="lazy">
+        <span class="tag" data-cs="Beauty · Sebamed" data-en="Beauty · Sebamed">Beauty · Sebamed</span>
+      </div>
+      <div class="gallery-item" data-cat="beauty">
+        <img src="assets/photos/beauty-rare-beauty.jpg" alt="Rare Beauty blush" loading="lazy">
+        <span class="tag" data-cs="Beauty · Rare Beauty" data-en="Beauty · Rare Beauty">Beauty · Rare Beauty</span>
+      </div>
+      <div class="gallery-item" data-cat="beauty">
+        <img src="assets/photos/beauty-ordinary.jpg" alt="The Ordinary séra" loading="lazy">
+        <span class="tag" data-cs="Beauty · The Ordinary" data-en="Beauty · The Ordinary">Beauty · The Ordinary</span>
+      </div>
+      <div class="gallery-item" data-cat="wellness">
+        <img src="assets/photos/wellness-sebamed-baby.jpg" alt="Sebamed Baby" loading="lazy">
+        <span class="tag" data-cs="Wellness · Sebamed Baby" data-en="Wellness · Sebamed Baby">Wellness · Sebamed Baby</span>
+      </div>
+      <div class="gallery-item" data-cat="travel">
+        <img src="assets/photos/travel-greece.jpg" alt="Řecko" loading="lazy">
+        <span class="tag" data-cs="Travel · Řecko" data-en="Travel · Greece">Travel · Řecko</span>
+      </div>
+      <div class="gallery-item" data-cat="travel">
+        <img src="assets/photos/travel-summer.jpg" alt="Léto" loading="lazy">
+        <span class="tag" data-cs="Travel · léto" data-en="Travel · summer">Travel · léto</span>
+      </div>
+      <div class="gallery-item" data-cat="travel">
+        <img src="assets/photos/travel-brunch.jpg" alt="Brunch" loading="lazy">
+        <span class="tag" data-cs="Travel · brunch" data-en="Travel · brunch">Travel · brunch</span>
+      </div>
+      <div class="gallery-item" data-cat="event">
+        <img src="assets/photos/event-elle.jpg" alt="ELLE event" loading="lazy">
+        <span class="tag" data-cs="Event · ELLE" data-en="Event · ELLE">Event · ELLE</span>
+      </div>
+      <div class="gallery-item" data-cat="media">
+        <img src="assets/photos/media-heroine.jpg" alt="časopis Heroine" loading="lazy">
+        <span class="tag" data-cs="Média · Heroine" data-en="Media · Heroine">Média · Heroine</span>
+      </div>
+      <div class="gallery-item" data-cat="media">
+        <img src="assets/photos/media-book.jpg" alt="knižní obsah" loading="lazy">
+        <span class="tag" data-cs="Média · knižní tip" data-en="Media · book feature">Média · knižní tip</span>
+      </div>
     </div>
+    <p class="gallery-empty" id="galleryEmpty" data-cs="Pro tento filtr zatím nemám ukázku." data-en="No samples for this filter yet.">Pro tento filtr zatím nemám ukázku.</p>
+    <button class="gallery-more" id="galleryMore" data-cs="Zobrazit vše" data-en="Show all">Zobrazit vše</button>
   </div>
 </section>
 
@@ -682,9 +977,9 @@
   <div class="section-inner">
     <div class="eyebrow on-lila" data-cs="V ČÍSLECH" data-en="BY THE NUMBERS">V ČÍSLECH</div>
     <div class="stats-grid">
-      <div><div class="num">1,3M</div><div class="lbl" data-cs="oslovených / měsíc" data-en="reach / month">oslovených / měsíc</div></div>
-      <div><div class="num">60K+</div><div class="lbl" data-cs="interakcí / měsíc" data-en="interactions / month">interakcí / měsíc</div></div>
-      <div><div class="num">10+</div><div class="lbl" data-cs="spoluprací" data-en="collaborations">spoluprací</div></div>
+      <div><div class="num">2,3M</div><div class="lbl" data-cs="zobrazení / měsíc" data-en="views / month">zobrazení / měsíc</div></div>
+      <div><div class="num">335K</div><div class="lbl" data-cs="oslovených / měsíc" data-en="accounts reached / month">oslovených / měsíc</div></div>
+      <div><div class="num">41K</div><div class="lbl" data-cs="interakcí / měsíc" data-en="interactions / month">interakcí / měsíc</div></div>
       <div><div class="num">5</div><div class="lbl" data-cs="let v marketingu" data-en="years in marketing">let v marketingu</div></div>
     </div>
   </div>
@@ -726,28 +1021,83 @@ videoItems.forEach(item => {
   video.addEventListener('pause', () => item.classList.remove('playing'));
 });
 
-// ---- gallery filter ----
-const filterBtns = document.querySelectorAll('.filter-btn');
-const galleryItems = document.querySelectorAll('.gallery-item');
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    galleryItems.forEach(item => {
-      if(filter === 'all' || item.dataset.cat === filter){
-        item.classList.remove('hidden');
-      } else {
-        item.classList.add('hidden');
-      }
-    });
+// ---- gallery filter (media type + topic) ----
+const galleryItems = [...document.querySelectorAll('.gallery-item')];
+const mediaBtns = [...document.querySelectorAll('#filters-media .filter-btn')];
+const topicBtns = [...document.querySelectorAll('#filters .filter-btn')];
+const galleryMore = document.getElementById('galleryMore');
+const galleryEmpty = document.getElementById('galleryEmpty');
+const COLLAPSE_COUNT = 8;
+let galState = { media: 'all', topic: 'all', expanded: false };
+
+galleryItems.forEach(item => {
+  item.dataset.media = item.classList.contains('is-video') ? 'video' : 'foto';
+});
+
+function applyGallery(){
+  const matches = galleryItems.filter(item =>
+    (galState.media === 'all' || item.dataset.media === galState.media) &&
+    (galState.topic === 'all' || item.dataset.cat === galState.topic)
+  );
+  galleryItems.forEach(item => item.classList.add('hidden'));
+  matches.forEach((item, i) => {
+    item.classList.remove('hidden');
+    const over = !galState.expanded && i >= COLLAPSE_COUNT;
+    item.classList.toggle('collapsed-hidden', over);
+  });
+  const hiddenCount = matches.length - (galState.expanded ? matches.length : Math.min(COLLAPSE_COUNT, matches.length));
+  galleryMore.style.display = hiddenCount > 0 ? 'block' : 'none';
+  const lang = currentLang === 'en' ? 'en' : 'cs';
+  if(galState.expanded){
+    galleryMore.textContent = lang === 'en' ? 'Show less' : 'Zobrazit méně';
+  } else {
+    galleryMore.textContent = (lang === 'en' ? 'Show all' : 'Zobrazit vše') + ' (' + matches.length + ')';
+  }
+  galleryEmpty.style.display = matches.length === 0 ? 'block' : 'none';
+}
+
+mediaBtns.forEach(btn => btn.addEventListener('click', () => {
+  mediaBtns.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  galState.media = btn.dataset.media;
+  galState.expanded = false;
+  applyGallery();
+}));
+topicBtns.forEach(btn => btn.addEventListener('click', () => {
+  topicBtns.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  galState.topic = btn.dataset.filter;
+  galState.expanded = false;
+  applyGallery();
+}));
+galleryMore.addEventListener('click', () => {
+  galState.expanded = !galState.expanded;
+  applyGallery();
+  if(!galState.expanded) document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
+});
+
+// jump from "Co dělám" into the gallery pre-filtered by media type
+function jumpToWork(media){
+  const btn = mediaBtns.find(b => b.dataset.media === media) || mediaBtns[0];
+  btn.click();
+  document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
+}
+document.querySelectorAll('[data-jump]').forEach(el => {
+  el.addEventListener('click', e => {
+    const target = el.dataset.jump;
+    if(target === 'video' || target === 'foto'){
+      e.preventDefault();
+      jumpToWork(target);
+    }
   });
 });
+
+applyGallery();
 
 // ---- language toggle (CS / EN) ----
 const langToggle = document.getElementById('langToggle');
 const translatable = document.querySelectorAll('[data-cs]');
-let currentLang = 'cs';
+var currentLang = 'cs';
 
 function applyLang(lang){
   document.documentElement.lang = lang === 'en' ? 'en' : 'cs';
@@ -765,6 +1115,83 @@ function applyLang(lang){
 }
 
 langToggle.addEventListener('click', () => applyLang(currentLang === 'cs' ? 'en' : 'cs'));
+
+// ---- managed profiles (Instagram mockup) ----
+const PROFILES = {
+  sebamed: {
+    user: 'sebamedcz',
+    avatar: 'assets/logos/sebamed.svg',
+    posts: '460', followers: '13,2 tis.', following: '610',
+    name: { cs: 'sebamed Česko', en: 'sebamed Czechia' },
+    bio: {
+      cs: 'Dermatologicky testovaná péče s pH 5,5. 🧴 Obsah &amp; správa profilu: Anna Bašková',
+      en: 'Dermatologically tested skincare at pH 5.5. 🧴 Content &amp; profile management: Anna Bašková'
+    },
+    highlights: { cs: ['Novinky','Tipy','Recenze','Akné'], en: ['News','Tips','Reviews','Acne'] },
+    feed: 'assets/instagram/feed-sebamed.jpg'
+  },
+  mam: {
+    user: 'mambaby_cz',
+    avatar: 'assets/logos/mam.jpg',
+    posts: '1 240', followers: '9 810', following: '480',
+    name: { cs: 'MAM Baby CZ', en: 'MAM Baby CZ' },
+    bio: {
+      cs: 'Kojenecké lahve, dudlíky a péče o miminko. 🍼 Obsah &amp; správa profilu: Anna Bašková',
+      en: 'Baby bottles, soothers and infant care. 🍼 Content &amp; profile management: Anna Bašková'
+    },
+    highlights: { cs: ['Lahve','Dudlíky','Zoubky','Tipy'], en: ['Bottles','Soothers','Teething','Tips'] },
+    feed: 'assets/instagram/feed-mam.jpg'
+  },
+  korff: {
+    user: 'korff_czsk',
+    avatar: 'assets/logos/korff.png',
+    posts: '890', followers: '8 540', following: '720',
+    name: { cs: 'KORFF CZ/SK', en: 'KORFF CZ/SK' },
+    bio: {
+      cs: 'The science in beauty. 💄 Italská dermokosmetika. Obsah &amp; správa profilu: Anna Bašková',
+      en: 'The science in beauty. 💄 Italian dermocosmetics. Content &amp; profile management: Anna Bašková'
+    },
+    highlights: { cs: ['Make-up','Péče','SPF','Novinky'], en: ['Make-up','Skincare','SPF','News'] },
+    feed: 'assets/instagram/feed-korff.jpg'
+  }
+};
+let currentProfile = 'sebamed';
+const igEls = {
+  user: document.getElementById('igUser'),
+  avatar: document.getElementById('igAvatar'),
+  posts: document.getElementById('igPosts'),
+  followers: document.getElementById('igFollowers'),
+  following: document.getElementById('igFollowing'),
+  name: document.getElementById('igName'),
+  bio: document.getElementById('igBio'),
+  highlights: document.getElementById('igHighlights'),
+  feed: document.getElementById('igFeed')
+};
+function renderProfile(){
+  const p = PROFILES[currentProfile];
+  const lang = currentLang === 'en' ? 'en' : 'cs';
+  igEls.user.textContent = p.user;
+  igEls.avatar.src = p.avatar;
+  igEls.posts.textContent = p.posts;
+  igEls.followers.textContent = p.followers;
+  igEls.following.textContent = p.following;
+  igEls.name.textContent = p.name[lang];
+  igEls.bio.innerHTML = p.bio[lang];
+  igEls.highlights.innerHTML = p.highlights[lang]
+    .map(h => `<div><i></i>${h}</div>`).join('');
+  igEls.feed.src = p.feed;
+}
+document.getElementById('profileSwitch').addEventListener('click', e => {
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  document.querySelectorAll('#profileSwitch button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentProfile = btn.dataset.profile;
+  renderProfile();
+});
+const _applyLang = applyLang;
+applyLang = function(lang){ _applyLang(lang); renderProfile(); applyGallery(); };
+renderProfile();
 </script>
 
 </body>
