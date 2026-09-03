@@ -1,0 +1,64 @@
+{
+  "note_cs": "Orientační ceny pro představu o rozpočtu. Finální nabídku sestavím na míru konkrétnímu zadání a pošlu do 48 hodin.",
+  "note_en": "Guide prices to help you plan a budget. I'll build the final quote around your specific brief and send it within 48 hours.",
+  "blocks": [
+    {
+      "name_cs": "UGC & video obsah", "name_en": "UGC & video content",
+      "price_cs": "od 3 500 Kč", "price_en": "from 3,500 CZK",
+      "points_cs": [
+        "jedno vertikální video (15–45 s) — testimonial, unboxing, GRWM, recenze",
+        "scénář a koncept na míru, nebo zpracování vašeho briefu",
+        "balíček více videí najednou — nižší cena za kus"
+      ],
+      "points_en": [
+        "one vertical video (15–45 s) — testimonial, unboxing, GRWM, review",
+        "a custom script and concept, or working from your brief",
+        "bundle of several videos at once — lower price per piece"
+      ]
+    },
+    {
+      "name_cs": "Fotografie", "name_en": "Photography",
+      "price_cs": "od 4 000 Kč", "price_en": "from 4,000 CZK",
+      "points_cs": [
+        "produktová i lifestylová sada, studio i v terénu",
+        "retuš a příprava záběrů rovnou k publikaci",
+        "cena podle počtu záběrů a náročnosti stylingu"
+      ],
+      "points_en": [
+        "product and lifestyle set, studio and on location",
+        "retouching and shots prepared ready to publish",
+        "price by number of shots and styling complexity"
+      ]
+    },
+    {
+      "name_cs": "Správa sociálních sítí", "name_en": "Social media management",
+      "price_cs": "od 12 000 Kč / měsíc", "price_en": "from 12,000 CZK / month",
+      "points_cs": [
+        "strategie, obsahový plán a tvorba příspěvků i stories",
+        "publikace příspěvků a měsíční reporting",
+        "doplňkově copywriting a správa Paid Ads na Meta"
+      ],
+      "points_en": [
+        "strategy, content calendar and creation of posts and stories",
+        "publishing and monthly reporting",
+        "optionally copywriting and Meta Paid Ads management"
+      ]
+    }
+  ],
+  "factors_title_cs": "Co ovlivňuje cenu",
+  "factors_title_en": "What affects the price",
+  "factors_cs": [
+    "<b>Rozsah</b> — počet videí nebo fotek a délka spolupráce",
+    "<b>Práva k užití</b> — organika, nebo i placené Ads",
+    "<b>Exkluzivita</b> — branžová exkluzivita po dané období",
+    "<b>Komplexnost</b> — vlastní koncept a scénář, nebo brief od značky",
+    "<b>Termín dodání</b> — standardní, nebo expresní"
+  ],
+  "factors_en": [
+    "<b>Scope</b> — number of videos or photos and length of the collaboration",
+    "<b>Usage rights</b> — organic only, or paid Ads too",
+    "<b>Exclusivity</b> — category exclusivity for a given period",
+    "<b>Complexity</b> — my own concept and script, or a brief from the brand",
+    "<b>Turnaround</b> — standard, or express"
+  ]
+}

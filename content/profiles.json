@@ -1,0 +1,50 @@
+{
+  "note_cs": "V letech 2023–2024 jsem měla na starosti obsah, vizuální styl feedu a komunikaci s komunitou pro tyto značky na Instagramu.",
+  "note_en": "In 2023–2024 I was responsible for content, feed aesthetics and community management for these brands on Instagram.",
+  "disclaimer_cs": "Ilustrační náhled feedu z období spolupráce. Přesné dosahy a statistiky doplním.",
+  "disclaimer_en": "Illustrative feed preview from the collaboration period. Exact reach and analytics to be added.",
+  "profiles": [
+    {
+      "id": "sebamed",
+      "handle": "sebamedcz",
+      "name": "sebamed Česko",
+      "avatar": "assets/logos/sebamed.svg",
+      "posts": "460",
+      "followers": "13,2 tis.",
+      "following": "610",
+      "bio_cs": "Dermatologicky testovaná péče s pH 5,5. 🧴 Obsah & správa profilu: Anna Bašková",
+      "bio_en": "Dermatologically tested skincare at pH 5.5. 🧴 Content & profile management: Anna Bašková",
+      "highlights_cs": ["Novinky", "Tipy", "Recenze", "Akné"],
+      "highlights_en": ["News", "Tips", "Reviews", "Acne"],
+      "feed": "assets/instagram/feed-sebamed.jpg"
+    },
+    {
+      "id": "mam",
+      "handle": "mambaby_cz",
+      "name": "MAM Baby CZ",
+      "avatar": "assets/logos/mam.jpg",
+      "posts": "1 240",
+      "followers": "9 810",
+      "following": "480",
+      "bio_cs": "Kojenecké lahve, dudlíky a péče o miminko. 🍼 Obsah & správa profilu: Anna Bašková",
+      "bio_en": "Baby bottles, soothers and infant care. 🍼 Content & profile management: Anna Bašková",
+      "highlights_cs": ["Lahve", "Dudlíky", "Zoubky", "Tipy"],
+      "highlights_en": ["Bottles", "Soothers", "Teething", "Tips"],
+      "feed": "assets/instagram/feed-mam.jpg"
+    },
+    {
+      "id": "korff",
+      "handle": "korff_czsk",
+      "name": "KORFF CZ/SK",
+      "avatar": "assets/logos/korff.png",
+      "posts": "890",
+      "followers": "8 540",
+      "following": "720",
+      "bio_cs": "The science in beauty. 💄 Italská dermokosmetika. Obsah & správa profilu: Anna Bašková",
+      "bio_en": "The science in beauty. 💄 Italian dermocosmetics. Content & profile management: Anna Bašková",
+      "highlights_cs": ["Make-up", "Péče", "SPF", "Novinky"],
+      "highlights_en": ["Make-up", "Skincare", "SPF", "News"],
+      "feed": "assets/instagram/feed-korff.jpg"
+    }
+  ]
+}
