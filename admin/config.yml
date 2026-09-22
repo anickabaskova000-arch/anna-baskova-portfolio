@@ -42,17 +42,18 @@ collections:
       - name: showcase
         label: 'Top showcase'
         file: content/showcase.json
-        description: '4–6 nejlepších vertikálních videí hned pod hero. Žádné fotky.'
+        description: 'Vertikální videa pod hero. Prvních 5 je vidět rovnou, zbytek se odkryje tlačítkem „Zobrazit více". Žádné fotky.'
         fields:
           - name: items
             label: 'Videa'
             label_singular: 'Video'
             widget: list
-            max: 6
+            max: 16
             min: 1
-            summary: '{{fields.format_cs}}'
+            summary: '{{fields.brand}} — {{fields.format_cs}}'
             fields:
               - { name: file, label: 'Video soubor', widget: file, media_folder: assets/videos, public_folder: /assets/videos, hint: 'Velké soubory (desítky MB) radši pošli vývojáři ke zkomprimování.' }
+              - { name: brand, label: 'Značka (štítek dole)', widget: string, hint: 'např. Reserved, Sebamed, heroine × Matějovský, nebo Vlastní produkce' }
               - { name: format_cs, label: 'Štítek formátu (CZ)', widget: string, hint: 'např. Problem/Solution, Aesthetic Skincare, Dynamic Sport' }
               - { name: format_en, label: 'Štítek formátu (EN)', widget: string, required: false }
 

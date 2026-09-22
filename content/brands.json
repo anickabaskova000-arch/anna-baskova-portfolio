@@ -2,8 +2,6 @@
   "items": [
     { "name": "Sebamed", "file": "assets/logos/sebamed.svg" },
     { "name": "heroine", "file": "assets/logos/heroine.svg" },
-    { "name": "Unbeaten", "file": "assets/logos/unbeaten.svg" },
-    { "name": "Verra", "file": "assets/logos/verra.svg" },
     { "name": "Korff", "file": "assets/logos/korff.png" },
     { "name": "Škoda", "file": "assets/logos/skoda.svg" },
     { "name": "Allwyn", "file": "assets/logos/allwyn.svg" },

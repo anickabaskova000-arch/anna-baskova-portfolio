@@ -23,6 +23,23 @@
       video.addEventListener("pause", function () { item.classList.remove("playing"); });
     });
 
+    /* ---- top showcase: zobrazit více videí ---- */
+    var showcaseMore = document.getElementById("showcaseMore");
+    if (showcaseMore) {
+      showcaseMore.addEventListener("click", function () {
+        var expanded = showcaseMore.dataset.expanded === "1";
+        var next = !expanded;
+        document.querySelectorAll(".showcase-item.extra").forEach(function (item) {
+          item.classList.toggle("hidden", !next);
+        });
+        showcaseMore.dataset.expanded = next ? "1" : "0";
+        showcaseMore.dataset.cs = next ? showcaseMore.dataset.lessCs : showcaseMore.dataset.moreCs;
+        showcaseMore.dataset.en = next ? showcaseMore.dataset.lessEn : showcaseMore.dataset.moreEn;
+        showcaseMore.textContent = currentLang === "en" ? showcaseMore.dataset.en : showcaseMore.dataset.cs;
+        if (!next) document.getElementById("showcase").scrollIntoView({ behavior: "smooth" });
+      });
+    }
+
     /* ---- language toggle (CS / EN) ---- */
     var langToggle = document.getElementById("langToggle");
     var translatable = document.querySelectorAll("[data-cs]");

@@ -38,22 +38,45 @@
   }
 
   /* ---------- TOP SHOWCASE ---------- */
+  const SHOWCASE_MAIN_COUNT = 5;
+
   function buildShowcase(data) {
     const grid = document.getElementById("showcaseGrid");
+    const moreBtn = document.getElementById("showcaseMore");
     if (!grid || !data || !Array.isArray(data.items)) return;
     grid.innerHTML = data.items
-      .map((it) => {
+      .map((it, i) => {
         const cs = esc(it.format_cs || "");
         const en = esc(it.format_en || it.format_cs || "");
+        const brand = esc(it.brand || "");
+        const extraClass = i >= SHOWCASE_MAIN_COUNT ? " hidden extra" : "";
         return (
-          `<div class="showcase-item is-video">` +
+          `<div class="showcase-item is-video${extraClass}">` +
           `<video src="${esc(it.file)}" preload="metadata" playsinline loop></video>` +
           `<span class="format-chip" data-cs="${cs}" data-en="${en}">${cs}</span>` +
+          (brand ? `<span class="brand-tag">${brand}</span>` : "") +
           `<span class="play-icon" aria-hidden="true">${PLAY_SVG}</span>` +
           `</div>`
         );
       })
       .join("");
+
+    if (moreBtn) {
+      const extraCount = Math.max(0, data.items.length - SHOWCASE_MAIN_COUNT);
+      if (extraCount <= 0) {
+        moreBtn.style.display = "none";
+      } else {
+        moreBtn.style.display = "block";
+        moreBtn.dataset.moreCs = `Zobrazit více videí (${extraCount})`;
+        moreBtn.dataset.moreEn = `Show more videos (${extraCount})`;
+        moreBtn.dataset.lessCs = "Zobrazit méně";
+        moreBtn.dataset.lessEn = "Show less";
+        moreBtn.dataset.cs = moreBtn.dataset.moreCs;
+        moreBtn.dataset.en = moreBtn.dataset.moreEn;
+        moreBtn.textContent = moreBtn.dataset.moreCs;
+        moreBtn.dataset.expanded = "0";
+      }
+    }
   }
 
   /* ---------- WHY WORK WITH ME ---------- */

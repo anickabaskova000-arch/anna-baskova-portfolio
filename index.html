@@ -203,12 +203,24 @@
     color:var(--white); background:rgba(33,27,39,0.55); backdrop-filter:blur(4px);
     padding:6px 12px; border-radius:100px;
   }
+  .showcase-item .brand-tag{
+    position:absolute; left:14px; bottom:14px; z-index:2;
+    font-size:13px; font-weight:700; color:var(--white);
+  }
   .showcase-item .play-icon{
     position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
     z-index:2; pointer-events:none; transition:opacity .15s ease;
   }
   .showcase-item.playing .play-icon{ opacity:0; }
   .showcase-item.playing::after{ opacity:0; }
+  .showcase-item.hidden{ display:none; }
+  .showcase-more{
+    display:block; margin:28px auto 0; font-family:inherit;
+    font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+    padding:12px 26px; border-radius:100px; border:1px solid var(--ink);
+    background:transparent; color:var(--ink); cursor:pointer; transition:all .15s ease;
+  }
+  .showcase-more:hover{ background:var(--ink); color:var(--white); }
   @media (max-width:900px){
     .showcase-grid{ grid-template-columns:repeat(2,1fr); }
   }
@@ -366,6 +378,7 @@
     <div class="eyebrow" data-cs="UKÁZKY" data-en="SAMPLES">UKÁZKY</div>
     <h2 class="section-heading" data-html="1" data-cs="TOP &lt;span class=&quot;serif-italic&quot;&gt;showcase&lt;/span&gt;" data-en="TOP &lt;span class=&quot;serif-italic&quot;&gt;showcase&lt;/span&gt;">TOP <span class="serif-italic">showcase</span></h2>
     <div class="showcase-grid" id="showcaseGrid"></div>
+    <button class="showcase-more" id="showcaseMore" data-cs="Zobrazit více videí" data-en="Show more videos">Zobrazit více videí</button>
   </div>
   <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,44 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
 </section>
