@@ -2,12 +2,12 @@
   "items": [
     { "file": "assets/videos/reserved.mp4", "brand": "Reserved", "format_cs": "GRWM & Styling", "format_en": "GRWM & Styling" },
     { "file": "assets/videos/heroine-matejovsky.mp4", "brand": "heroine × Matějovský", "format_cs": "Produktová ukázka", "format_en": "Product Demo" },
-    { "file": "assets/videos/self-care-rutina.mp4", "brand": "Vlastní produkce", "format_cs": "Aesthetic Skincare", "format_en": "Aesthetic Skincare" },
+    { "file": "assets/videos/self-care-rutina.mp4", "brand": "Korff", "format_cs": "Aesthetic Skincare", "format_en": "Aesthetic Skincare" },
     { "file": "assets/videos/sleepy-girl.mp4", "brand": "InSync", "format_cs": "Wellness rutina", "format_en": "Wellness Routine" },
     { "file": "assets/videos/sebamed-clear-face.mp4", "brand": "Sebamed", "format_cs": "Problem / Solution", "format_en": "Problem / Solution" },
     { "file": "assets/videos/heroine-skoda.mp4", "brand": "heroine × Škoda", "format_cs": "Event Recap", "format_en": "Event Recap" },
     { "file": "assets/videos/sebamed-bag.mp4", "brand": "Sebamed", "format_cs": "Produktová ukázka", "format_en": "Product Feature" },
-    { "file": "assets/videos/sanctuary-spa.mp4", "brand": "Sanctuary Spa", "format_cs": "Aesthetic Skincare", "format_en": "Aesthetic Skincare" },
+    { "file": "assets/videos/sanctuary-spa.mp4", "brand": "Flawless Beauty", "format_cs": "Aesthetic Skincare", "format_en": "Aesthetic Skincare" },
     { "file": "assets/videos/heroine-allwyn.mp4", "brand": "heroine × Allwyn", "format_cs": "Event Recap", "format_en": "Event Recap" },
     { "file": "assets/videos/matcha-bebes.mp4", "brand": "heroine × Matcha Bebes", "format_cs": "Event Recap", "format_en": "Event Recap" },
     { "file": "assets/videos/fitness.mp4", "brand": "Vlastní produkce", "format_cs": "Dynamic Sport", "format_en": "Dynamic Sport" }

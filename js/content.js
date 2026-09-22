@@ -167,7 +167,6 @@
       el.dataset.en = en == null ? cs : en;
       el.textContent = cs;
     };
-    set(".hero-tagline", t.hero_tagline_cs, t.hero_tagline_en);
     if (t.hero_badge) {
       const b = document.querySelector(".hero-badge");
       if (b) b.textContent = t.hero_badge;

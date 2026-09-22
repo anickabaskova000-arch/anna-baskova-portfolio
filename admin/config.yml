@@ -66,8 +66,6 @@ collections:
         file: content/texts.json
         fields:
           - { name: hero_badge, label: 'Štítek v hlavičce (hero)', widget: string }
-          - { name: hero_tagline_cs, label: 'Hero – one-liner (CZ)', widget: string }
-          - { name: hero_tagline_en, label: 'Hero – one-liner (EN)', widget: string, required: false }
           - { name: hero_cta_cs, label: 'Hero – tlačítko (CZ)', widget: string }
           - { name: hero_cta_en, label: 'Hero – tlačítko (EN)', widget: string, required: false }
           - { name: why_para_cs, label: 'Proč já – odstavec (CZ)', widget: text }
