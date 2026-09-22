@@ -1,8 +1,7 @@
 {
   "items": [
-    { "num": "2,3M", "label_cs": "zobrazení / měsíc", "label_en": "views / month" },
-    { "num": "335K", "label_cs": "oslovených / měsíc", "label_en": "accounts reached / month" },
-    { "num": "41K", "label_cs": "interakcí / měsíc", "label_en": "interactions / month" },
-    { "num": "5", "label_cs": "let v marketingu", "label_en": "years in marketing" }
+    { "num": "2,3M", "label_cs": "views / měsíc", "label_en": "views / month" },
+    { "num": "5", "label_cs": "let v marketingu", "label_en": "years in marketing" },
+    { "num": "100%", "label_cs": "spolehlivost", "label_en": "reliability" }
   ]
 }

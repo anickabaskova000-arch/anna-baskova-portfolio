@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-cs="Anna Bašková | UGC & content tvůrkyně Praha" data-en="Anna Bašková | UGC & Content Creator, Prague">Anna Bašková | UGC & content tvůrkyně Praha</title>
-<meta name="description" content="Anna Bašková — UGC a content tvůrkyně z Prahy. Sport, wellness, beauty a travel obsah pro značky jako Sebamed, Korff či Reserved. 5 let zkušeností v marketingu.">
+<meta name="description" content="Anna Bašková — UGC tvůrkyně z Prahy. Vertikální video obsah pro značky jako Sebamed, heroine, Unbeaten či Verra. 5 let zkušeností v marketingu, 2,3M views měsíčně.">
 <meta name="theme-color" content="#211b27">
 <link rel="canonical" href="https://anna-baskova-portfolio.vercel.app/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Anna Bašková | UGC & content tvůrkyně Praha">
-<meta property="og:description" content="UGC a content tvůrkyně z Prahy — sport, wellness, beauty, travel. 5 let zkušeností v marketingu, spolupráce se značkami jako Sebamed, Korff, Škoda či Reserved.">
+<meta property="og:description" content="UGC tvůrkyně z Prahy — vertikální video obsah, který prodává. 5 let zkušeností v marketingu, spolupráce se značkami jako Sebamed, heroine, Unbeaten či Verra.">
 <meta property="og:url" content="https://anna-baskova-portfolio.vercel.app/">
 <meta property="og:locale" content="cs_CZ">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Anna Bašková | UGC & content tvůrkyně Praha">
-<meta name="twitter:description" content="UGC a content tvůrkyně z Prahy — sport, wellness, beauty, travel. 5 let zkušeností v marketingu.">
+<meta name="twitter:description" content="UGC tvůrkyně z Prahy — vertikální video obsah, který prodává. 5 let zkušeností v marketingu.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23211b27'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='28' font-style='italic' fill='%238a5cdd' text-anchor='middle'%3EAB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,7 +64,9 @@
     color:var(--lila-deep); margin-bottom:16px;
   }
   .eyebrow.on-dark{color:var(--lila);}
-  .eyebrow.on-lila{color:rgba(255,255,255,0.65);}
+
+  .section-heading{ font-size:clamp(28px,3.6vw,40px); font-weight:900; margin-top:8px; letter-spacing:-0.01em; }
+  .section-heading .serif-italic{ color:var(--lila); }
 
   .lang-toggle{
     position:fixed; top:16px; right:16px; z-index:50;
@@ -84,13 +86,12 @@
     width:100%; height:40px; display:block; margin:28px 0;
   }
   .wave path{ fill:none; stroke:var(--lila); stroke-width:3; stroke-linecap:round; }
-  .wave.on-dark path{ stroke:var(--lila); }
   .wave.white-stroke path{ stroke: var(--white); }
 
   /* ============ HERO ============ */
   .hero{
     background:var(--bg);
-    padding:0 0 40px;
+    padding:0 0 48px;
     min-height:auto;
     overflow:hidden;
     position:relative;
@@ -146,16 +147,31 @@
   }
 
   .hero-tagline{
-    font-size:clamp(16px,2vw,22px);
+    font-size:clamp(18px,2.4vw,26px);
     color:var(--lila-deep);
-    margin-top:40px;
+    margin-top:36px;
     text-align:center;
+    font-weight:600;
+    max-width:640px;
+    margin-left:auto; margin-right:auto;
   }
+
+  .hero-stats{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+    max-width:720px; margin:40px auto 0;
+  }
+  .hero-stats > div{
+    background:var(--white); border:1px solid rgba(33,27,39,0.1); border-radius:8px;
+    padding:20px 12px; text-align:center;
+  }
+  .hero-stats .num{ font-size:clamp(24px,3.4vw,34px); font-weight:900; color:var(--lila-deep); line-height:1; }
+  .hero-stats .lbl{ font-size:12px; opacity:0.65; margin-top:8px; line-height:1.3; }
+
   .hero-cta-wrap{ text-align:center; }
   .hero-cta{
     display:inline-flex; align-items:center; gap:10px;
     margin-top:36px; font-size:14px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;
-    padding:14px 24px; border-radius:100px; background:var(--ink); color:var(--white);
+    padding:16px 30px; border-radius:100px; background:var(--ink); color:var(--white);
     transition:background .15s ease;
   }
   .hero-cta:hover{ background:var(--lila-deep); }
@@ -163,176 +179,71 @@
   @media (max-width:640px){
     .spin-badge{ width:76px; height:76px; }
     .hero-name{ margin-top:10px; }
+    .hero-stats{ gap:10px; }
+    .hero-stats .num{ font-size:22px; }
   }
 
-  /* ============ ABOUT ============ */
-  .about{ background:var(--white); padding:56px 0 64px; }
-  .about-hook{
-    font-size:clamp(30px,4.2vw,44px);
-    font-weight:900; letter-spacing:-0.02em; line-height:1.05;
+  /* ============ TOP SHOWCASE ============ */
+  .showcase{ background:var(--white); padding:56px 0 64px; }
+  .showcase-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin-top:32px;
   }
-  .about-hook .serif-italic{
-    display:block;
-    font-size:clamp(24px,3.4vw,38px);
-    color:var(--lila);
-    margin-top:6px;
-    font-weight:400;
+  .showcase-item{
+    position:relative; aspect-ratio:9/16; background:#161219; overflow:hidden;
+    border-radius:10px; cursor:pointer;
   }
-  .about-grid{
-    display:grid; grid-template-columns:1.4fr 1fr; gap:40px;
-    margin-top:28px; align-items:start;
+  .showcase-item video{ width:100%; height:100%; object-fit:cover; display:block; }
+  .showcase-item::after{
+    content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0) 45%);
   }
-  .about-para{
-    font-size:16px; line-height:1.6; opacity:0.78; max-width:60ch;
+  .showcase-item .format-chip{
+    position:absolute; left:12px; top:12px; z-index:2;
+    font-size:11px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase;
+    color:var(--white); background:rgba(33,27,39,0.55); backdrop-filter:blur(4px);
+    padding:6px 12px; border-radius:100px;
   }
-  .stat-row{ display:flex; gap:16px; }
-  .stat-card{
-    background:var(--lila-pale); border-radius:4px; padding:24px; flex:1; min-width:140px;
+  .showcase-item .play-icon{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    z-index:2; pointer-events:none; transition:opacity .15s ease;
   }
-  .stat-card .num{ font-size:40px; font-weight:900; color:var(--lila-deep); line-height:1; }
-  .stat-card .lbl{ font-size:13px; opacity:0.75; margin-top:10px; }
-
-  .about-sub{
-    font-size:clamp(24px,3.4vw,36px); font-weight:900; letter-spacing:-0.02em;
-    margin-top:72px; margin-bottom:40px;
+  .showcase-item.playing .play-icon{ opacity:0; }
+  .showcase-item.playing::after{ opacity:0; }
+  @media (max-width:900px){
+    .showcase-grid{ grid-template-columns:repeat(2,1fr); }
   }
-  .feature-grid{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:48px 40px;
-  }
-  .feature{ position:relative; }
-  .feature .fnum{
-    display:block; font-size:clamp(44px,5vw,64px); font-weight:900;
-    color:var(--lila); line-height:0.9; letter-spacing:-0.03em; margin-bottom:16px;
-  }
-  .feature h4{ font-size:clamp(19px,2.2vw,24px); font-weight:900; margin-bottom:12px; letter-spacing:-0.01em; }
-  .feature p{ font-size:clamp(15px,1.6vw,17px); line-height:1.55; opacity:0.7; }
-
-  .about-closing{
-    font-size:clamp(16px,2vw,19px); color:var(--lila-deep); margin-top:48px; max-width:900px;
+  @media (max-width:560px){
+    .showcase-grid{ grid-template-columns:1fr 1fr; gap:10px; }
   }
 
-  /* ============ SERVICES (dark) ============ */
-  .services{ background:var(--dark-panel); padding:56px 0 48px; color:var(--white); }
-  .services .section-heading{
-    font-size:clamp(26px,3.4vw,32px); font-weight:900; margin-top:8px; margin-bottom:36px;
+  /* ============ WHY (dark) ============ */
+  .why{ background:var(--dark-panel); padding:56px 0 60px; color:var(--white); }
+  .why-para{ font-size:clamp(17px,2.2vw,21px); line-height:1.6; opacity:0.85; max-width:70ch; margin-top:8px; }
+  .why-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:40px; margin-top:52px;
   }
-  .visually-hidden{
-    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  .why-point .fnum{
+    display:block; font-size:clamp(38px,4.6vw,54px); font-weight:900;
+    color:var(--lila); line-height:0.9; letter-spacing:-0.03em; margin-bottom:14px;
   }
-  .service-row{
-    position:relative;
-    display:grid; grid-template-columns:40px 1fr auto; align-items:baseline;
-    gap:20px; padding:22px 44px 22px 0; border-top:1px solid rgba(255,255,255,0.12);
-    color:inherit; transition:padding-left .18s ease;
-  }
-  .service-row:first-of-type{ border-top:1px solid rgba(255,255,255,0.12); }
-  a.service-row:hover{ padding-left:10px; }
-  a.service-row:hover .service-title{ color:var(--lila); }
-  .service-go{
-    position:absolute; right:4px; top:22px; font-size:18px; color:var(--lila);
-    opacity:0; transform:translateX(-6px); transition:all .18s ease;
-  }
-  a.service-row:hover .service-go{ opacity:1; transform:translateX(0); }
-  .service-num{ font-size:14px; color:var(--lila); opacity:0.9; }
-  .service-title{ font-size:clamp(22px,3.6vw,38px); font-weight:900; letter-spacing:-0.01em; }
-  .service-desc{ font-size:13px; opacity:0.55; text-align:right; max-width:300px; }
+  .why-point h4{ font-size:clamp(18px,2.1vw,22px); font-weight:900; margin-bottom:10px; letter-spacing:-0.01em; }
+  .why-point p{ font-size:14.5px; line-height:1.55; opacity:0.65; }
 
-  .service-extras{
-    margin-top:40px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.12);
-  }
-  .service-extras-label{
-    font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase;
-    color:var(--lila); margin-bottom:18px;
-  }
-  .service-chips{ display:flex; flex-wrap:wrap; gap:10px; }
-  .service-chips span, .service-chips a{
-    font-size:13.5px; font-weight:600; padding:9px 16px; border-radius:100px;
-    border:1px solid rgba(255,255,255,0.22); color:rgba(255,255,255,0.82);
-  }
-  .service-chips a{ transition:all .15s ease; }
-  .service-chips a::after{ content:' ↗'; opacity:0.6; }
-  .service-chips a:hover{ background:var(--lila); border-color:var(--lila); color:var(--white); }
-
-  /* ============ MANAGED PROFILES / IG MOCKUP ============ */
-  .profiles{ background:var(--white); padding:56px 0 64px; }
-  .profiles .section-heading{ font-size:clamp(26px,3.4vw,40px); font-weight:900; margin-top:8px; }
-  .profiles .section-heading .serif-italic{ color:var(--lila); }
-  .profiles-note{ font-size:15px; opacity:0.65; margin-top:16px; max-width:56ch; line-height:1.5; }
-
-  .profile-switch{ display:flex; flex-wrap:wrap; gap:10px; margin:32px 0 8px; }
-  .profile-switch button{
-    font-family:inherit; font-size:13px; font-weight:700; letter-spacing:0.02em;
-    padding:10px 18px; border-radius:100px; border:1px solid var(--ink);
-    background:transparent; color:var(--ink); cursor:pointer; transition:all .15s ease;
-  }
-  .profile-switch button.active{ background:var(--lila); border-color:var(--lila); color:var(--white); }
-
-  .phone-wrap{ display:flex; justify-content:center; margin-top:28px; }
-  .phone{
-    width:340px; max-width:92vw; aspect-ratio:340/720;
-    background:#111014; border-radius:52px; padding:12px;
-    box-shadow:0 30px 70px rgba(33,27,39,0.28);
-    position:relative; flex:none;
-  }
-  .phone-screen{
-    width:100%; height:100%; background:#fff; border-radius:42px; overflow:hidden;
-    display:flex; flex-direction:column;
-  }
-  .phone-island{
-    position:absolute; top:22px; left:50%; transform:translateX(-50%);
-    width:96px; height:26px; background:#111014; border-radius:100px; z-index:5;
-  }
-  .ig-scroll{ overflow-y:auto; -webkit-overflow-scrolling:touch; height:100%; }
-  .ig-topbar{
-    display:flex; align-items:center; gap:8px; padding:34px 16px 10px;
-    font-weight:700; font-size:15px; color:#111;
-  }
-  .ig-topbar .ig-user{ display:flex; align-items:center; gap:5px; }
-  .ig-topbar .sp{ margin-left:auto; display:flex; gap:16px; opacity:0.85; font-weight:400; }
-  .ig-head{ display:flex; align-items:center; gap:22px; padding:6px 16px 0; }
-  .ig-avatar{
-    width:74px; height:74px; border-radius:50%; flex:none; padding:3px;
-    background:conic-gradient(from 0deg,#f9ce34,#ee2a7b,#6228d7,#f9ce34);
-  }
-  .ig-avatar div{
-    width:100%; height:100%; border-radius:50%; background:#fff; border:2px solid #fff;
-    display:flex; align-items:center; justify-content:center; overflow:hidden;
-  }
-  .ig-avatar img{ width:84%; height:84%; object-fit:contain; }
-  .ig-stats{ display:flex; flex:1; justify-content:space-around; text-align:center; }
-  .ig-stats b{ display:block; font-size:16px; color:#111; }
-  .ig-stats span{ font-size:12px; color:#555; }
-  .ig-bio{ padding:12px 16px 0; font-size:12.5px; line-height:1.5; color:#222; }
-  .ig-bio .n{ font-weight:700; }
-  .ig-btns{ display:flex; gap:6px; padding:12px 16px 0; }
-  .ig-btns a{ flex:1; text-align:center; font-size:12.5px; font-weight:700; padding:7px 0; border-radius:8px; }
-  .ig-btns .follow{ background:#0095f6; color:#fff; }
-  .ig-btns .msg{ background:#efefef; color:#111; }
-  .ig-hl{ display:flex; gap:16px; padding:16px 16px 12px; overflow-x:auto; }
-  .ig-hl div{ text-align:center; font-size:10.5px; color:#333; flex:none; }
-  .ig-hl div i{
-    display:block; width:52px; height:52px; border-radius:50%; margin-bottom:5px;
-    background:#f0f0f0; border:1px solid #dbdbdb;
-  }
-  .ig-tabs{ display:flex; border-top:1px solid #dbdbdb; }
-  .ig-tabs span{ flex:1; text-align:center; padding:9px 0; font-size:12px; }
-  .ig-tabs span:first-child{ border-top:2px solid #111; margin-top:-1px; }
-  .ig-feed{ padding-bottom:8px; }
-  .ig-feed img{ display:block; width:100%; height:auto; }
-  .profiles-disclaimer{ font-size:12px; opacity:0.5; text-align:center; margin-top:16px; }
+  /* ============ PROCESS ============ */
+  .process{ background:var(--bg); padding:56px 0 60px; }
+  .step-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:32px; }
+  .step-num{ font-size:26px; font-weight:900; color:var(--lila); }
+  .step-title{ font-size:21px; font-weight:900; margin-top:10px; margin-bottom:8px; }
+  .step-desc{ font-size:14px; opacity:0.6; line-height:1.5; }
 
   /* ============ PRICING ============ */
-  .pricing{ background:var(--bg); padding:56px 0 64px; }
-  .pricing .section-heading{ font-size:clamp(28px,3.6vw,40px); font-weight:900; margin-top:8px; }
-  .pricing .section-heading .serif-italic{ color:var(--lila); font-size:0.85em; }
+  .pricing{ background:var(--white); padding:56px 0 64px; }
   .pricing-note{ font-size:15px; opacity:0.65; margin-top:16px; margin-bottom:40px; max-width:60ch; line-height:1.5; }
   .price-list{ border-top:1px solid var(--ink); }
   .price-block{ padding:28px 0; border-bottom:1px solid rgba(33,27,39,0.15); }
   .price-head{
-    display:grid; grid-template-columns:40px 1fr auto; align-items:baseline; gap:20px;
+    display:grid; grid-template-columns:1fr auto; align-items:baseline; gap:20px;
   }
-  .price-head .price-num{ font-size:14px; font-weight:700; color:var(--lila); }
   .price-head .price-name{
     font-size:clamp(19px,2.6vw,27px); font-weight:900; letter-spacing:-0.01em; margin:0;
   }
@@ -340,17 +251,12 @@
     font-size:clamp(17px,2.2vw,23px); font-weight:900; color:var(--lila-deep); white-space:nowrap;
   }
   .price-sub{
-    list-style:none; margin:16px 0 0 60px; display:grid; gap:9px; max-width:56ch;
+    list-style:none; margin:16px 0 0; display:grid; gap:9px; max-width:56ch;
   }
   .price-sub li{ position:relative; padding-left:20px; font-size:14.5px; line-height:1.5; opacity:0.72; }
   .price-sub li::before{
     content:''; position:absolute; left:0; top:8px; width:6px; height:6px;
     border-radius:50%; background:var(--lila);
-  }
-  @media (max-width:640px){
-    .price-head{ grid-template-columns:1fr auto; gap:6px 14px; }
-    .price-head .price-num{ grid-column:1 / -1; }
-    .price-sub{ margin-left:0; }
   }
 
   .pricing-factors{ margin-top:56px; }
@@ -373,92 +279,18 @@
   }
   .pricing-cta:hover{ background:var(--lila-deep); }
 
-  /* ============ PROCESS ============ */
-  .process{ background:var(--bg); padding:56px 0 60px; }
-  .process .section-heading{ font-size:clamp(24px,3.2vw,32px); font-weight:900; }
-  .process .section-heading .serif-italic{ color:var(--lila); font-size:1em; }
-  .step-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:32px; }
-  .step-num{ font-size:26px; font-weight:900; color:var(--lila); }
-  .step-title{ font-size:21px; font-weight:900; margin-top:10px; margin-bottom:8px; }
-  .step-desc{ font-size:14px; opacity:0.6; line-height:1.5; }
-
-  /* ============ GALLERY ============ */
-  .gallery-section{ background:var(--bg); padding:56px 0 64px; }
-  .gallery-top{
-    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;
-    margin-bottom:32px;
-  }
-  .gallery-title{ font-size:clamp(28px,3.6vw,44px); font-weight:900; margin-top:8px; }
-  .filters{ display:flex; flex-wrap:wrap; gap:10px; }
-  .filters-wrap{ display:flex; flex-direction:column; gap:12px; align-items:flex-end; }
-  @media (max-width:640px){ .filters-wrap{ align-items:flex-start; } }
-  .filter-btn{
-    font-family:inherit; font-size:12px; font-weight:600; padding:8px 16px;
-    border-radius:4px; border:1px solid var(--ink); background:transparent; color:var(--ink);
-    cursor:pointer; transition:all 0.15s ease;
-  }
-  .filter-btn.active, .filter-btn:hover{ background:var(--lila); border-color:var(--lila); color:var(--white); }
-  .filters.primary .filter-btn{
-    font-size:13px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;
-    padding:9px 20px; border-radius:100px; border-width:2px;
-  }
-  .filters.secondary .filter-btn{ opacity:0.9; }
-
-  .gallery-more{
-    display:block; margin:22px auto 0; font-family:inherit;
-    font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
-    padding:12px 26px; border-radius:100px; border:1px solid var(--ink);
-    background:transparent; color:var(--ink); cursor:pointer; transition:all .15s ease;
-  }
-  .gallery-more:hover{ background:var(--ink); color:var(--white); }
-  .gallery-empty{ text-align:center; opacity:0.55; font-size:14px; padding:32px 0; display:none; }
-  .gallery-grid{
-    display:grid; grid-template-columns:repeat(4, 1fr); gap:2px;
-  }
-  .gallery-item{
-    position:relative; aspect-ratio:3/4.3; background:#161219; overflow:hidden;
-    transition:opacity 0.2s ease;
-  }
-  .gallery-item img, .gallery-item video{
-    width:100%; height:100%; object-fit:cover; display:block;
-  }
-  .gallery-item::after{
-    content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
-    background:linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0) 40%);
-  }
-  .gallery-item .tag{
-    position:absolute; left:14px; bottom:14px; font-size:11px; font-weight:600;
-    color:var(--white); z-index:2;
-  }
-  .gallery-item.is-video{ cursor:pointer; }
-  .gallery-item .play-icon{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    z-index:2; pointer-events:none; transition:opacity .15s ease;
-  }
-  .gallery-item.playing .play-icon{ opacity:0; }
-  .gallery-item.playing::after{ opacity:0; }
-  .gallery-item.hidden{ display:none; }
-  .gallery-item.collapsed-hidden{ display:none; }
-
-  /* ============ CLIENTS ============ */
-  .clients{ background:var(--white); padding:56px 0 64px; }
-  .clients .section-heading{ font-size:clamp(26px,3.4vw,36px); font-weight:900; margin-top:8px; }
-  .clients-row{
+  /* ============ BRANDS ============ */
+  .brands{ background:var(--bg); padding:56px 0 64px; }
+  .brands-row{
     display:flex; align-items:center; flex-wrap:wrap; gap:clamp(28px,4.5vw,56px);
     margin-top:36px;
   }
-  .clients-row img{
+  .brands-row img{
     height:28px; width:auto; max-width:130px; object-fit:contain;
     filter:grayscale(1); opacity:0.5;
     transition:opacity .2s ease, filter .2s ease;
   }
-  .clients-row img:hover{ filter:grayscale(0); opacity:1; }
-
-  /* ============ STATS ============ */
-  .stats-band{ background:var(--lila); padding:0 0 56px; color:var(--white); }
-  .stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; padding-top:40px; }
-  .stats-grid .num{ font-size:clamp(32px,4.4vw,52px); font-weight:900; letter-spacing:-0.02em; }
-  .stats-grid .lbl{ font-size:13.5px; opacity:0.85; margin-top:8px; }
+  .brands-row img:hover{ filter:grayscale(0); opacity:1; }
 
   /* ============ CONTACT ============ */
   .contact{ background:var(--dark-panel); color:var(--white); padding:56px 0 48px; }
@@ -472,19 +304,11 @@
 
   /* ============ RESPONSIVE ============ */
   @media (max-width: 900px){
-    .about-grid{ grid-template-columns:1fr; }
-    .feature-grid{ grid-template-columns:1fr; gap:24px; }
+    .why-grid{ grid-template-columns:1fr; gap:32px; }
     .pricing-factors-list{ grid-template-columns:1fr; }
     .step-grid{ grid-template-columns:1fr; gap:28px; }
-    .gallery-grid{ grid-template-columns:repeat(2,1fr); }
-    .stats-grid{ grid-template-columns:repeat(2,1fr); row-gap:28px; }
-    .service-row{ grid-template-columns:1fr; gap:6px; }
-    .service-desc{ text-align:left; max-width:100%; }
-    .service-go{ opacity:0.7; transform:none; }
-    .stat-row{ flex-direction:column; }
-  }
-  @media (max-width: 560px){
-    .gallery-grid{ grid-template-columns:repeat(2,1fr); }
+    .price-head{ grid-template-columns:1fr; gap:6px; }
+    .hero-stats{ grid-template-columns:1fr; max-width:320px; }
   }
 
   /* focus visibility */
@@ -511,7 +335,7 @@
 
   <div class="hero-edge">
     <div class="hero-top-row">
-      <div class="hero-badge">PORTFOLIO — 2026</div>
+      <div class="hero-badge" data-cs="PORTFOLIO — 2026" data-en="PORTFOLIO — 2026">PORTFOLIO — 2026</div>
       <div class="spin-badge" aria-hidden="true">
         <svg viewBox="0 0 200 200">
           <defs><path id="spinPath" d="M100,100 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0" /></defs>
@@ -525,163 +349,36 @@
 
     <h1 class="hero-name">ANNA <span class="serif-italic">Bašková</span></h1>
 
-    <p class="hero-tagline serif-italic" data-cs="content &amp; UGC creator, Praha" data-en="content &amp; UGC creator, Prague">content &amp; UGC creator, Praha</p>
+    <p class="hero-tagline" data-cs="Obsah, co zastaví scroll a prodá." data-en="Content that stops the scroll — and sells.">Obsah, co zastaví scroll a prodá.</p>
+
+    <div class="hero-stats" id="heroStats"></div>
+
     <div class="hero-cta-wrap">
-      <a href="#contact" class="hero-cta" data-cs="napište mi ↓" data-en="get in touch ↓">napište mi ↓</a>
+      <a href="#pricing" class="hero-cta" data-cs="Poptat video ↓" data-en="Request a video ↓">Poptat video ↓</a>
     </div>
   </div>
   <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,4 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
 </section>
 
-<!-- ============ ABOUT ============ -->
-<section class="section about" id="about">
+<!-- ============ TOP SHOWCASE ============ -->
+<section class="section showcase" id="showcase">
   <div class="section-inner">
-    <div class="eyebrow" data-cs="O MNĚ" data-en="ABOUT ME">O MNĚ</div>
-    <h2 class="about-hook" data-html="1" data-cs="OBSAH, KTERÝ &lt;span class=&quot;serif-italic&quot;&gt;hezky vypadá — a hlavně funguje.&lt;/span&gt;" data-en="CONTENT THAT &lt;span class=&quot;serif-italic&quot;&gt;looks great — and actually works.&lt;/span&gt;">OBSAH, KTERÝ <span class="serif-italic">hezky vypadá — a hlavně funguje.</span></h2>
-
-    <div class="about-grid">
-      <p class="about-para" data-cs="Jsem UGC a content tvůrkyně se specializací na sport, wellness, beauty a travel. Na rozdíl od mnoha tvůrců ale nestavím jen na estetice — mám za sebou 5 let praxe v marketingu a řízení kampaní, takže přesně vím, co jako značka potřebujete: obsah, který rezonuje s cílovkou, plní KPI a dodržuje brand manuál." data-en="I'm a UGC and content creator specializing in sport, wellness, beauty and travel. Unlike many creators, I don't build on aesthetics alone — I bring 5 years of marketing and campaign management experience, so I know exactly what a brand needs: content that resonates with the target audience, hits KPIs and follows brand guidelines.">Jsem UGC a content tvůrkyně se specializací na sport, wellness, beauty a travel. Na rozdíl od mnoha tvůrců ale nestavím jen na estetice — mám za sebou 5 let praxe v marketingu a řízení kampaní, takže přesně vím, co jako značka potřebujete: obsah, který rezonuje s cílovkou, plní KPI a dodržuje brand manuál.</p>
-      <div class="stat-row">
-        <div class="stat-card"><div class="num">5</div><div class="lbl" data-cs="let zkušeností" data-en="years of experience">let zkušeností</div></div>
-        <div class="stat-card"><div class="num">10+</div><div class="lbl" data-cs="spoluprací" data-en="collaborations">spoluprací</div></div>
-      </div>
-    </div>
-
-    <h3 class="about-sub" data-cs="CO ODE MĚ MŮŽETE ČEKAT?" data-en="WHAT CAN YOU EXPECT FROM ME?">CO ODE MĚ MŮŽETE ČEKAT?</h3>
-    <div class="feature-grid">
-      <div class="feature">
-        <span class="fnum">1.</span>
-        <h4 data-cs="Strategický přesah" data-en="Strategic thinking">Strategický přesah</h4>
-        <p data-cs="Chápu, jak fungují sítě, co zastaví scrollování a jak vypadá silný call-to-action." data-en="I understand how social platforms work, what stops the scroll, and what a strong call-to-action looks like.">Chápu, jak fungují sítě, co zastaví scrollování a jak vypadá silný call-to-action.</p>
-      </div>
-      <div class="feature">
-        <span class="fnum">2.</span>
-        <h4 data-cs="Flexibilitu" data-en="Flexibility">Flexibilitu</h4>
-        <p data-cs="Zpracuji váš brief do puntíku, nebo přijdu s vlastním konceptem, který schválíte předem." data-en="I'll follow your brief to the letter, or bring my own concept for you to approve upfront.">Zpracuji váš brief do puntíku, nebo přijdu s vlastním konceptem, který schválíte předem.</p>
-      </div>
-      <div class="feature">
-        <span class="fnum">3.</span>
-        <h4 data-cs="Spolehlivost a férovost" data-en="Reliability and fairness">Spolehlivost a férovost</h4>
-        <p data-cs="Transparentní komunikace, dodržování deadlinů a partnerský přístup založený na důvěře." data-en="Transparent communication, deadlines that hold, and a partner-like approach built on trust.">Transparentní komunikace, dodržování deadlinů a partnerský přístup založený na důvěře.</p>
-      </div>
-    </div>
-
-    <p class="about-closing serif-italic" data-cs="dynamické video z ranního běhu, estetický unboxing, nebo autentická recenze — dodám podklady připravené rovnou k nasazení." data-en="a dynamic video from a morning run, an aesthetic unboxing, or an authentic review — I deliver content ready to publish.">dynamické video z ranního běhu, estetický unboxing, nebo autentická recenze — dodám podklady připravené rovnou k nasazení.</p>
+    <div class="eyebrow" data-cs="UKÁZKY" data-en="SAMPLES">UKÁZKY</div>
+    <h2 class="section-heading" data-html="1" data-cs="TOP &lt;span class=&quot;serif-italic&quot;&gt;showcase&lt;/span&gt;" data-en="TOP &lt;span class=&quot;serif-italic&quot;&gt;showcase&lt;/span&gt;">TOP <span class="serif-italic">showcase</span></h2>
+    <div class="showcase-grid" id="showcaseGrid"></div>
   </div>
   <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,44 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
 </section>
 
-<!-- ============ SERVICES ============ -->
-<section class="section services" id="services">
+<!-- ============ WHY WORK WITH ME ============ -->
+<section class="section why" id="why">
   <div class="section-inner">
-    <div class="eyebrow on-dark" data-cs="CO DĚLÁM" data-en="WHAT I DO">CO DĚLÁM</div>
-    <h2 class="visually-hidden" data-cs="Co dělám" data-en="What I do">Co dělám</h2>
-
-    <a class="service-row" href="#work" data-jump="video">
-      <div class="service-num">01</div>
-      <h3 class="service-title" data-cs="UGC VIDEA" data-en="UGC VIDEOS">UGC VIDEA</h3>
-      <div class="service-desc" data-cs="pro Ads i organiku — testimonial, unboxing, GRWM, recenze" data-en="for Ads and organic — testimonials, unboxing, GRWM, reviews">pro Ads i organiku — testimonial, unboxing, GRWM, recenze</div>
-      <span class="service-go" aria-hidden="true">↗</span>
-    </a>
-    <a class="service-row" href="#profiles">
-      <div class="service-num">02</div>
-      <h3 class="service-title" data-cs="SPRÁVA SOCIÁLNÍCH SÍTÍ" data-en="SOCIAL MEDIA MANAGEMENT">SPRÁVA SOCIÁLNÍCH SÍTÍ</h3>
-      <div class="service-desc" data-cs="social media manager — strategie, obsahový plán, publikování a komunikace s komunitou" data-en="social media manager — strategy, content calendar, publishing and community management">social media manager — strategie, obsahový plán, publikování a komunikace s komunitou</div>
-      <span class="service-go" aria-hidden="true">↗</span>
-    </a>
-    <a class="service-row" href="#work" data-jump="foto">
-      <div class="service-num">03</div>
-      <h3 class="service-title" data-cs="FOTOGRAFIE" data-en="PHOTOGRAPHY">FOTOGRAFIE</h3>
-      <div class="service-desc" data-cs="produktová i lifestylová, studiová i v terénu — cit pro detail a světlo" data-en="product and lifestyle, studio and on location — an eye for detail and light">produktová i lifestylová, studiová i v terénu — cit pro detail a světlo</div>
-      <span class="service-go" aria-hidden="true">↗</span>
-    </a>
-
-    <div class="service-extras">
-      <div class="service-extras-label" data-cs="A dále" data-en="Also">A dále</div>
-      <div class="service-chips">
-        <a href="#profiles" data-cs="Spolupráce na můj profil" data-en="Content on my profile">Spolupráce na můj profil</a>
-        <a href="#profiles" data-cs="Ambasadorství" data-en="Ambassadorships">Ambasadorství</a>
-        <span data-cs="Scénáře a koncepty" data-en="Scripts &amp; concepts">Scénáře a koncepty</span>
-        <span data-cs="Copywriting" data-en="Copywriting">Copywriting</span>
-        <span data-cs="Paid Ads (Meta)" data-en="Paid Ads (Meta)">Paid Ads (Meta)</span>
-      </div>
-    </div>
+    <div class="eyebrow on-dark" data-cs="PROČ JÁ" data-en="WHY ME">PROČ JÁ</div>
+    <h2 class="section-heading" data-html="1" data-cs="PROČ SE MNOU &lt;span class=&quot;serif-italic&quot;&gt;spolupracovat&lt;/span&gt;" data-en="WHY WORK &lt;span class=&quot;serif-italic&quot;&gt;with me&lt;/span&gt;">PROČ SE MNOU <span class="serif-italic">spolupracovat</span></h2>
+    <p class="why-para" data-cs="5 let jsem strávila v performance marketingu, než jsem přešla před kameru — takže nedělám obsah jen proto, aby hezky vypadal. Vím, co zastaví scrollování, co drží retenci a co reálně vede ke konverzi." data-en="I spent 5 years in performance marketing before stepping in front of the camera — so I don't make content just to look pretty. I know what stops the scroll, holds retention and actually drives conversion.">5 let jsem strávila v performance marketingu, než jsem přešla před kameru — takže nedělám obsah jen proto, aby hezky vypadal. Vím, co zastaví scrollování, co drží retenci a co reálně vede ke konverzi.</p>
+    <div class="why-grid" id="whyGrid"></div>
   </div>
   <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,4 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
-</section>
-
-<!-- ============ MANAGED PROFILES ============ -->
-<section class="section profiles" id="profiles">
-  <div class="section-inner">
-    <div class="eyebrow" data-cs="SPRÁVA PROFILŮ" data-en="MANAGED PROFILES">SPRÁVA PROFILŮ</div>
-    <h2 class="section-heading" data-html="1" data-cs="PROFILY, &lt;span class=&quot;serif-italic&quot;&gt;které jsem vedla&lt;/span&gt;" data-en="PROFILES &lt;span class=&quot;serif-italic&quot;&gt;I've managed&lt;/span&gt;">PROFILY, <span class="serif-italic">které jsem vedla</span></h2>
-    <p class="profiles-note" data-cs="V letech 2023–2024 jsem měla na starosti obsah, vizuální styl feedu a komunikaci s komunitou pro tyto značky na Instagramu." data-en="In 2023–2024 I was responsible for content, feed aesthetics and community management for these brands on Instagram.">V letech 2023–2024 jsem měla na starosti obsah, vizuální styl feedu a komunikaci s komunitou pro tyto značky na Instagramu.</p>
-
-    <div class="profile-switch" id="profileSwitch">
-      <button class="active" data-profile="sebamed">@sebamedcz</button>
-      <button data-profile="mam">@mambaby_cz</button>
-      <button data-profile="korff">@korff_czsk</button>
-    </div>
-
-    <div class="phone-wrap">
-      <div class="phone">
-        <div class="phone-island" aria-hidden="true"></div>
-        <div class="phone-screen">
-          <div class="ig-scroll">
-            <div class="ig-topbar">
-              <span class="ig-user">← <b id="igUser">sebamedcz</b> ▾</span>
-              <span class="sp">＋ ≡</span>
-            </div>
-            <div class="ig-head">
-              <div class="ig-avatar"><div><img id="igAvatar" src="assets/logos/sebamed.svg" alt=""></div></div>
-              <div class="ig-stats">
-                <div><b id="igPosts">460</b><span data-cs="příspěvků" data-en="posts">příspěvků</span></div>
-                <div><b id="igFollowers">13,2 tis.</b><span data-cs="sledujících" data-en="followers">sledujících</span></div>
-                <div><b id="igFollowing">610</b><span data-cs="sleduje" data-en="following">sleduje</span></div>
-              </div>
-            </div>
-            <div class="ig-bio">
-              <span class="n" id="igName">sebamed Česko</span><br>
-              <span id="igBio">Dermatologicky testovaná péče s pH 5,5. 🧴 Obsah &amp; správa profilu: Anna Bašková</span>
-            </div>
-            <div class="ig-btns">
-              <a class="follow" data-cs="Sledovat" data-en="Follow">Sledovat</a>
-              <a class="msg" data-cs="Zpráva" data-en="Message">Zpráva</a>
-            </div>
-            <div class="ig-hl" id="igHighlights">
-              <div><i></i>Novinky</div>
-              <div><i></i>Tipy</div>
-              <div><i></i>Recenze</div>
-              <div><i></i>Akné</div>
-            </div>
-            <div class="ig-tabs"><span>▦</span><span>▷</span><span>♁</span></div>
-            <div class="ig-feed"><img id="igFeed" src="assets/instagram/feed-sebamed.jpg" alt="Instagram feed" loading="lazy"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="profiles-disclaimer" data-cs="Ilustrační náhled feedu z období spolupráce." data-en="Illustrative feed preview from the collaboration period.">Ilustrační náhled feedu z období spolupráce.</p>
-  </div>
-  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,44 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
-</section>
-
-<!-- ============ PRICING ============ -->
-<section class="section pricing" id="pricing">
-  <div class="section-inner">
-    <div class="eyebrow" data-cs="SPOLUPRÁCE" data-en="COLLABORATION">SPOLUPRÁCE</div>
-    <h2 class="section-heading" data-html="1" data-cs="KOLIK TO &lt;span class=&quot;serif-italic&quot;&gt;stojí?&lt;/span&gt;" data-en="HOW MUCH DOES IT &lt;span class=&quot;serif-italic&quot;&gt;cost?&lt;/span&gt;">KOLIK TO <span class="serif-italic">stojí?</span></h2>
-    <p class="pricing-note" data-cs="Orientační ceny pro představu o rozpočtu. Finální nabídku sestavím na míru konkrétnímu zadání a pošlu do 48 hodin." data-en="Guide prices to help you plan a budget. I'll build the final quote around your specific brief and send it within 48 hours.">Orientační ceny pro představu o rozpočtu. Finální nabídku sestavím na míru konkrétnímu zadání a pošlu do 48 hodin.</p>
-
-    <div class="price-list"></div>
-
-    <div class="pricing-factors">
-      <h3 class="pricing-factors-title" data-cs="Co ovlivňuje cenu" data-en="What affects the price">Co ovlivňuje cenu</h3>
-      <ul class="pricing-factors-list"></ul>
-    </div>
-
-    <a href="#contact" class="pricing-cta" data-cs="napište mi pro nabídku ↓" data-en="message me for a quote ↓">napište mi pro nabídku ↓</a>
-  </div>
-  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,44 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
 </section>
 
 <!-- ============ PROCESS ============ -->
@@ -693,84 +390,49 @@
     <div class="step-grid">
       <div>
         <div class="step-num">01</div>
-        <div class="step-title" data-cs="Napíšete mi" data-en="You reach out">Napíšete mi</div>
-        <p class="step-desc" data-cs="Domluvíme se na rozsahu spolupráce, produktu a termínu." data-en="We'll agree on the scope of the collaboration, the product and the timeline.">Domluvíme se na rozsahu spolupráce, produktu a termínu.</p>
+        <div class="step-title" data-cs="Brief" data-en="Brief">Brief</div>
+        <p class="step-desc" data-cs="Pošlete mi brief nebo produkt, domluvíme rozsah spolupráce a termín." data-en="Send me your brief or product — we'll agree on scope and timeline.">Pošlete mi brief nebo produkt, domluvíme rozsah spolupráce a termín.</p>
       </div>
       <div>
         <div class="step-num">02</div>
-        <div class="step-title" data-cs="Pošlu návrh" data-en="I send a proposal">Pošlu návrh</div>
-        <p class="step-desc" data-cs="Zašlu koncept, cenu a termín dodání do 48 hodin." data-en="I'll send a concept, price and delivery date within 48 hours.">Zašlu koncept, cenu a termín dodání do 48 hodin.</p>
+        <div class="step-title" data-cs="Schválení scénáře" data-en="Script approval">Schválení scénáře</div>
+        <p class="step-desc" data-cs="Pošlu scénář a koncept ke schválení, než začnu natáčet." data-en="I send the script and concept for approval before I start filming.">Pošlu scénář a koncept ke schválení, než začnu natáčet.</p>
       </div>
       <div>
         <div class="step-num">03</div>
-        <div class="step-title" data-cs="Natočím a dodám" data-en="I film and deliver">Natočím a dodám</div>
-        <p class="step-desc" data-cs="Hotový obsah, připravený rovnou k publikaci, s možností revize." data-en="Finished content, ready to publish, with a round of revisions included.">Hotový obsah, připravený rovnou k publikaci, s možností revize.</p>
+        <div class="step-title" data-cs="Dodání do 5 dnů" data-en="Delivery within 5 days">Dodání do 5 dnů</div>
+        <p class="step-desc" data-cs="Hotové video dodám do 5 pracovních dnů, připravené rovnou k publikaci." data-en="Finished video delivered within 5 business days, ready to publish.">Hotové video dodám do 5 pracovních dnů, připravené rovnou k publikaci.</p>
       </div>
     </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,44 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section pricing" id="pricing">
+  <div class="section-inner">
+    <div class="eyebrow" data-cs="CENÍK" data-en="PRICING">CENÍK</div>
+    <h2 class="section-heading" data-html="1" data-cs="BALÍČKY PRO &lt;span class=&quot;serif-italic&quot;&gt;značky&lt;/span&gt;" data-en="PACKAGES FOR &lt;span class=&quot;serif-italic&quot;&gt;brands&lt;/span&gt;">BALÍČKY PRO <span class="serif-italic">značky</span></h2>
+    <p class="pricing-note" data-cs="Zaměřuju se hlavně na UGC videa a licenci k jejich použití v reklamě. Ceny jsou orientační — finální nabídku sestavím na míru a pošlu do 48 hodin." data-en="I focus mainly on UGC videos and the licence to run them as ads. Prices are a guide — I'll build the final quote around your brief and send it within 48 hours.">Zaměřuju se hlavně na UGC videa a licenci k jejich použití v reklamě. Ceny jsou orientační — finální nabídku sestavím na míru a pošlu do 48 hodin.</p>
+
+    <div class="price-list" id="priceList"></div>
+
+    <div class="pricing-factors">
+      <h3 class="pricing-factors-title" data-cs="Co ovlivňuje cenu" data-en="What affects the price">Co ovlivňuje cenu</h3>
+      <ul class="pricing-factors-list" id="pricingFactors"></ul>
+    </div>
+
+    <a href="#contact" class="pricing-cta" data-cs="poptat video ↓" data-en="request a video ↓">poptat video ↓</a>
   </div>
   <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,4 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
 </section>
 
-<!-- ============ GALLERY ============ -->
-<section class="section gallery-section" id="work">
-  <div class="section-inner">
-    <div class="gallery-top">
-      <div>
-        <div class="eyebrow" data-cs="UKÁZKY" data-en="SAMPLES">UKÁZKY</div>
-        <h2 class="gallery-title" data-cs="MOJE PRÁCE" data-en="MY WORK">MOJE PRÁCE</h2>
-      </div>
-      <div class="filters-wrap">
-        <div class="filters primary" id="filters-media">
-          <button class="filter-btn active" data-media="all" data-cs="vše" data-en="all">vše</button>
-          <button class="filter-btn" data-media="video" data-cs="video" data-en="video">video</button>
-          <button class="filter-btn" data-media="foto" data-cs="fotografie" data-en="photography">fotografie</button>
-        </div>
-        <div class="filters secondary" id="filters">
-          <button class="filter-btn active" data-filter="all" data-cs="vše téma" data-en="all topics">vše téma</button>
-          <button class="filter-btn" data-filter="beauty" data-cs="beauty" data-en="beauty">beauty</button>
-          <button class="filter-btn" data-filter="wellness" data-cs="wellness" data-en="wellness">wellness</button>
-          <button class="filter-btn" data-filter="moda" data-cs="móda" data-en="fashion">móda</button>
-          <button class="filter-btn" data-filter="sport" data-cs="sport" data-en="sport">sport</button>
-          <button class="filter-btn" data-filter="travel" data-cs="travel" data-en="travel">travel</button>
-          <button class="filter-btn" data-filter="event" data-cs="event" data-en="events">event</button>
-          <button class="filter-btn" data-filter="media" data-cs="média" data-en="media">média</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="gallery-grid" id="gallery-grid"></div>
-    <p class="gallery-empty" id="galleryEmpty" data-cs="Pro tento filtr zatím nemám ukázku." data-en="No samples for this filter yet.">Pro tento filtr zatím nemám ukázku.</p>
-    <button class="gallery-more" id="galleryMore" data-cs="Zobrazit vše" data-en="Show all">Zobrazit vše</button>
-  </div>
-</section>
-
-<!-- ============ CLIENTS ============ -->
-<section class="section clients" id="clients">
+<!-- ============ BRANDS ============ -->
+<section class="section brands" id="brands">
   <div class="section-inner">
     <div class="eyebrow" data-cs="DŮVĚŘUJÍ MI" data-en="TRUSTED BY">DŮVĚŘUJÍ MI</div>
-    <h2 class="section-heading" data-html="1" data-cs="ZNAČKY, &lt;span class=&quot;serif-italic&quot;&gt;se kterými jsem spolupracovala&lt;/span&gt;" data-en="BRANDS &lt;span class=&quot;serif-italic&quot;&gt;I've worked with&lt;/span&gt;">ZNAČKY, <span class="serif-italic">se kterými jsem spolupracovala</span></h2>
-    <div class="clients-row">
-      <img src="assets/logos/skoda.svg" alt="Škoda" loading="lazy">
-      <img src="assets/logos/allwyn.svg" alt="Allwyn" loading="lazy">
-      <img src="assets/logos/reserved.svg" alt="Reserved" loading="lazy">
-      <img src="assets/logos/sebamed.svg" alt="Sebamed" loading="lazy">
-      <img src="assets/logos/korff.png" alt="Korff" loading="lazy">
-      <img src="assets/logos/sanctuary-spa.svg" alt="Sanctuary Spa" loading="lazy">
-      <img src="assets/logos/heroine.svg" alt="heroine" loading="lazy">
-      <img src="assets/logos/matejovsky.svg" alt="Matějovský" loading="lazy">
-      <img src="assets/logos/eccevita.svg" alt="Ecce Vita" loading="lazy">
-      <img src="assets/logos/matchabebes.png" alt="Matcha Bebes" loading="lazy">
-      <img src="assets/logos/insync.png" alt="InSync" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- ============ STATS ============ -->
-<section class="section stats-band">
-  <svg class="wave white-stroke" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,44 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
-  <div class="section-inner">
-    <div class="eyebrow on-lila" data-cs="V ČÍSLECH" data-en="BY THE NUMBERS">V ČÍSLECH</div>
-    <div class="stats-grid"></div>
+    <h2 class="section-heading" data-html="1" data-cs="ZNAČKY &amp; &lt;span class=&quot;serif-italic&quot;&gt;reference&lt;/span&gt;" data-en="BRANDS &amp; &lt;span class=&quot;serif-italic&quot;&gt;references&lt;/span&gt;">ZNAČKY &amp; <span class="serif-italic">reference</span></h2>
+    <div class="brands-row" id="brandsRow"></div>
   </div>
 </section>
 

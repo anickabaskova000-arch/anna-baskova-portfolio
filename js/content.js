@@ -24,34 +24,60 @@
     }
   }
 
-  /* ---------- GALLERY ---------- */
-  function buildGallery(data) {
-    const grid = document.getElementById("gallery-grid");
+  /* ---------- HERO STATS ---------- */
+  function buildHeroStats(data) {
+    const el = document.getElementById("heroStats");
+    if (!el || !data || !Array.isArray(data.items)) return;
+    el.innerHTML = data.items
+      .map(
+        (s) =>
+          `<div><div class="num">${esc(s.num)}</div>` +
+          `<div class="lbl" data-cs="${esc(s.label_cs)}" data-en="${esc(s.label_en || s.label_cs)}">${esc(s.label_cs)}</div></div>`
+      )
+      .join("");
+  }
+
+  /* ---------- TOP SHOWCASE ---------- */
+  function buildShowcase(data) {
+    const grid = document.getElementById("showcaseGrid");
     if (!grid || !data || !Array.isArray(data.items)) return;
     grid.innerHTML = data.items
       .map((it) => {
-        const cat = esc(it.category || "media");
-        const cs = esc(it.label_cs || "");
-        const en = esc(it.label_en || it.label_cs || "");
-        const file = esc(it.file || "");
-        const tag = `<span class="tag" data-cs="${cs}" data-en="${en}">${cs}</span>`;
-        if ((it.media || "").toLowerCase() === "video") {
-          return (
-            `<div class="gallery-item is-video" data-cat="${cat}">` +
-            `<video src="${file}" preload="metadata" playsinline loop></video>` +
-            tag +
-            `<span class="play-icon" aria-hidden="true">${PLAY_SVG}</span>` +
-            `</div>`
-          );
-        }
+        const cs = esc(it.format_cs || "");
+        const en = esc(it.format_en || it.format_cs || "");
         return (
-          `<div class="gallery-item" data-cat="${cat}">` +
-          `<img src="${file}" alt="${cs}" loading="lazy">` +
-          tag +
+          `<div class="showcase-item is-video">` +
+          `<video src="${esc(it.file)}" preload="metadata" playsinline loop></video>` +
+          `<span class="format-chip" data-cs="${cs}" data-en="${en}">${cs}</span>` +
+          `<span class="play-icon" aria-hidden="true">${PLAY_SVG}</span>` +
           `</div>`
         );
       })
       .join("");
+  }
+
+  /* ---------- WHY WORK WITH ME ---------- */
+  function buildWhy(texts) {
+    if (!texts) return;
+    const para = document.querySelector(".why-para");
+    if (para && texts.why_para_cs) {
+      para.dataset.cs = texts.why_para_cs;
+      para.dataset.en = texts.why_para_en || texts.why_para_cs;
+      para.textContent = texts.why_para_cs;
+    }
+    const grid = document.getElementById("whyGrid");
+    if (grid && Array.isArray(texts.why_points)) {
+      grid.innerHTML = texts.why_points
+        .map((p, i) => {
+          const n = String(i + 1) + ".";
+          return (
+            `<div class="why-point"><span class="fnum">${n}</span>` +
+            `<h4 data-cs="${esc(p.title_cs)}" data-en="${esc(p.title_en || p.title_cs)}">${esc(p.title_cs)}</h4>` +
+            `<p data-cs="${esc(p.desc_cs)}" data-en="${esc(p.desc_en || p.desc_cs)}">${esc(p.desc_cs)}</p></div>`
+          );
+        })
+        .join("");
+    }
   }
 
   /* ---------- PRICING ---------- */
@@ -63,11 +89,10 @@
       note.dataset.en = data.note_en || data.note_cs;
       note.textContent = data.note_cs;
     }
-    const list = document.querySelector(".price-list");
+    const list = document.getElementById("priceList");
     if (list && Array.isArray(data.blocks)) {
       list.innerHTML = data.blocks
-        .map((b, i) => {
-          const n = String(i + 1).padStart(2, "0");
+        .map((b) => {
           const pts = (b.points_cs || [])
             .map((p, j) => {
               const en = (b.points_en || [])[j] || p;
@@ -76,7 +101,6 @@
             .join("");
           return (
             `<div class="price-block"><div class="price-head">` +
-            `<span class="price-num">${n}</span>` +
             `<h3 class="price-name" data-cs="${esc(b.name_cs)}" data-en="${esc(b.name_en || b.name_cs)}">${esc(b.name_cs)}</h3>` +
             `<div class="price-tag" data-cs="${esc(b.price_cs)}" data-en="${esc(b.price_en || b.price_cs)}">${esc(b.price_cs)}</div>` +
             `</div><ul class="price-sub">${pts}</ul></div>`
@@ -90,7 +114,7 @@
       ft.dataset.en = data.factors_title_en || data.factors_title_cs;
       ft.textContent = data.factors_title_cs;
     }
-    const fl = document.querySelector(".pricing-factors-list");
+    const fl = document.getElementById("pricingFactors");
     if (fl && Array.isArray(data.factors_cs)) {
       fl.innerHTML = data.factors_cs
         .map((f, j) => {
@@ -101,100 +125,35 @@
     }
   }
 
-  /* ---------- STATS ("V ČÍSLECH") ---------- */
-  function buildStats(data) {
-    const grid = document.querySelector(".stats-grid");
-    if (!grid || !data || !Array.isArray(data.items)) return;
-    grid.innerHTML = data.items
-      .map(
-        (s) =>
-          `<div><div class="num">${esc(s.num)}</div>` +
-          `<div class="lbl" data-cs="${esc(s.label_cs)}" data-en="${esc(s.label_en || s.label_cs)}">${esc(s.label_cs)}</div></div>`
-      )
+  /* ---------- BRANDS ---------- */
+  function buildBrands(data) {
+    const row = document.getElementById("brandsRow");
+    if (!row || !data || !Array.isArray(data.items)) return;
+    row.innerHTML = data.items
+      .map((b) => `<img src="${esc(b.file)}" alt="${esc(b.name)}" loading="lazy">`)
       .join("");
-  }
-
-  /* ---------- PROFILES (Instagram mockup) ---------- */
-  function buildProfiles(data) {
-    if (!data || !Array.isArray(data.profiles) || !data.profiles.length) return;
-
-    const note = document.querySelector(".profiles-note");
-    if (note && data.note_cs) {
-      note.dataset.cs = data.note_cs;
-      note.dataset.en = data.note_en || data.note_cs;
-      note.textContent = data.note_cs;
-    }
-    const disc = document.querySelector(".profiles-disclaimer");
-    if (disc && data.disclaimer_cs) {
-      disc.dataset.cs = data.disclaimer_cs;
-      disc.dataset.en = data.disclaimer_en || data.disclaimer_cs;
-      disc.textContent = data.disclaimer_cs;
-    }
-
-    const sw = document.getElementById("profileSwitch");
-    if (sw) {
-      sw.innerHTML = data.profiles
-        .map(
-          (p, i) =>
-            `<button${i === 0 ? ' class="active"' : ""} data-profile="${esc(p.id)}">@${esc(p.handle)}</button>`
-        )
-        .join("");
-    }
-
-    // struktura, kterou čeká app.js
-    window.PROFILES = {};
-    data.profiles.forEach((p) => {
-      window.PROFILES[p.id] = {
-        user: p.handle,
-        avatar: p.avatar,
-        posts: p.posts,
-        followers: p.followers,
-        following: p.following,
-        name: { cs: p.name, en: p.name },
-        bio: { cs: p.bio_cs, en: p.bio_en || p.bio_cs },
-        highlights: {
-          cs: p.highlights_cs || [],
-          en: p.highlights_en || p.highlights_cs || [],
-        },
-        feed: p.feed,
-      };
-    });
-    window.PROFILE_ORDER = data.profiles.map((p) => p.id);
   }
 
   /* ---------- TEXTY ---------- */
   function applyTexts(t) {
     if (!t) return;
-    const set = (sel, cs, en, html) => {
+    const set = (sel, cs, en) => {
       const el = document.querySelector(sel);
       if (!el || cs == null) return;
       el.dataset.cs = cs;
       el.dataset.en = en == null ? cs : en;
-      if (html) el.innerHTML = cs;
-      else el.textContent = cs;
+      el.textContent = cs;
     };
     set(".hero-tagline", t.hero_tagline_cs, t.hero_tagline_en);
     if (t.hero_badge) {
       const b = document.querySelector(".hero-badge");
       if (b) b.textContent = t.hero_badge;
     }
-    set(".about-para", t.about_para_cs, t.about_para_en);
-    set(".about-closing", t.about_closing_cs, t.about_closing_en);
-
-    const cards = document.querySelectorAll(".about .stat-card");
-    if (cards[0] && t.about_stat1_num != null) {
-      cards[0].querySelector(".num").textContent = t.about_stat1_num;
-      const l = cards[0].querySelector(".lbl");
-      l.dataset.cs = t.about_stat1_cs;
-      l.dataset.en = t.about_stat1_en || t.about_stat1_cs;
-      l.textContent = t.about_stat1_cs;
-    }
-    if (cards[1] && t.about_stat2_num != null) {
-      cards[1].querySelector(".num").textContent = t.about_stat2_num;
-      const l = cards[1].querySelector(".lbl");
-      l.dataset.cs = t.about_stat2_cs;
-      l.dataset.en = t.about_stat2_en || t.about_stat2_cs;
-      l.textContent = t.about_stat2_cs;
+    const cta = document.querySelector(".hero-cta");
+    if (cta && t.hero_cta_cs) {
+      cta.dataset.cs = t.hero_cta_cs;
+      cta.dataset.en = t.hero_cta_en || t.hero_cta_cs;
+      cta.textContent = t.hero_cta_cs;
     }
 
     if (t.contact_email) {
@@ -212,28 +171,26 @@
       }
     }
     if (t.contact_instagram_handle) {
-      document
-        .querySelectorAll('a[href*="instagram.com/"]')
-        .forEach((a) => {
-          a.href = "https://instagram.com/" + t.contact_instagram_handle;
-          if (a.closest(".contact-links"))
-            a.textContent = "@" + t.contact_instagram_handle;
-        });
+      document.querySelectorAll('a[href*="instagram.com/"]').forEach((a) => {
+        a.href = "https://instagram.com/" + t.contact_instagram_handle;
+        if (a.closest(".contact-links")) a.textContent = "@" + t.contact_instagram_handle;
+      });
     }
   }
 
   window.contentReady = (async function () {
-    const [gallery, pricing, stats, profiles, texts] = await Promise.all([
-      getJSON("content/gallery.json"),
-      getJSON("content/pricing.json"),
+    const [stats, showcase, pricing, brands, texts] = await Promise.all([
       getJSON("content/stats.json"),
-      getJSON("content/profiles.json"),
+      getJSON("content/showcase.json"),
+      getJSON("content/pricing.json"),
+      getJSON("content/brands.json"),
       getJSON("content/texts.json"),
     ]);
-    try { buildGallery(gallery); } catch (e) { console.warn(e); }
+    try { buildHeroStats(stats); } catch (e) { console.warn(e); }
+    try { buildShowcase(showcase); } catch (e) { console.warn(e); }
     try { buildPricing(pricing); } catch (e) { console.warn(e); }
-    try { buildStats(stats); } catch (e) { console.warn(e); }
-    try { buildProfiles(profiles); } catch (e) { console.warn(e); }
+    try { buildBrands(brands); } catch (e) { console.warn(e); }
     try { applyTexts(texts); } catch (e) { console.warn(e); }
+    try { buildWhy(texts); } catch (e) { console.warn(e); }
   })();
 })();
