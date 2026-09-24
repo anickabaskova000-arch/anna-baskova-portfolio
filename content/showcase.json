@@ -11,6 +11,16 @@
     { "file": "assets/videos/sanctuary-spa.mp4", "brand": "Flawless Beauty", "format_cs": "Aesthetic Skincare", "format_en": "Aesthetic Skincare" },
     { "file": "assets/videos/heroine-allwyn.mp4", "brand": "heroine × Allwyn", "format_cs": "Event Recap", "format_en": "Event Recap" },
     { "file": "assets/videos/matcha-bebes.mp4", "brand": "heroine × Matcha Bebes", "format_cs": "Event Recap", "format_en": "Event Recap" },
-    { "file": "assets/videos/fitness.mp4", "brand": "Vlastní produkce", "format_cs": "Dynamic Sport", "format_en": "Dynamic Sport" }
+    { "file": "assets/videos/fitness.mp4", "brand": "Vlastní produkce", "format_cs": "Dynamic Sport", "format_en": "Dynamic Sport" },
+    { "file": "assets/videos/letni-essentials.mp4", "brand": "Sebamed", "format_cs": "Unboxing", "format_en": "Unboxing" },
+    { "file": "assets/videos/insync-ovulace.mp4", "brand": "InSync", "format_cs": "Testimonial", "format_en": "Testimonial" },
+    { "file": "assets/videos/heroine-ecce-vita.mp4", "brand": "heroine × Ecce Vita", "format_cs": "Event Recap", "format_en": "Event Recap" },
+    { "file": "assets/videos/heroine-magazine.mp4", "brand": "heroine", "format_cs": "Mediální zmínka", "format_en": "Media Feature" },
+    { "file": "assets/videos/media-magaziny.mp4", "brand": "Vlastní produkce", "format_cs": "Mediální zmínka", "format_en": "Media Feature" },
+    { "file": "assets/videos/praha-tourist.mp4", "brand": "Vlastní produkce", "format_cs": "Travel Diary", "format_en": "Travel Diary" },
+    { "file": "assets/videos/kodan.mp4", "brand": "Vlastní produkce", "format_cs": "Travel Diary", "format_en": "Travel Diary" },
+    { "file": "assets/videos/italie.mp4", "brand": "Vlastní produkce", "format_cs": "Travel Diary", "format_en": "Travel Diary" },
+    { "file": "assets/videos/dovolena-more.mp4", "brand": "Vlastní produkce", "format_cs": "Travel Diary", "format_en": "Travel Diary" },
+    { "file": "assets/videos/hotel.mp4", "brand": "Vlastní produkce", "format_cs": "Travel Diary", "format_en": "Travel Diary" }
   ]
 }

@@ -29,12 +29,12 @@ collections:
           - name: hero_formats
             label: 'Zaměření (štítky pod „Kdo jsem")'
             widget: list
-            max: 6
+            max: 10
             min: 1
             summary: '{{fields.label_cs}}'
             fields:
-              - { name: label_cs, label: 'Zaměření (CZ)', widget: string, hint: 'např. Beauty, Wellness, Fashion, Food' }
-              - { name: label_en, label: 'Typ videa (EN)', widget: string, required: false }
+              - { name: label_cs, label: 'Zaměření (CZ)', widget: string, hint: 'např. Beauty, Wellness, Fashion, Food, Sport, Travel, Events' }
+              - { name: label_en, label: 'Zaměření (EN)', widget: string, required: false }
           - { name: hero_cta_cs, label: 'Hero – tlačítko (CZ)', widget: string }
           - { name: hero_cta_en, label: 'Hero – tlačítko (EN)', widget: string, required: false }
           - { name: contact_email, label: 'Kontaktní e-mail', widget: string }
@@ -53,7 +53,7 @@ collections:
             label: 'Videa'
             label_singular: 'Video'
             widget: list
-            max: 16
+            max: 40
             min: 1
             summary: '{{fields.brand}} — {{fields.format_cs}}'
             fields:

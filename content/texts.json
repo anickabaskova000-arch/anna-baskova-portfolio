@@ -6,7 +6,10 @@
     { "label_cs": "Beauty", "label_en": "Beauty" },
     { "label_cs": "Wellness", "label_en": "Wellness" },
     { "label_cs": "Fashion", "label_en": "Fashion" },
-    { "label_cs": "Food", "label_en": "Food" }
+    { "label_cs": "Food", "label_en": "Food" },
+    { "label_cs": "Sport", "label_en": "Sport" },
+    { "label_cs": "Travel", "label_en": "Travel" },
+    { "label_cs": "Events", "label_en": "Events" }
   ],
   "hero_cta_cs": "Poptat video ↓",
   "hero_cta_en": "Request a video ↓",
