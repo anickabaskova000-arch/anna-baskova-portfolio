@@ -27,13 +27,13 @@ collections:
           - { name: hero_tagline_cs, label: 'Kdo jsem (CZ)', widget: string }
           - { name: hero_tagline_en, label: 'Kdo jsem (EN)', widget: string, required: false }
           - name: hero_formats
-            label: 'Jaké typy videí dělám (štítky pod „Kdo jsem")'
+            label: 'Zaměření (štítky pod „Kdo jsem")'
             widget: list
             max: 6
             min: 1
             summary: '{{fields.label_cs}}'
             fields:
-              - { name: label_cs, label: 'Typ videa (CZ)', widget: string, hint: 'např. Problem/Solution, GRWM & Styling' }
+              - { name: label_cs, label: 'Zaměření (CZ)', widget: string, hint: 'např. Beauty, Wellness, Fashion, Food' }
               - { name: label_en, label: 'Typ videa (EN)', widget: string, required: false }
           - { name: hero_cta_cs, label: 'Hero – tlačítko (CZ)', widget: string }
           - { name: hero_cta_en, label: 'Hero – tlačítko (EN)', widget: string, required: false }

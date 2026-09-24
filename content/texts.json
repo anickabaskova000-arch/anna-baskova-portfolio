@@ -3,11 +3,10 @@
   "hero_tagline_cs": "UGC & content tvůrkyně z Prahy",
   "hero_tagline_en": "UGC & content creator from Prague",
   "hero_formats": [
-    { "label_cs": "Problem / Solution", "label_en": "Problem / Solution" },
-    { "label_cs": "GRWM & Styling", "label_en": "GRWM & Styling" },
-    { "label_cs": "Unboxing & recenze", "label_en": "Unboxing & Review" },
-    { "label_cs": "Aesthetic Skincare", "label_en": "Aesthetic Skincare" },
-    { "label_cs": "Návod (How-To)", "label_en": "How-To" }
+    { "label_cs": "Beauty", "label_en": "Beauty" },
+    { "label_cs": "Wellness", "label_en": "Wellness" },
+    { "label_cs": "Fashion", "label_en": "Fashion" },
+    { "label_cs": "Food", "label_en": "Food" }
   ],
   "hero_cta_cs": "Poptat video ↓",
   "hero_cta_en": "Request a video ↓",
