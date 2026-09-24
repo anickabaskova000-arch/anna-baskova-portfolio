@@ -146,21 +146,24 @@
     margin-top:10px;
   }
 
-  .hero-stats{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
-    max-width:720px; margin:56px auto 0;
+  .hero-tagline{
+    font-size:clamp(17px,2.2vw,22px); color:var(--lila-deep); font-weight:700;
+    margin-top:28px; text-align:center;
   }
-  .hero-stats > div{
-    background:var(--white); border:1px solid rgba(33,27,39,0.1); border-radius:8px;
-    padding:20px 12px; text-align:center;
+  .hero-formats{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
+    margin-top:20px; max-width:620px; margin-left:auto; margin-right:auto;
   }
-  .hero-stats .num{ font-size:clamp(24px,3.4vw,34px); font-weight:900; color:var(--lila-deep); line-height:1; }
-  .hero-stats .lbl{ font-size:12px; opacity:0.65; margin-top:8px; line-height:1.3; }
+  .hero-formats span{
+    font-size:12.5px; font-weight:700; letter-spacing:0.02em;
+    padding:8px 16px; border-radius:100px; border:1px solid rgba(33,27,39,0.2);
+    color:var(--ink); opacity:0.82;
+  }
 
   .hero-cta-wrap{ text-align:center; }
   .hero-cta{
     display:inline-flex; align-items:center; gap:10px;
-    margin-top:36px; font-size:14px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;
+    margin-top:40px; font-size:14px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;
     padding:16px 30px; border-radius:100px; background:var(--ink); color:var(--white);
     transition:background .15s ease;
   }
@@ -169,8 +172,6 @@
   @media (max-width:640px){
     .spin-badge{ width:76px; height:76px; }
     .hero-name{ margin-top:10px; }
-    .hero-stats{ gap:10px; }
-    .hero-stats .num{ font-size:22px; }
   }
 
   /* ============ TOP SHOWCASE ============ */
@@ -218,69 +219,6 @@
     .showcase-grid{ grid-template-columns:1fr 1fr; gap:10px; }
   }
 
-  /* ============ WHY (dark) ============ */
-  .why{ background:var(--dark-panel); padding:56px 0 60px; color:var(--white); }
-  .why-para{ font-size:clamp(17px,2.2vw,21px); line-height:1.6; opacity:0.85; max-width:70ch; margin-top:8px; }
-  .why-grid{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:40px; margin-top:52px;
-  }
-  .why-point .fnum{
-    display:block; font-size:clamp(38px,4.6vw,54px); font-weight:900;
-    color:var(--lila); line-height:0.9; letter-spacing:-0.03em; margin-bottom:14px;
-  }
-  .why-point h4{ font-size:clamp(18px,2.1vw,22px); font-weight:900; margin-bottom:10px; letter-spacing:-0.01em; }
-  .why-point p{ font-size:14.5px; line-height:1.55; opacity:0.65; }
-
-  /* ============ PROCESS ============ */
-  .process{ background:var(--bg); padding:56px 0 60px; }
-  .step-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:32px; }
-  .step-num{ font-size:26px; font-weight:900; color:var(--lila); }
-  .step-title{ font-size:21px; font-weight:900; margin-top:10px; margin-bottom:8px; }
-  .step-desc{ font-size:14px; opacity:0.6; line-height:1.5; }
-
-  /* ============ PRICING ============ */
-  .pricing{ background:var(--white); padding:56px 0 64px; }
-  .pricing-note{ font-size:15px; opacity:0.65; margin-top:16px; margin-bottom:40px; max-width:60ch; line-height:1.5; }
-  .price-list{ border-top:1px solid var(--ink); }
-  .price-block{ padding:28px 0; border-bottom:1px solid rgba(33,27,39,0.15); }
-  .price-head{
-    display:grid; grid-template-columns:1fr auto; align-items:baseline; gap:20px;
-  }
-  .price-head .price-name{
-    font-size:clamp(19px,2.6vw,27px); font-weight:900; letter-spacing:-0.01em; margin:0;
-  }
-  .price-head .price-tag{
-    font-size:clamp(17px,2.2vw,23px); font-weight:900; color:var(--lila-deep); white-space:nowrap;
-  }
-  .price-sub{
-    list-style:none; margin:16px 0 0; display:grid; gap:9px; max-width:56ch;
-  }
-  .price-sub li{ position:relative; padding-left:20px; font-size:14.5px; line-height:1.5; opacity:0.72; }
-  .price-sub li::before{
-    content:''; position:absolute; left:0; top:8px; width:6px; height:6px;
-    border-radius:50%; background:var(--lila);
-  }
-
-  .pricing-factors{ margin-top:56px; }
-  .pricing-factors-title{ font-size:18px; font-weight:900; margin-bottom:20px; }
-  .pricing-factors-list{ list-style:none; display:grid; grid-template-columns:repeat(2,1fr); gap:14px 32px; max-width:800px; }
-  .pricing-factors-list li{
-    position:relative; padding-left:22px; font-size:14.5px; line-height:1.5; opacity:0.75;
-  }
-  .pricing-factors-list li::before{
-    content:''; position:absolute; left:0; top:7px; width:8px; height:8px;
-    border-radius:50%; background:var(--lila);
-  }
-  .pricing-factors-list b{ opacity:1; }
-
-  .pricing-cta{
-    display:inline-flex; align-items:center; gap:10px;
-    margin-top:40px; font-size:14px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;
-    padding:14px 24px; border-radius:100px; background:var(--ink); color:var(--white);
-    transition:background .15s ease;
-  }
-  .pricing-cta:hover{ background:var(--lila-deep); }
-
   /* ============ BRANDS ============ */
   .brands{ background:var(--bg); padding:56px 0 64px; }
   .brands-row{
@@ -305,13 +243,6 @@
   footer{ text-align:center; font-size:12px; opacity:0.4; padding:24px 0; background:var(--dark-panel); color:var(--white); }
 
   /* ============ RESPONSIVE ============ */
-  @media (max-width: 900px){
-    .why-grid{ grid-template-columns:1fr; gap:32px; }
-    .pricing-factors-list{ grid-template-columns:1fr; }
-    .step-grid{ grid-template-columns:1fr; gap:28px; }
-    .price-head{ grid-template-columns:1fr; gap:6px; }
-    .hero-stats{ grid-template-columns:1fr; max-width:320px; }
-  }
 
   /* focus visibility */
   a:focus-visible, button:focus-visible{ outline:2px solid var(--lila); outline-offset:3px; }
@@ -351,10 +282,11 @@
 
     <h1 class="hero-name">ANNA <span class="serif-italic">Bašková</span></h1>
 
-    <div class="hero-stats" id="heroStats"></div>
+    <p class="hero-tagline" data-cs="UGC &amp; content tvůrkyně z Prahy" data-en="UGC &amp; content creator from Prague">UGC &amp; content tvůrkyně z Prahy</p>
+    <div class="hero-formats" id="heroFormats"></div>
 
     <div class="hero-cta-wrap">
-      <a href="#pricing" class="hero-cta" data-cs="Poptat video ↓" data-en="Request a video ↓">Poptat video ↓</a>
+      <a href="#contact" class="hero-cta" data-cs="Poptat video ↓" data-en="Request a video ↓">Poptat video ↓</a>
     </div>
   </div>
   <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,4 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
@@ -369,63 +301,6 @@
     <button class="showcase-more" id="showcaseMore" data-cs="Zobrazit více videí" data-en="Show more videos">Zobrazit více videí</button>
   </div>
   <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,44 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
-</section>
-
-<!-- ============ WHY WORK WITH ME ============ -->
-<section class="section why" id="why">
-  <div class="section-inner">
-    <div class="eyebrow on-dark" data-cs="PROČ JÁ" data-en="WHY ME">PROČ JÁ</div>
-    <h2 class="section-heading" data-html="1" data-cs="PROČ SE MNOU &lt;span class=&quot;serif-italic&quot;&gt;spolupracovat&lt;/span&gt;" data-en="WHY WORK &lt;span class=&quot;serif-italic&quot;&gt;with me&lt;/span&gt;">PROČ SE MNOU <span class="serif-italic">spolupracovat</span></h2>
-    <p class="why-para" data-cs="5 let jsem strávila v performance marketingu, než jsem přešla před kameru — takže nedělám obsah jen proto, aby hezky vypadal. Vím, co zastaví scrollování, co drží retenci a co reálně vede ke konverzi." data-en="I spent 5 years in performance marketing before stepping in front of the camera — so I don't make content just to look pretty. I know what stops the scroll, holds retention and actually drives conversion.">5 let jsem strávila v performance marketingu, než jsem přešla před kameru — takže nedělám obsah jen proto, aby hezky vypadal. Vím, co zastaví scrollování, co drží retenci a co reálně vede ke konverzi.</p>
-    <div class="why-grid" id="whyGrid"></div>
-  </div>
-  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,4 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
-</section>
-
-<!-- ============ PROCESS ============ -->
-<section class="section process" id="process">
-  <div class="section-inner">
-    <div class="eyebrow" data-cs="JAK TO FUNGUJE" data-en="HOW IT WORKS">JAK TO FUNGUJE</div>
-    <h2 class="section-heading" data-html="1" data-cs="SPOLUPRÁCE &lt;span class=&quot;serif-italic&quot;&gt;krok za krokem&lt;/span&gt;" data-en="COLLABORATION &lt;span class=&quot;serif-italic&quot;&gt;step by step&lt;/span&gt;">SPOLUPRÁCE <span class="serif-italic">krok za krokem</span></h2>
-
-    <div class="step-grid">
-      <div>
-        <div class="step-num">01</div>
-        <div class="step-title" data-cs="Brief" data-en="Brief">Brief</div>
-        <p class="step-desc" data-cs="Pošlete mi brief nebo produkt, domluvíme rozsah spolupráce a termín." data-en="Send me your brief or product — we'll agree on scope and timeline.">Pošlete mi brief nebo produkt, domluvíme rozsah spolupráce a termín.</p>
-      </div>
-      <div>
-        <div class="step-num">02</div>
-        <div class="step-title" data-cs="Schválení scénáře" data-en="Script approval">Schválení scénáře</div>
-        <p class="step-desc" data-cs="Pošlu scénář a koncept ke schválení, než začnu natáčet." data-en="I send the script and concept for approval before I start filming.">Pošlu scénář a koncept ke schválení, než začnu natáčet.</p>
-      </div>
-      <div>
-        <div class="step-num">03</div>
-        <div class="step-title" data-cs="Dodání do 5 dnů" data-en="Delivery within 5 days">Dodání do 5 dnů</div>
-        <p class="step-desc" data-cs="Hotové video dodám do 5 pracovních dnů, připravené rovnou k publikaci." data-en="Finished video delivered within 5 business days, ready to publish.">Hotové video dodám do 5 pracovních dnů, připravené rovnou k publikaci.</p>
-      </div>
-    </div>
-  </div>
-  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,44 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
-</section>
-
-<!-- ============ PRICING ============ -->
-<section class="section pricing" id="pricing">
-  <div class="section-inner">
-    <div class="eyebrow" data-cs="CENÍK" data-en="PRICING">CENÍK</div>
-    <h2 class="section-heading" data-html="1" data-cs="BALÍČKY PRO &lt;span class=&quot;serif-italic&quot;&gt;značky&lt;/span&gt;" data-en="PACKAGES FOR &lt;span class=&quot;serif-italic&quot;&gt;brands&lt;/span&gt;">BALÍČKY PRO <span class="serif-italic">značky</span></h2>
-    <p class="pricing-note" data-cs="Zaměřuju se hlavně na UGC videa a licenci k jejich použití v reklamě. Ceny jsou orientační — finální nabídku sestavím na míru a pošlu do 48 hodin." data-en="I focus mainly on UGC videos and the licence to run them as ads. Prices are a guide — I'll build the final quote around your brief and send it within 48 hours.">Zaměřuju se hlavně na UGC videa a licenci k jejich použití v reklamě. Ceny jsou orientační — finální nabídku sestavím na míru a pošlu do 48 hodin.</p>
-
-    <div class="price-list" id="priceList"></div>
-
-    <div class="pricing-factors">
-      <h3 class="pricing-factors-title" data-cs="Co ovlivňuje cenu" data-en="What affects the price">Co ovlivňuje cenu</h3>
-      <ul class="pricing-factors-list" id="pricingFactors"></ul>
-    </div>
-
-    <a href="#contact" class="pricing-cta" data-cs="poptat video ↓" data-en="request a video ↓">poptat video ↓</a>
-  </div>
-  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,4 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
 </section>
 
 <!-- ============ BRANDS ============ -->

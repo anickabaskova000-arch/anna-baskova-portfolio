@@ -1,29 +1,16 @@
 {
   "hero_badge": "PORTFOLIO — 2026",
+  "hero_tagline_cs": "UGC & content tvůrkyně z Prahy",
+  "hero_tagline_en": "UGC & content creator from Prague",
+  "hero_formats": [
+    { "label_cs": "Problem / Solution", "label_en": "Problem / Solution" },
+    { "label_cs": "GRWM & Styling", "label_en": "GRWM & Styling" },
+    { "label_cs": "Unboxing & recenze", "label_en": "Unboxing & Review" },
+    { "label_cs": "Aesthetic Skincare", "label_en": "Aesthetic Skincare" },
+    { "label_cs": "Návod (How-To)", "label_en": "How-To" }
+  ],
   "hero_cta_cs": "Poptat video ↓",
   "hero_cta_en": "Request a video ↓",
-  "why_para_cs": "5 let jsem strávila v performance marketingu, než jsem přešla před kameru — takže nedělám obsah jen proto, aby hezky vypadal. Vím, co zastaví scrollování, co drží retenci a co reálně vede ke konverzi.",
-  "why_para_en": "I spent 5 years in performance marketing before stepping in front of the camera — so I don't make content just to look pretty. I know what stops the scroll, holds retention and actually drives conversion.",
-  "why_points": [
-    {
-      "title_cs": "Marketingový přesah",
-      "title_en": "Marketing background",
-      "desc_cs": "5 let v performance marketingu — vím, co značky reálně potřebují, ne jen co hezky vypadá.",
-      "desc_en": "5 years in performance marketing — I know what brands actually need, not just what looks nice."
-    },
-    {
-      "title_cs": "Datově podložené",
-      "title_en": "Data-driven",
-      "desc_cs": "Sleduju retenci, CTR a konverze — obsah stavím na tom, co prokazatelně funguje.",
-      "desc_en": "I track retention, CTR and conversions — content is built on what's proven to work."
-    },
-    {
-      "title_cs": "Konverzní hooky",
-      "title_en": "Conversion hooks",
-      "desc_cs": "První 3 vteřiny videa navržené tak, aby diváka udržely a dovedly k akci.",
-      "desc_en": "The first 3 seconds are designed to hold the viewer and lead them to act."
-    }
-  ],
   "contact_email": "anickabaskova000@gmail.com",
   "contact_instagram_handle": "annabaskova"
 }

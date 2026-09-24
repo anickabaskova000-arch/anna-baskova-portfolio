@@ -15,25 +15,30 @@ media_folder: assets/photos
 public_folder: /assets/photos
 
 collections:
-  - name: hero_stats
-    label: 'Hero – 3 velká čísla'
-    icon: bar_chart
+  - name: hero
+    label: 'Hero – úvod'
+    icon: text_fields
     files:
-      - name: stats
-        label: 'Čísla v hero'
-        file: content/stats.json
-        description: 'Tři velká čísla hned pod jménem (např. 2,3M / 5 / 100%).'
+      - name: hero
+        label: 'Hero – úvod'
+        file: content/texts.json
         fields:
-          - name: items
-            label: 'Čísla'
+          - { name: hero_badge, label: 'Štítek v hlavičce (hero)', widget: string }
+          - { name: hero_tagline_cs, label: 'Kdo jsem (CZ)', widget: string }
+          - { name: hero_tagline_en, label: 'Kdo jsem (EN)', widget: string, required: false }
+          - name: hero_formats
+            label: 'Jaké typy videí dělám (štítky pod „Kdo jsem")'
             widget: list
-            max: 3
+            max: 6
             min: 1
-            summary: '{{fields.num}} — {{fields.label_cs}}'
+            summary: '{{fields.label_cs}}'
             fields:
-              - { name: num, label: 'Číslo', widget: string, hint: 'např. 2,3M nebo 100%' }
-              - { name: label_cs, label: 'Popisek (CZ)', widget: string }
-              - { name: label_en, label: 'Popisek (EN)', widget: string, required: false }
+              - { name: label_cs, label: 'Typ videa (CZ)', widget: string, hint: 'např. Problem/Solution, GRWM & Styling' }
+              - { name: label_en, label: 'Typ videa (EN)', widget: string, required: false }
+          - { name: hero_cta_cs, label: 'Hero – tlačítko (CZ)', widget: string }
+          - { name: hero_cta_en, label: 'Hero – tlačítko (EN)', widget: string, required: false }
+          - { name: contact_email, label: 'Kontaktní e-mail', widget: string }
+          - { name: contact_instagram_handle, label: 'Instagram handle (bez @)', widget: string }
 
   - name: showcase
     label: 'Top showcase (videa)'
@@ -56,60 +61,6 @@ collections:
               - { name: brand, label: 'Značka (štítek dole)', widget: string, hint: 'např. Reserved, Sebamed, heroine × Matějovský, nebo Vlastní produkce' }
               - { name: format_cs, label: 'Štítek formátu (CZ)', widget: string, hint: 'např. Problem/Solution, Aesthetic Skincare, Dynamic Sport' }
               - { name: format_en, label: 'Štítek formátu (EN)', widget: string, required: false }
-
-  - name: why
-    label: 'Proč se mnou spolupracovat'
-    icon: text_fields
-    files:
-      - name: why
-        label: 'Proč se mnou spolupracovat'
-        file: content/texts.json
-        fields:
-          - { name: hero_badge, label: 'Štítek v hlavičce (hero)', widget: string }
-          - { name: hero_cta_cs, label: 'Hero – tlačítko (CZ)', widget: string }
-          - { name: hero_cta_en, label: 'Hero – tlačítko (EN)', widget: string, required: false }
-          - { name: why_para_cs, label: 'Proč já – odstavec (CZ)', widget: text }
-          - { name: why_para_en, label: 'Proč já – odstavec (EN)', widget: text, required: false }
-          - name: why_points
-            label: 'Proč já – 3 body'
-            widget: list
-            max: 3
-            min: 1
-            summary: '{{fields.title_cs}}'
-            fields:
-              - { name: title_cs, label: 'Nadpis (CZ)', widget: string }
-              - { name: title_en, label: 'Nadpis (EN)', widget: string, required: false }
-              - { name: desc_cs, label: 'Text (CZ)', widget: text }
-              - { name: desc_en, label: 'Text (EN)', widget: text, required: false }
-          - { name: contact_email, label: 'Kontaktní e-mail', widget: string }
-          - { name: contact_instagram_handle, label: 'Instagram handle (bez @)', widget: string }
-
-  - name: pricing
-    label: 'Ceník / balíčky'
-    icon: payments
-    files:
-      - name: pricing
-        label: 'Ceník'
-        file: content/pricing.json
-        fields:
-          - { name: note_cs, label: 'Úvodní věta (CZ)', widget: text }
-          - { name: note_en, label: 'Úvodní věta (EN)', widget: text, required: false }
-          - name: blocks
-            label: 'Balíčky'
-            widget: list
-            max: 4
-            summary: '{{fields.name_cs}} — {{fields.price_cs}}'
-            fields:
-              - { name: name_cs, label: 'Název balíčku (CZ)', widget: string, hint: 'např. Starter, Growth, Partner' }
-              - { name: name_en, label: 'Název balíčku (EN)', widget: string, required: false }
-              - { name: price_cs, label: 'Cena (CZ)', widget: string, hint: 'např. od 3 500 Kč' }
-              - { name: price_en, label: 'Cena (EN)', widget: string, required: false }
-              - { name: points_cs, label: 'Co balíček obsahuje (CZ)', widget: list, field: { name: text, label: 'Bod', widget: string } }
-              - { name: points_en, label: 'Co balíček obsahuje (EN)', widget: list, required: false, field: { name: text, label: 'Bod', widget: string } }
-          - { name: factors_title_cs, label: '„Co ovlivňuje cenu" – nadpis (CZ)', widget: string }
-          - { name: factors_title_en, label: 'Nadpis (EN)', widget: string, required: false }
-          - { name: factors_cs, label: 'Faktory ceny (CZ) – tučné přes <b>text</b>', widget: list, field: { name: text, label: 'Faktor', widget: string } }
-          - { name: factors_en, label: 'Faktory ceny (EN)', widget: list, required: false, field: { name: text, label: 'Faktor', widget: string } }
 
   - name: brands
     label: 'Značky & reference'

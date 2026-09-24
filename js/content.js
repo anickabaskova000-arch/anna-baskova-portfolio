@@ -24,19 +24,6 @@
     }
   }
 
-  /* ---------- HERO STATS ---------- */
-  function buildHeroStats(data) {
-    const el = document.getElementById("heroStats");
-    if (!el || !data || !Array.isArray(data.items)) return;
-    el.innerHTML = data.items
-      .map(
-        (s) =>
-          `<div><div class="num">${esc(s.num)}</div>` +
-          `<div class="lbl" data-cs="${esc(s.label_cs)}" data-en="${esc(s.label_en || s.label_cs)}">${esc(s.label_cs)}</div></div>`
-      )
-      .join("");
-  }
-
   /* ---------- TOP SHOWCASE ---------- */
   const SHOWCASE_MAIN_COUNT = 5;
 
@@ -79,75 +66,6 @@
     }
   }
 
-  /* ---------- WHY WORK WITH ME ---------- */
-  function buildWhy(texts) {
-    if (!texts) return;
-    const para = document.querySelector(".why-para");
-    if (para && texts.why_para_cs) {
-      para.dataset.cs = texts.why_para_cs;
-      para.dataset.en = texts.why_para_en || texts.why_para_cs;
-      para.textContent = texts.why_para_cs;
-    }
-    const grid = document.getElementById("whyGrid");
-    if (grid && Array.isArray(texts.why_points)) {
-      grid.innerHTML = texts.why_points
-        .map((p, i) => {
-          const n = String(i + 1) + ".";
-          return (
-            `<div class="why-point"><span class="fnum">${n}</span>` +
-            `<h4 data-cs="${esc(p.title_cs)}" data-en="${esc(p.title_en || p.title_cs)}">${esc(p.title_cs)}</h4>` +
-            `<p data-cs="${esc(p.desc_cs)}" data-en="${esc(p.desc_en || p.desc_cs)}">${esc(p.desc_cs)}</p></div>`
-          );
-        })
-        .join("");
-    }
-  }
-
-  /* ---------- PRICING ---------- */
-  function buildPricing(data) {
-    if (!data) return;
-    const note = document.querySelector(".pricing-note");
-    if (note && data.note_cs) {
-      note.dataset.cs = data.note_cs;
-      note.dataset.en = data.note_en || data.note_cs;
-      note.textContent = data.note_cs;
-    }
-    const list = document.getElementById("priceList");
-    if (list && Array.isArray(data.blocks)) {
-      list.innerHTML = data.blocks
-        .map((b) => {
-          const pts = (b.points_cs || [])
-            .map((p, j) => {
-              const en = (b.points_en || [])[j] || p;
-              return `<li data-cs="${esc(p)}" data-en="${esc(en)}">${esc(p)}</li>`;
-            })
-            .join("");
-          return (
-            `<div class="price-block"><div class="price-head">` +
-            `<h3 class="price-name" data-cs="${esc(b.name_cs)}" data-en="${esc(b.name_en || b.name_cs)}">${esc(b.name_cs)}</h3>` +
-            `<div class="price-tag" data-cs="${esc(b.price_cs)}" data-en="${esc(b.price_en || b.price_cs)}">${esc(b.price_cs)}</div>` +
-            `</div><ul class="price-sub">${pts}</ul></div>`
-          );
-        })
-        .join("");
-    }
-    const ft = document.querySelector(".pricing-factors-title");
-    if (ft && data.factors_title_cs) {
-      ft.dataset.cs = data.factors_title_cs;
-      ft.dataset.en = data.factors_title_en || data.factors_title_cs;
-      ft.textContent = data.factors_title_cs;
-    }
-    const fl = document.getElementById("pricingFactors");
-    if (fl && Array.isArray(data.factors_cs)) {
-      fl.innerHTML = data.factors_cs
-        .map((f, j) => {
-          const en = (data.factors_en || [])[j] || f;
-          return `<li data-html="1" data-cs="${esc(f)}" data-en="${esc(en)}">${f}</li>`;
-        })
-        .join("");
-    }
-  }
-
   /* ---------- BRANDS ---------- */
   function buildBrands(data) {
     const row = document.getElementById("brandsRow");
@@ -157,16 +75,30 @@
       .join("");
   }
 
+  /* ---------- HERO INTRO (kdo jsem + jaké typy videí dělám) ---------- */
+  function buildHeroIntro(t) {
+    if (!t) return;
+    const tag = document.querySelector(".hero-tagline");
+    if (tag && t.hero_tagline_cs) {
+      tag.dataset.cs = t.hero_tagline_cs;
+      tag.dataset.en = t.hero_tagline_en || t.hero_tagline_cs;
+      tag.textContent = t.hero_tagline_cs;
+    }
+    const row = document.getElementById("heroFormats");
+    if (row && Array.isArray(t.hero_formats)) {
+      row.innerHTML = t.hero_formats
+        .map((f) => {
+          const cs = esc(f.label_cs || "");
+          const en = esc(f.label_en || f.label_cs || "");
+          return `<span data-cs="${cs}" data-en="${en}">${cs}</span>`;
+        })
+        .join("");
+    }
+  }
+
   /* ---------- TEXTY ---------- */
   function applyTexts(t) {
     if (!t) return;
-    const set = (sel, cs, en) => {
-      const el = document.querySelector(sel);
-      if (!el || cs == null) return;
-      el.dataset.cs = cs;
-      el.dataset.en = en == null ? cs : en;
-      el.textContent = cs;
-    };
     if (t.hero_badge) {
       const b = document.querySelector(".hero-badge");
       if (b) b.textContent = t.hero_badge;
@@ -201,18 +133,14 @@
   }
 
   window.contentReady = (async function () {
-    const [stats, showcase, pricing, brands, texts] = await Promise.all([
-      getJSON("content/stats.json"),
+    const [showcase, brands, texts] = await Promise.all([
       getJSON("content/showcase.json"),
-      getJSON("content/pricing.json"),
       getJSON("content/brands.json"),
       getJSON("content/texts.json"),
     ]);
-    try { buildHeroStats(stats); } catch (e) { console.warn(e); }
     try { buildShowcase(showcase); } catch (e) { console.warn(e); }
-    try { buildPricing(pricing); } catch (e) { console.warn(e); }
     try { buildBrands(brands); } catch (e) { console.warn(e); }
     try { applyTexts(texts); } catch (e) { console.warn(e); }
-    try { buildWhy(texts); } catch (e) { console.warn(e); }
+    try { buildHeroIntro(texts); } catch (e) { console.warn(e); }
   })();
 })();
