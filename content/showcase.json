@@ -1,5 +1,6 @@
 {
   "items": [
+    { "file": "assets/videos/verra-final.mp4", "brand": "Verra", "format_cs": "Problem / Solution", "format_en": "Problem / Solution" },
     { "file": "assets/videos/reserved.mp4", "brand": "Reserved", "format_cs": "GRWM & Styling", "format_en": "GRWM & Styling" },
     { "file": "assets/videos/heroine-matejovsky.mp4", "brand": "heroine × Matějovský", "format_cs": "Produktová ukázka", "format_en": "Product Demo" },
     { "file": "assets/videos/silkin.mp4", "brand": "Silkin", "format_cs": "Návod (How-To)", "format_en": "How-To" },
