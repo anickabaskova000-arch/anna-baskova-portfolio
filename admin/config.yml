@@ -47,7 +47,7 @@ collections:
       - name: showcase
         label: 'Top showcase'
         file: content/showcase.json
-        description: 'Vertikální videa pod hero. Prvních 5 je vidět rovnou, zbytek se odkryje tlačítkem „Zobrazit více". Žádné fotky.'
+        description: 'Vertikální videa pod hero. Prvních 6 je vidět rovnou, zbytek se odkryje tlačítkem „Zobrazit více". Žádné fotky.'
         fields:
           - name: items
             label: 'Videa'

@@ -25,7 +25,7 @@
   }
 
   /* ---------- TOP SHOWCASE ---------- */
-  const SHOWCASE_MAIN_COUNT = 5;
+  const SHOWCASE_MAIN_COUNT = 6;
 
   function buildShowcase(data) {
     const grid = document.getElementById("showcaseGrid");
