@@ -37,9 +37,13 @@
         const en = esc(it.format_en || it.format_cs || "");
         const brand = esc(it.brand || "");
         const extraClass = i >= SHOWCASE_MAIN_COUNT ? " hidden extra" : "";
+        // s náhledovkou stačí video načíst až po kliknutí; bez ní se načte aspoň první snímek
+        const vidAttrs = it.poster
+          ? `poster="${esc(it.poster)}" preload="none"`
+          : `preload="metadata"`;
         return (
           `<div class="showcase-item is-video${extraClass}">` +
-          `<video src="${esc(it.file)}" preload="metadata" playsinline loop></video>` +
+          `<video src="${esc(it.file)}" ${vidAttrs} playsinline loop></video>` +
           `<span class="format-chip" data-cs="${cs}" data-en="${en}">${cs}</span>` +
           (brand ? `<span class="brand-tag">${brand}</span>` : "") +
           `<span class="play-icon" aria-hidden="true">${PLAY_SVG}</span>` +
