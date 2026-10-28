@@ -1,6 +1,7 @@
 {
   "items": [
     { "name": "Verra", "file": "assets/logos/verra.png" },
+    { "name": "Purity Vision", "file": "assets/logos/purity-vision.svg" },
     { "name": "Sebamed", "file": "assets/logos/sebamed.svg" },
     { "name": "heroine", "file": "assets/logos/heroine.svg" },
     { "name": "Korff", "file": "assets/logos/korff.png" },
