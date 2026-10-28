@@ -2,7 +2,7 @@
   "items": [
     {"file": "assets/videos/verra-final.mp4", "poster": "assets/posters/verra-final.jpg", "brand": "Verra", "format_cs": "Problem / Solution", "format_en": "Problem / Solution"},
     {"file": "assets/videos/reserved.mp4", "poster": "assets/posters/reserved.jpg", "brand": "Reserved", "format_cs": "GRWM & Styling", "format_en": "GRWM & Styling"},
-    {"file": "assets/videos/purity-vision-balzamky.mp4", "poster": "assets/posters/purity-vision-balzamky.jpg", "brand": "Purity Vision", "format_cs": "Ráno vs. večer", "format_en": "Morning vs. Night"},
+    {"file": "assets/videos/purity-vision-balzamky.mp4", "poster": "assets/posters/purity-vision-rty.jpg", "brand": "Purity Vision", "format_cs": "Ráno vs. večer", "format_en": "Morning vs. Night"},
     {"file": "assets/videos/heroine-matejovsky.mp4", "poster": "assets/posters/heroine-matejovsky.jpg", "brand": "heroine × Matějovský", "format_cs": "Produktová ukázka", "format_en": "Product Demo"},
     {"file": "assets/videos/silkin.mp4", "poster": "assets/posters/silkin.jpg", "brand": "Silkin", "format_cs": "Návod (How-To)", "format_en": "How-To"},
     {"file": "assets/videos/self-care-rutina.mp4", "poster": "assets/posters/self-care-rutina.jpg", "brand": "Korff", "format_cs": "Aesthetic Skincare", "format_en": "Aesthetic Skincare"},
