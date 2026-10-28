@@ -16,27 +16,22 @@ public_folder: /assets/photos
 
 collections:
   - name: hero
-    label: 'Hero – úvod'
+    label: 'Úvod a kontakt'
     icon: text_fields
     files:
       - name: hero
-        label: 'Hero – úvod'
+        label: 'Úvod a kontakt'
         file: content/texts.json
+        description: 'Slovo v *hvězdičkách* se zvýrazní barvou. Nový řádek = zalomení v nadpisu.'
         fields:
-          - { name: hero_badge, label: 'Štítek v hlavičce (hero)', widget: string }
-          - { name: hero_tagline_cs, label: 'Kdo jsem (CZ)', widget: string }
-          - { name: hero_tagline_en, label: 'Kdo jsem (EN)', widget: string, required: false }
-          - name: hero_formats
-            label: 'Zaměření (štítky pod „Kdo jsem")'
-            widget: list
-            max: 10
-            min: 1
-            summary: '{{fields.label_cs}}'
-            fields:
-              - { name: label_cs, label: 'Zaměření (CZ)', widget: string, hint: 'např. Beauty, Wellness, Fashion, Food, Sport, Travel, Events' }
-              - { name: label_en, label: 'Zaměření (EN)', widget: string, required: false }
-          - { name: hero_cta_cs, label: 'Hero – tlačítko (CZ)', widget: string }
-          - { name: hero_cta_en, label: 'Hero – tlačítko (EN)', widget: string, required: false }
+          - { name: hero_status, label: 'Štítek s tečkou (např. Dostupná pro spolupráci)', widget: string }
+          - { name: hero_title, label: 'Hlavní nadpis', widget: text }
+          - { name: hero_text, label: 'Text pod nadpisem', widget: text }
+          - { name: hero_cta, label: 'Tlačítko pod textem', widget: string }
+          - { name: hero_photo, label: 'Fotka vpravo', widget: image }
+          - { name: hero_photo_caption, label: 'Popisek na fotce (prázdné = skrýt)', widget: string, required: false }
+          - { name: about_title, label: 'Nadpis sekce O mně', widget: string }
+          - { name: contact_title, label: 'Nadpis v kontaktu', widget: text }
           - { name: contact_email, label: 'Kontaktní e-mail', widget: string }
           - { name: contact_instagram_handle, label: 'Instagram handle (bez @)', widget: string }
 
@@ -47,7 +42,7 @@ collections:
       - name: showcase
         label: 'Top showcase'
         file: content/showcase.json
-        description: 'Vertikální videa pod hero. Prvních 6 je vidět rovnou, zbytek se odkryje tlačítkem „Zobrazit více". Žádné fotky.'
+        description: 'Vertikální videa v sekci Práce. Prvních 8 je vidět rovnou, zbytek se odkryje tlačítkem „Zobrazit všechna videa". Kategorie určuje filtr.'
         fields:
           - name: items
             label: 'Videa'
@@ -62,6 +57,15 @@ collections:
               - { name: brand, label: 'Značka (štítek dole)', widget: string, hint: 'např. Reserved, Sebamed, heroine × Matějovský, nebo Vlastní produkce' }
               - { name: format_cs, label: 'Štítek formátu (CZ)', widget: string, hint: 'např. Problem/Solution, Aesthetic Skincare, Dynamic Sport' }
               - { name: format_en, label: 'Štítek formátu (EN)', widget: string, required: false }
+              - name: category
+                label: 'Kategorie (filtr)'
+                widget: select
+                options:
+                  - { label: 'Beauty', value: beauty }
+                  - { label: 'Wellness & sport', value: wellness }
+                  - { label: 'Fashion', value: fashion }
+                  - { label: 'Eventy', value: event }
+                  - { label: 'Travel', value: travel }
 
   - name: brands
     label: 'Značky & reference'
@@ -79,3 +83,48 @@ collections:
             fields:
               - { name: name, label: 'Název značky', widget: string }
               - { name: file, label: 'Logo (obrázek)', widget: image }
+              - { name: via_heroine, label: 'Spolupráce přes heroine (zobrazí „heroine ×")', widget: boolean, default: false, required: false }
+
+  - name: about
+    label: 'O mně'
+    icon: person
+    files:
+      - name: about
+        label: 'O mně'
+        file: content/about.json
+        description: 'Fotky se střídají a ke každé patří text vedle. Slovo v *hvězdičkách* se zvýrazní barvou. Fotky ideálně na výšku.'
+        fields:
+          - name: items
+            label: 'Fotky a texty'
+            label_singular: 'Fotka'
+            widget: list
+            summary: '{{fields.text}}'
+            fields:
+              - { name: photo, label: 'Fotka', widget: image }
+              - { name: alt, label: 'Popis fotky (pro nevidomé a Google)', widget: string, required: false }
+              - { name: text, label: 'Text vedle fotky', widget: text }
+          - name: facts
+            label: 'Čísla pod textem'
+            label_singular: 'Číslo'
+            widget: list
+            max: 3
+            fields:
+              - { name: value, label: 'Hodnota (např. 5 let)', widget: string }
+              - { name: label, label: 'Popisek', widget: string }
+
+  - name: services
+    label: 'Služby'
+    icon: work
+    files:
+      - name: services
+        label: 'Služby'
+        file: content/services.json
+        fields:
+          - name: items
+            label: 'Služby'
+            label_singular: 'Služba'
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { name: title, label: 'Název', widget: string }
+              - { name: text, label: 'Popis', widget: text }
