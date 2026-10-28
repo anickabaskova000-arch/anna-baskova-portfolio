@@ -1,335 +1,427 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-cs="Anna Bašková | UGC & content tvůrkyně Praha" data-en="Anna Bašková | UGC & Content Creator, Prague">Anna Bašková | UGC & content tvůrkyně Praha</title>
-<meta name="description" content="Anna Bašková — UGC tvůrkyně z Prahy. Vertikální video obsah pro značky jako Sebamed, heroine, Unbeaten či Verra. 5 let zkušeností v marketingu, 2,3M views měsíčně.">
-<meta name="theme-color" content="#211b27">
-<link rel="canonical" href="https://anna-baskova-portfolio.vercel.app/">
-<meta property="og:type" content="profile">
-<meta property="og:title" content="Anna Bašková | UGC & content tvůrkyně Praha">
-<meta property="og:description" content="UGC tvůrkyně z Prahy — vertikální video obsah, který prodává. 5 let zkušeností v marketingu, spolupráce se značkami jako Sebamed, heroine, Unbeaten či Verra.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anna Bašková | UGC & content tvůrkyně, Praha</title>
+<meta name="description" content="Anna Bašková, UGC a content tvůrkyně z Prahy. Sport, zdravý životní styl, kosmetika, cesty a eventy.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Anna Bašková | UGC & content tvůrkyně">
+<meta property="og:description" content="Dělám marketing a k tomu točím UGC videa, co lidi na feedu nepřeskočí.">
 <meta property="og:url" content="https://anna-baskova-portfolio.vercel.app/">
-<meta property="og:locale" content="cs_CZ">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Anna Bašková | UGC & content tvůrkyně Praha">
-<meta name="twitter:description" content="UGC tvůrkyně z Prahy — vertikální video obsah, který prodává. 5 let zkušeností v marketingu.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23211b27'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='28' font-style='italic' fill='%238a5cdd' text-anchor='middle'%3EAB%3C/text%3E%3C/svg%3E">
+<meta property="og:image" content="https://anna-baskova-portfolio.vercel.app/assets/photos/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%230E0E0E'/%3E%3Ctext x='16' y='21.5' font-family='Arial,sans-serif' font-weight='700' font-size='15' fill='%23fff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,900;1,900&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-<script type="application/ld+json" id="ldjson">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Anna Bašková",
-  "url": "https://anna-baskova-portfolio.vercel.app/",
-  "jobTitle": "UGC & content tvůrkyně",
-  "email": "annabaskovawork@gmail.com",
-  "address": { "@type": "PostalAddress", "addressLocality": "Praha", "addressCountry": "CZ" },
-  "sameAs": ["https://instagram.com/annabaskova"]
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg: #f9f8fb;
-    --ink: #211b27;
-    --lila: #8a5cdd;
-    --lila-deep: #5a34a0;
-    --lila-pale: #ddd0f6;
-    --white: #ffffff;
-    --dark-panel: #211b27;
-    --max-w: 1280px;
-    --edge: clamp(20px, 5vw, 96px);
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Archivo', sans-serif;
-    background:var(--bg);
-    color:var(--ink);
-    overflow-x:hidden;
-  }
-  img,svg{display:block; max-width:100%;}
-  a{color:inherit; text-decoration:none;}
+:root{
+  --bg:#FFFFFF;
+  --ink:#0E0E0E;
+  --muted:#85857F;
+  --line:#E7E7E3;
+  --soft:#F3F3F0;
+  --accent:#E0457B;
+  --pad:clamp(16px,4vw,48px);
+  --max:1320px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter Tight",system-ui,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.muted{color:var(--muted)}
 
-  .serif-italic{font-family:'Instrument Serif', serif; font-style:italic; font-weight:400;}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:600;font-size:17px;text-decoration:none;letter-spacing:-.01em}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{text-decoration:none;font-size:15px}
+.nav-links a:not(.btn):hover{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;border-radius:999px;padding:10px 18px;font-size:14px;font-weight:500;transition:background .2s}
+.btn:hover{background:var(--accent)}
+.btn.lg{padding:16px 26px;font-size:15px}
 
-  .section{position:relative; width:100%;}
-  .section-inner{max-width:var(--max-w); margin:0 auto; padding:0 var(--edge);}
+/* hero */
+.hero{padding:clamp(48px,8vw,104px) 0 clamp(56px,8vw,112px)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,5vw,80px);align-items:end}
+.status{display:inline-flex;align-items:center;gap:10px;margin-bottom:32px}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--accent);transition:background 1.2s ease,box-shadow 1.2s ease;box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
+h1{font-weight:500;font-size:clamp(44px,7.4vw,108px);line-height:.95;letter-spacing:-.045em;margin:0}
+h1 em,.contact h2 em{font-style:normal;color:var(--accent);transition:color 1.2s ease}
+.hero-photo .mono:empty{display:none}
+[data-loading] .wrap{opacity:0}
+.wrap{transition:opacity .4s}
+.hero-sub{display:flex;flex-wrap:wrap;gap:16px 40px;margin-top:40px;align-items:center}
+.hero-sub p{margin:0;max-width:480px;font-size:18px;line-height:1.45}
+.hero-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--soft)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo .mono{position:absolute;left:12px;right:12px;bottom:12px;color:#fff;mix-blend-mode:difference}
 
-  .eyebrow{
-    font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase;
-    color:var(--lila-deep); margin-bottom:16px;
-  }
-  .eyebrow.on-dark{color:var(--lila);}
+/* section heads */
+section{scroll-margin-top:72px}
+.sec{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+h2{font-weight:500;font-size:clamp(32px,4.4vw,60px);letter-spacing:-.035em;line-height:1;margin:8px 0 0}
 
-  .section-heading{ font-size:clamp(28px,3.6vw,40px); font-weight:900; margin-top:8px; letter-spacing:-0.01em; }
-  .section-heading .serif-italic{ color:var(--lila); }
+/* filtry */
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 14px;font:500 14px "Inter Tight",sans-serif;color:var(--ink);cursor:pointer;transition:all .2s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
 
-  .lang-toggle{
-    position:fixed; top:16px; right:16px; z-index:50;
-    font-family:inherit; font-size:12px; font-weight:700; letter-spacing:0.08em;
-    padding:9px 16px; border-radius:100px; border:none;
-    background:var(--ink); color:var(--white); cursor:pointer;
-    box-shadow:0 4px 16px rgba(0,0,0,0.18);
-    transition:background .15s ease;
-  }
-  .lang-toggle:hover{ background:var(--lila-deep); }
-  @media (max-width:640px){
-    .lang-toggle{ top:10px; right:10px; padding:7px 13px; font-size:11px; }
-  }
+/* video grid */
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.4vw,20px) clamp(10px,1.4vw,20px)}
+.vid{cursor:pointer;border:0;background:none;padding:0;text-align:left;font:inherit;color:inherit}
+.vid-media{position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--soft)}
+.vid-media img,.vid-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vid-media video{opacity:0;transition:opacity .3s}
+.vid.playing .vid-media video{opacity:1}
+.vid-play{position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;transition:transform .25s}
+.vid:hover .vid-play{transform:scale(1.1)}
+.vid-meta{display:flex;flex-direction:column;gap:2px;padding-top:10px}
+.vid-brand{font-weight:500;font-size:15px}
+.vid.hide{display:none}
+.vid:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.more{display:flex;justify-content:center;margin-top:40px}
+.more button{border:1px solid var(--ink);background:none;border-radius:999px;padding:12px 22px;font:500 14px "Inter Tight",sans-serif;cursor:pointer}
+.more button:hover{background:var(--ink);color:#fff}
 
-  /* organic wave divider */
-  .wave{
-    width:100%; height:40px; display:block; margin:28px 0;
-  }
-  .wave path{ fill:none; stroke:var(--lila); stroke-width:3; stroke-linecap:round; }
-  .wave.white-stroke path{ stroke: var(--white); }
+/* loga */
+.logos{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.logos div{border-right:1px solid var(--line);border-bottom:1px solid var(--line);aspect-ratio:3/2;display:grid;place-items:center;padding:16% 18%}
+.logos img{max-height:34px;width:auto;object-fit:contain;filter:grayscale(1) contrast(1.2) brightness(.2);opacity:.85;transition:opacity .2s}
+.logos div:hover img{opacity:1}
+.logos div.via{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.logos div.via .mono{font-size:10px;color:var(--muted);white-space:nowrap}
 
-  /* ============ HERO ============ */
-  .hero{
-    background:var(--bg);
-    padding:0 0 48px;
-    min-height:auto;
-    overflow:hidden;
-    position:relative;
-  }
-  .hero-marquee{
-    width:100%; overflow:hidden; background:var(--ink); color:var(--lila-pale);
-    padding:11px 0; white-space:nowrap; margin-bottom:44px;
-  }
-  .hero-marquee-track{
-    display:inline-flex; width:max-content;
-    animation:marquee 24s linear infinite;
-  }
-  .hero-marquee-track span{
-    font-size:13px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
-    padding-right:28px;
-  }
-  .hero-marquee-track span em{ color:var(--lila); font-style:normal; }
-  @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+/* o mně */
+.about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,96px);align-items:center}
+.stage{position:relative;width:min(100%,400px);aspect-ratio:4/5;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.card{position:absolute;inset:0;margin:0;overflow:hidden;background:var(--soft);transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .35s;cursor:grab;box-shadow:0 20px 40px -24px rgba(0,0,0,.35)}
+.card.dragging{transition:none;cursor:grabbing}
+.stage.m-fade,.stage.m-slide,.stage.m-wipe{overflow:hidden;box-shadow:0 20px 40px -24px rgba(0,0,0,.35)}
+.stage.m-fade .card,.stage.m-slide .card,.stage.m-wipe .card{box-shadow:none}
+.stage .card.notrans{transition:none!important}
+.stage.m-fade .card{transition:opacity .8s ease,transform 1.6s cubic-bezier(.2,.8,.2,1)}
+.stage.m-slide .card{transition:transform .7s cubic-bezier(.65,0,.25,1)}
+.stage.m-wipe .card{transition:clip-path .8s cubic-bezier(.65,0,.25,1),transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.card img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.stage-ctl{display:flex;justify-content:space-between;align-items:center;width:min(100%,400px);margin-top:40px}
+.arrows{display:flex;gap:8px}
+.arrow{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;transition:border-color .2s}
+.arrow:hover{border-color:var(--ink)}
+.about-text{transition:opacity .3s,transform .3s}
+.about-text.out{opacity:0;transform:translateY(6px)}
+.about-text p.big{font-size:clamp(21px,2.1vw,28px);line-height:1.28;letter-spacing:-.02em;margin:16px 0 0;font-weight:500;min-height:5.2em}
+.about-text p.big em{font-style:normal;color:var(--accent);transition:color 1.2s ease}
+.acc{color:var(--accent);transition:color 1.2s ease}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:48px;border-top:1px solid var(--line)}
+.facts div{padding:18px 16px 0 0}
+.facts b{display:block;font-weight:500;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.03em}
 
-  .hero-edge{
-    width:100%;
-    padding:0 clamp(16px, 4vw, 48px);
-    position:relative;
-  }
-  .hero-top-row{
-    display:flex; align-items:flex-start; justify-content:space-between; gap:20px;
-  }
-  .hero-badge{
-    font-size:13px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; opacity:0.5;
-    margin-top:10px;
-  }
+/* služby */
+.rows{border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:80px 1.1fr 1.4fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.row h3{margin:0;font-weight:500;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.025em}
+.row p{margin:0;color:var(--muted);max-width:520px}
 
-  .spin-badge{
-    position:relative; width:104px; height:104px; flex:none;
-    animation:spin 13s linear infinite;
-  }
-  .spin-badge svg{ width:100%; height:100%; }
-  .spin-badge text{ fill:var(--lila-deep); font-family:'Archivo',sans-serif; }
-  .spin-badge-center{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    font-size:26px; color:var(--lila);
-  }
-  @keyframes spin{ to{ transform:rotate(360deg); } }
+/* kontakt */
+.contact{padding:clamp(72px,10vw,140px) 0;border-top:1px solid var(--line)}
+.contact h2{font-size:clamp(44px,8vw,120px);letter-spacing:-.05em;line-height:.92}
+.mail{display:inline-block;margin-top:40px;font-size:clamp(22px,3vw,40px);letter-spacing:-.03em;text-decoration:none;border-bottom:2px solid var(--ink);padding-bottom:4px;transition:color .2s,border-color .2s}
+.mail:hover{color:var(--accent);border-color:var(--accent)}
+.contact-row{display:flex;gap:24px;margin-top:28px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;padding-top:22px;padding-bottom:22px;gap:12px;flex-wrap:wrap}
 
-  .hero-name{
-    font-size:clamp(58px, 12.5vw, 196px);
-    font-weight:900; letter-spacing:-0.03em; line-height:0.88; margin-top:32px;
-    text-align:center;
-  }
-  .hero-name .serif-italic{
-    display:block; color:var(--lila); font-weight:400; font-size:0.82em; line-height:1;
-    margin-top:10px;
-  }
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(14,14,14,.92);display:none;align-items:center;justify-content:center;padding:24px}
+.lb.open{display:flex}
+.lb video{max-height:86vh;max-width:min(92vw,520px);background:#000}
+.lb-close{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;cursor:pointer;display:grid;place-items:center}
+.lb-cap{position:absolute;left:24px;bottom:20px;color:#fff}
 
-  .hero-tagline{
-    font-size:clamp(17px,2.2vw,22px); color:var(--lila-deep); font-weight:700;
-    margin-top:28px; text-align:center;
-  }
-  .hero-formats{
-    display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
-    margin-top:20px; max-width:620px; margin-left:auto; margin-right:auto;
-  }
-  .hero-formats span{
-    font-size:12.5px; font-weight:700; letter-spacing:0.02em;
-    padding:8px 16px; border-radius:100px; border:1px solid rgba(33,27,39,0.2);
-    color:var(--ink); opacity:0.82;
-  }
-
-  .hero-cta-wrap{ text-align:center; }
-  .hero-cta{
-    display:inline-flex; align-items:center; gap:10px;
-    margin-top:40px; font-size:14px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;
-    padding:16px 30px; border-radius:100px; background:var(--ink); color:var(--white);
-    transition:background .15s ease;
-  }
-  .hero-cta:hover{ background:var(--lila-deep); }
-
-  @media (max-width:640px){
-    .spin-badge{ width:76px; height:76px; }
-    .hero-name{ margin-top:10px; }
-  }
-
-  /* ============ TOP SHOWCASE ============ */
-  .showcase{ background:var(--white); padding:56px 0 64px; }
-  .showcase-grid{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin-top:32px;
-  }
-  .showcase-item{
-    position:relative; aspect-ratio:9/16; background:#161219; overflow:hidden;
-    border-radius:10px; cursor:pointer;
-  }
-  .showcase-item video{ width:100%; height:100%; object-fit:cover; display:block; }
-  .showcase-item::after{
-    content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
-    background:linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0) 45%);
-  }
-  .showcase-item .format-chip{
-    position:absolute; left:12px; top:12px; z-index:2;
-    font-size:11px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase;
-    color:var(--white); background:rgba(33,27,39,0.55); backdrop-filter:blur(4px);
-    padding:6px 12px; border-radius:100px;
-  }
-  .showcase-item .brand-tag{
-    position:absolute; left:14px; bottom:14px; z-index:2;
-    font-size:13px; font-weight:700; color:var(--white);
-  }
-  .showcase-item .play-icon{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    z-index:2; pointer-events:none; transition:opacity .15s ease;
-  }
-  .showcase-item.playing .play-icon{ opacity:0; }
-  .showcase-item.playing::after{ opacity:0; }
-  .showcase-item.hidden{ display:none; }
-  .showcase-more{
-    display:block; margin:28px auto 0; font-family:inherit;
-    font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
-    padding:12px 26px; border-radius:100px; border:1px solid var(--ink);
-    background:transparent; color:var(--ink); cursor:pointer; transition:all .15s ease;
-  }
-  .showcase-more:hover{ background:var(--ink); color:var(--white); }
-  @media (max-width:900px){
-    .showcase-grid{ grid-template-columns:repeat(2,1fr); }
-  }
-  @media (max-width:560px){
-    .showcase-grid{ grid-template-columns:1fr 1fr; gap:10px; }
-  }
-
-  /* ============ BRANDS ============ */
-  .brands{ background:var(--bg); padding:56px 0 64px; }
-  .brands-row{
-    display:flex; align-items:center; flex-wrap:wrap; gap:clamp(28px,4.5vw,56px);
-    margin-top:36px;
-  }
-  .brands-row img{
-    height:28px; width:auto; max-width:130px; object-fit:contain;
-    filter:grayscale(1); opacity:0.5;
-    transition:opacity .2s ease, filter .2s ease;
-  }
-  .brands-row img:hover{ filter:grayscale(0); opacity:1; }
-
-  /* ============ CONTACT ============ */
-  .contact{ background:var(--dark-panel); color:var(--white); padding:56px 0 48px; }
-  .contact-heading{ font-size:clamp(44px,8vw,88px); font-weight:900; letter-spacing:-0.02em; margin-top:8px; }
-  .contact-heading .serif-italic{ color:var(--lila); }
-  .contact-links{ margin-top:44px; font-size:16px; opacity:0.75; display:flex; gap:12px; flex-wrap:wrap; }
-  .contact-links a{ opacity:1; border-bottom:1px solid transparent; transition:border-color .15s; }
-  .contact-links a:hover{ border-color:var(--lila); }
-
-  footer{ text-align:center; font-size:12px; opacity:0.4; padding:24px 0; background:var(--dark-panel); color:var(--white); }
-
-  /* ============ RESPONSIVE ============ */
-
-  /* focus visibility */
-  a:focus-visible, button:focus-visible{ outline:2px solid var(--lila); outline-offset:3px; }
-
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    *{ transition:none !important; animation:none !important; }
-  }
+@media (max-width:980px){
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .logos{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .nav-links a:not(.btn){display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-photo{order:-1;aspect-ratio:4/4.4}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .logos{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .about{grid-template-columns:1fr}
+  .stage{width:calc(100% - 20px);max-width:380px}
+  .stage-ctl{width:100%;max-width:400px}
+  .about-text p.big{font-size:clamp(21px,2.1vw,28px);line-height:1.28;letter-spacing:-.02em;margin:16px 0 0;font-weight:500;min-height:5.2em}
+  .facts{grid-template-columns:1fr 1fr 1fr}
+  .row{grid-template-columns:44px 1fr;gap:6px 14px}
+  .row p{grid-column:2}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
-<button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language / Přepnout jazyk">EN</button>
-
-<!-- ============ HERO ============ -->
-<section class="section hero">
-  <div class="hero-marquee" aria-hidden="true">
-    <div class="hero-marquee-track">
-      <span data-html="1" data-cs="UGC video &lt;em&gt;✦&lt;/em&gt; produktová foto &lt;em&gt;✦&lt;/em&gt; sport &lt;em&gt;✦&lt;/em&gt; wellness &lt;em&gt;✦&lt;/em&gt; beauty &lt;em&gt;✦&lt;/em&gt; travel &lt;em&gt;✦&lt;/em&gt; " data-en="UGC video &lt;em&gt;✦&lt;/em&gt; product photo &lt;em&gt;✦&lt;/em&gt; sport &lt;em&gt;✦&lt;/em&gt; wellness &lt;em&gt;✦&lt;/em&gt; beauty &lt;em&gt;✦&lt;/em&gt; travel &lt;em&gt;✦&lt;/em&gt; ">UGC video <em>✦</em> produktová foto <em>✦</em> sport <em>✦</em> wellness <em>✦</em> beauty <em>✦</em> travel <em>✦</em> </span>
-      <span data-html="1" data-cs="UGC video &lt;em&gt;✦&lt;/em&gt; produktová foto &lt;em&gt;✦&lt;/em&gt; sport &lt;em&gt;✦&lt;/em&gt; wellness &lt;em&gt;✦&lt;/em&gt; beauty &lt;em&gt;✦&lt;/em&gt; travel &lt;em&gt;✦&lt;/em&gt; " data-en="UGC video &lt;em&gt;✦&lt;/em&gt; product photo &lt;em&gt;✦&lt;/em&gt; sport &lt;em&gt;✦&lt;/em&gt; wellness &lt;em&gt;✦&lt;/em&gt; beauty &lt;em&gt;✦&lt;/em&gt; travel &lt;em&gt;✦&lt;/em&gt; ">UGC video <em>✦</em> produktová foto <em>✦</em> sport <em>✦</em> wellness <em>✦</em> beauty <em>✦</em> travel <em>✦</em> </span>
-    </div>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">Anna Bašková</a>
+    <nav class="nav-links" aria-label="Hlavní menu">
+      <a href="#prace">Práce</a>
+      <a href="#o-mne">O mně</a>
+      <a href="#sluzby">Služby</a>
+      <a class="btn" href="#kontakt">Napsat ↗</a>
+    </nav>
   </div>
+</header>
 
-  <div class="hero-edge">
-    <div class="hero-top-row">
-      <div class="hero-badge" data-cs="PORTFOLIO — 2026" data-en="PORTFOLIO — 2026">PORTFOLIO — 2026</div>
-      <div class="spin-badge" aria-hidden="true">
-        <svg viewBox="0 0 200 200">
-          <defs><path id="spinPath" d="M100,100 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0" /></defs>
-          <text font-size="13.5" font-weight="700" letter-spacing="2.5">
-            <textPath href="#spinPath" data-cs="DOSTUPNÁ PRO SPOLUPRÁCI ✦ DOSTUPNÁ PRO SPOLUPRÁCI ✦ " data-en="AVAILABLE FOR COLLABORATIONS ✦ AVAILABLE FOR COLLABORATIONS ✦ ">DOSTUPNÁ PRO SPOLUPRÁCI ✦ DOSTUPNÁ PRO SPOLUPRÁCI ✦ </textPath>
-          </text>
-        </svg>
-        <div class="spin-badge-center">↗</div>
+<!-- Veškerý obsah se načítá ze složky /content (upravuje se přes /admin) -->
+<main id="top" data-loading>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="status mono"><i></i><span id="hero-status"></span></div>
+        <h1 id="hero-title"></h1>
+        <div class="hero-sub">
+          <p id="hero-text"></p>
+          <a class="btn lg" href="#prace" id="hero-cta"></a>
+        </div>
+      </div>
+      <figure class="hero-photo" style="margin:0">
+        <img id="hero-photo" alt="Anna Bašková">
+        <span class="mono" id="hero-caption"></span>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="prace">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="mono muted">01 / Práce</span><h2>Vybraná videa</h2></div>
+        <div class="filters" id="filters" role="group" aria-label="Filtr videí"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="more"><button id="more">Zobrazit všechna videa</button></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="mono muted">02 / Klienti</span><h2>Značky, se kterými<br>jsem pracovala</h2></div>
+      </div>
+      <div class="logos" id="logos"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="o-mne">
+    <div class="wrap about">
+      <div>
+        <div class="stage" id="stage" tabindex="0" aria-label="Fotky Anny, swipni pro další"></div>
+        <div class="stage-ctl">
+          <span class="mono muted" id="count"></span>
+          <div class="arrows">
+            <button class="arrow" id="prev" aria-label="Předchozí fotka"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button class="arrow" id="next" aria-label="Další fotka"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="mono muted">03 / O mně</span>
+        <h2 id="about-title"></h2>
+        <div class="about-text" id="about-text" aria-live="polite">
+          <p class="big" id="about-big"></p>
+        </div>
+        <div class="facts" id="facts"></div>
       </div>
     </div>
+  </section>
 
-    <h1 class="hero-name">ANNA <span class="serif-italic">Bašková</span></h1>
-
-    <p class="hero-tagline" data-cs="UGC &amp; content tvůrkyně z Prahy" data-en="UGC &amp; content creator from Prague">UGC &amp; content tvůrkyně z Prahy</p>
-    <div class="hero-formats" id="heroFormats"></div>
-
-    <div class="hero-cta-wrap">
-      <a href="#contact" class="hero-cta" data-cs="Poptat video ↓" data-en="Request a video ↓">Poptat video ↓</a>
+  <section class="sec" id="sluzby">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="mono muted">04 / Služby</span><h2>Co pro vás natočím</h2></div>
+      </div>
+      <div class="rows" id="services"></div>
     </div>
-  </div>
-  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,4 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
-</section>
+  </section>
 
-<!-- ============ TOP SHOWCASE ============ -->
-<section class="section showcase" id="showcase">
-  <div class="section-inner">
-    <div class="eyebrow" data-cs="UKÁZKY" data-en="SAMPLES">UKÁZKY</div>
-    <h2 class="section-heading" data-html="1" data-cs="TOP &lt;span class=&quot;serif-italic&quot;&gt;showcase&lt;/span&gt;" data-en="TOP &lt;span class=&quot;serif-italic&quot;&gt;showcase&lt;/span&gt;">TOP <span class="serif-italic">showcase</span></h2>
-    <div class="showcase-grid" id="showcaseGrid"></div>
-    <button class="showcase-more" id="showcaseMore" data-cs="Zobrazit více videí" data-en="Show more videos">Zobrazit více videí</button>
-  </div>
-  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,44 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
-</section>
-
-<!-- ============ BRANDS ============ -->
-<section class="section brands" id="brands">
-  <div class="section-inner">
-    <div class="eyebrow" data-cs="DŮVĚŘUJÍ MI" data-en="TRUSTED BY">DŮVĚŘUJÍ MI</div>
-    <h2 class="section-heading" data-html="1" data-cs="ZNAČKY, &lt;span class=&quot;serif-italic&quot;&gt;se kterými jsem spolupracovala&lt;/span&gt;" data-en="BRANDS &lt;span class=&quot;serif-italic&quot;&gt;I've worked with&lt;/span&gt;">ZNAČKY, <span class="serif-italic">se kterými jsem spolupracovala</span></h2>
-    <div class="brands-row" id="brandsRow"></div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="section contact" id="contact">
-  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,24 Q90,4 180,24 T360,24 T540,24 T720,24 T900,24 T1080,24 T1260,24 T1440,24" /></svg>
-  <div class="section-inner">
-    <div class="eyebrow on-dark" data-cs="MÁTE ZNAČKU?" data-en="HAVE A BRAND?">MÁTE ZNAČKU?</div>
-    <h2 class="contact-heading" data-html="1" data-cs="NAPIŠTE &lt;span class=&quot;serif-italic&quot;&gt;mi&lt;/span&gt;" data-en="GET IN &lt;span class=&quot;serif-italic&quot;&gt;touch&lt;/span&gt;">NAPIŠTE <span class="serif-italic">mi</span></h2>
-    <div class="contact-links">
-      <a href="mailto:annabaskovawork@gmail.com">annabaskovawork@gmail.com</a>
-      <span>·</span>
-      <a href="https://instagram.com/annabaskova" target="_blank" rel="noopener">@annabaskova</a>
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <span class="mono muted">05 / Kontakt</span>
+      <h2 id="contact-title"></h2>
+      <a class="mail" id="contact-mail" href="#"></a>
+      <div class="contact-row mono">
+        <a id="contact-ig" target="_blank" rel="noopener">Instagram ↗</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<footer>© Anna Bašková</footer>
+<footer>
+  <div class="wrap mono muted"><span>© <span id="year"></span> Anna Bašková</span><span>Praha</span></div>
+</footer>
 
-<script src="js/content.js"></script>
-<script src="js/app.js"></script>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Přehrávání videa">
+  <button class="lb-close" id="lb-close" aria-label="Zavřít"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <video id="lb-video" controls playsinline></video>
+  <span class="lb-cap mono" id="lb-cap"></span>
+</div>
 
+<script>
+/* Obsah se upravuje přes /admin. Tady je jen logika stránky. */
+const FILTERS=[["all","Vše"],["beauty","Beauty"],["wellness","Wellness & sport"],["fashion","Fashion"],["event","Eventy"],["travel","Travel"]];
+const ABOUT_MODE="wipe"; // styl střídání fotek: wipe | fade | slide | stack
+const PALETA=["#E0457B","#F16BA6","#C8728D","#F07A5E","#F26A1B","#F2994A"];
+
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const rich=s=>esc(s).replace(/\*(.+?)\*/g,"<em>$1</em>").replace(/\n/g,"<br>");
+const url=p=>!p?"":(/^(https?:)?\/\//.test(p)||p.startsWith("/"))?p:"/"+p;
+const $=id=>document.getElementById(id);
+
+Promise.all(["texts","showcase","brands","about","services"].map(n=>
+  fetch("/content/"+n+".json",{cache:"no-cache"}).then(r=>r.json()).catch(()=>({}))
+)).then(([T,S,B,A,SV])=>{
+  renderTexts(T);renderWork(S.items||[]);renderLogos(B.items||[]);
+  renderAbout(A,T);renderServices(SV.items||[]);
+  document.querySelector("main").removeAttribute("data-loading");
+  startColors();
+});
+
+function renderTexts(T){
+  $("hero-status").textContent=T.hero_status||"";
+  $("hero-title").innerHTML=rich(T.hero_title||"");
+  $("hero-text").textContent=T.hero_text||"";
+  $("hero-cta").textContent=T.hero_cta||"Ukázky práce ↓";
+  if(T.hero_photo)$("hero-photo").src=url(T.hero_photo);
+  $("hero-caption").textContent=T.hero_photo_caption||"";
+  $("contact-title").innerHTML=rich(T.contact_title||"");
+  const mail=T.contact_email||"";$("contact-mail").textContent=mail;$("contact-mail").href="mailto:"+mail;
+  document.querySelectorAll('a[href="#kontakt"].btn').forEach(a=>a.href="#kontakt");
+  $("contact-ig").href="https://instagram.com/"+(T.contact_instagram_handle||"");
+  $("year").textContent=new Date().getFullYear();
+}
+
+function renderWork(items){
+  const grid=$("grid"),filtersEl=$("filters"),moreBtn=$("more"),LIMIT=8;let expanded=false,current="all";
+  const used=new Set(items.map(d=>d.category).filter(Boolean));
+  const playIcon='<svg width="12" height="12" viewBox="0 0 24 24" fill="#0E0E0E"><path d="M7 4v16l13-8z"/></svg>';
+  const canHover=matchMedia("(hover:hover)").matches;
+  const els=items.map(d=>{
+    const b=document.createElement("button");b.className="vid";b.type="button";b.dataset.cat=d.category||"";
+    b.setAttribute("aria-label","Přehrát video: "+(d.brand||"")+", "+(d.format_cs||""));
+    b.innerHTML='<div class="vid-media">'+(d.poster?'<img loading="lazy" src="'+esc(url(d.poster))+'" alt="">':'')+'<span class="vid-play">'+playIcon+'</span></div>'+
+      '<div class="vid-meta"><span class="vid-brand">'+esc(d.brand)+'</span><span class="mono muted">'+esc(d.format_cs)+'</span></div>';
+    let v=null;
+    if(canHover){
+      b.addEventListener("mouseenter",()=>{if(!v){v=document.createElement("video");v.muted=true;v.loop=true;v.playsInline=true;v.preload="none";v.src=url(d.file);b.querySelector(".vid-media").insertBefore(v,b.querySelector(".vid-play"));}v.play().then(()=>b.classList.add("playing")).catch(()=>{});});
+      b.addEventListener("mouseleave",()=>{if(v){v.pause();b.classList.remove("playing");}});
+    }
+    b.addEventListener("click",()=>openLb(d));grid.appendChild(b);return b;
+  });
+  function render(){
+    let shown=0,total=0;
+    els.forEach(el=>{const m=current==="all"||el.dataset.cat===current;if(m)total++;const vis=m&&(expanded||current!=="all"||shown<LIMIT);if(vis)shown++;el.classList.toggle("hide",!vis);});
+    moreBtn.parentElement.style.display=(current==="all"&&!expanded&&total>LIMIT)?"flex":"none";
+    moreBtn.textContent="Zobrazit všechna videa ("+total+")";
+  }
+  FILTERS.filter(([k])=>k==="all"||used.has(k)).forEach(([k,l])=>{
+    const c=document.createElement("button");c.className="chip";c.type="button";c.textContent=l;c.setAttribute("aria-pressed",k==="all");
+    c.addEventListener("click",()=>{current=k;[...filtersEl.children].forEach(x=>x.setAttribute("aria-pressed",x===c));render();});
+    filtersEl.appendChild(c);
+  });
+  moreBtn.addEventListener("click",()=>{expanded=true;render();});
+  render();
+  const lb=$("lb"),lbv=$("lb-video"),lbc=$("lb-cap");
+  function openLb(d){lbv.src=url(d.file);if(d.poster)lbv.poster=url(d.poster);lbc.textContent=(d.brand||"")+" · "+(d.format_cs||"");lb.classList.add("open");lbv.play().catch(()=>{});$("lb-close").focus();}
+  function closeLb(){lbv.pause();lbv.removeAttribute("src");lbv.load();lb.classList.remove("open");}
+  $("lb-close").addEventListener("click",closeLb);
+  lb.addEventListener("click",e=>{if(e.target===lb)closeLb();});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&lb.classList.contains("open"))closeLb();});
+}
+
+function renderLogos(items){
+  const logos=$("logos");
+  const sorted=[...items.filter(x=>!x.via_heroine),...items.filter(x=>x.via_heroine)];
+  sorted.forEach(x=>{const d=document.createElement("div");if(x.via_heroine)d.className="via";
+    d.innerHTML=(x.via_heroine?'<span class="mono">heroine ×</span>':'')+'<img loading="lazy" src="'+esc(url(x.file))+'" alt="'+esc((x.via_heroine?"heroine × ":"")+x.name)+'">';logos.appendChild(d);});
+  const fill=()=>{logos.querySelectorAll(".pad").forEach(x=>x.remove());const cols=getComputedStyle(logos).gridTemplateColumns.split(" ").length;const r=sorted.length%cols;if(r)for(let i=0;i<cols-r;i++){const p=document.createElement("div");p.className="pad";logos.appendChild(p);}};
+  fill();addEventListener("resize",fill);
+}
+
+function renderServices(items){
+  $("services").innerHTML=items.map((s,i)=>'<div class="row"><span class="mono muted">'+String(i+1).padStart(2,"0")+'</span><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p></div>').join("");
+}
+
+function renderAbout(A,T){
+  $("about-title").textContent=T.about_title||"";
+  $("facts").innerHTML=(A.facts||[]).map(f=>'<div><b>'+esc(f.value)+'</b><span class="mono muted">'+esc(f.label)+'</span></div>').join("");
+  const ITEMS=(A.items||[]).filter(x=>x.photo);if(!ITEMS.length)return;
+  const stage=$("stage"),count=$("count"),box=$("about-text"),big=$("about-big");
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,N=ITEMS.length,pad=n=>String(n).padStart(2,"0");
+  let cur=0,busy=false,shown=-1,tm;
+  const cards=ITEMS.map(p=>{const f=document.createElement("figure");f.className="card";f.innerHTML='<img src="'+esc(url(p.photo))+'" alt="'+esc(p.alt||"Anna Bašková")+'" draggable="false">';stage.appendChild(f);return f;});
+  const wrap=i=>(i+N)%N;
+  function text(i){if(shown===i)return;const go=()=>{big.innerHTML=rich(ITEMS[i].text)};if(shown<0||reduce){go();shown=i;return}shown=i;box.classList.add("out");clearTimeout(tm);tm=setTimeout(()=>{go();box.classList.remove("out")},250);}
+  function meta(){count.textContent=pad(cur+1)+" / "+pad(N);text(cur);cards.forEach((c,i)=>c.setAttribute("aria-hidden",i===cur?"false":"true"));}
+  function snap(c,css){c.classList.add("notrans");Object.assign(c.style,css);c.offsetHeight;c.classList.remove("notrans");}
+  function place(instant){
+    cards.forEach((c,i)=>{const on=i===cur;
+      if(ABOUT_MODE==="stack"){const pos=wrap(i-cur),d=Math.min(pos,2);c.style.zIndex=N-pos;c.style.transform="translate("+(d*10)+"px,"+(d*10)+"px)";c.style.opacity=pos>2?0:1;}
+      else if(ABOUT_MODE==="fade"){c.style.zIndex=on?2:1;c.style.opacity=on?1:0;c.style.transform=on?"scale(1)":"scale(1.06)";}
+      else if(ABOUT_MODE==="slide"){c.style.opacity=1;c.style.zIndex=on?2:1;if(!on&&instant)c.style.transform="translateX(100%)";}
+      else{c.style.opacity=1;c.style.clipPath="inset(0 0 0 0)";if(instant)c.style.zIndex=on?2:1;}
+    });
+    if(ABOUT_MODE==="slide"&&instant)cards[cur].style.transform="translateX(0)";
+    meta();
+  }
+  function go(dir,fly){
+    if(busy)return;busy=true;const prevI=cur;cur=wrap(cur+dir);const inC=cards[cur],outC=cards[prevI],T=reduce?0:820;
+    if(N<2){busy=false;return;}
+    if(ABOUT_MODE==="stack"){
+      if(dir>0){const fl=fly||1;outC.style.transform="translate("+(fl*120)+"%,0) rotate("+(fl*8)+"deg)";outC.style.opacity=0;setTimeout(()=>{snap(outC,{});place();busy=false;},reduce?0:300);}
+      else{snap(inC,{zIndex:N+1,opacity:0,transform:"translate(-120%,0) rotate(-8deg)"});place();setTimeout(()=>busy=false,reduce?0:300);}
+      return;
+    }
+    if(ABOUT_MODE==="fade"){place();setTimeout(()=>busy=false,T);return;}
+    if(ABOUT_MODE==="slide"){
+      cards.forEach((c,i)=>{if(i!==cur&&i!==prevI)snap(c,{transform:"translateX(100%)"});});
+      snap(inC,{transform:"translateX("+(dir*100)+"%)"});inC.style.transform="translateX(0)";outC.style.transform="translateX("+(-dir*100)+"%)";
+      meta();setTimeout(()=>busy=false,T);return;
+    }
+    cards.forEach((c,i)=>{if(i!==cur&&i!==prevI)snap(c,{zIndex:0});});
+    snap(outC,{zIndex:1,transform:"scale(1)"});
+    snap(inC,{zIndex:2,transform:"scale(1.08)",clipPath:dir>0?"inset(0 0 0 100%)":"inset(0 100% 0 0)"});
+    inC.style.clipPath="inset(0 0 0 0)";inC.style.transform="scale(1)";
+    meta();setTimeout(()=>busy=false,T);
+  }
+  let sx=0,dx=0,drag=false,moved=false,t0=0;
+  stage.addEventListener("pointerdown",e=>{if(busy)return;drag=true;moved=false;sx=e.clientX;dx=0;t0=Date.now();if(ABOUT_MODE==="stack")cards[cur].classList.add("dragging");stage.setPointerCapture(e.pointerId);});
+  stage.addEventListener("pointermove",e=>{if(!drag)return;dx=e.clientX-sx;if(Math.abs(dx)>4)moved=true;if(ABOUT_MODE==="stack")cards[cur].style.transform="translate("+dx+"px,0) rotate("+(dx/24)+"deg)";});
+  const end=()=>{if(!drag)return;drag=false;cards[cur].classList.remove("dragging");const fast=Math.abs(dx)/(Date.now()-t0)>.5;
+    if(!moved){go(1);return}
+    if(Math.abs(dx)>60||(fast&&Math.abs(dx)>25)){if(ABOUT_MODE==="stack")go(1,dx>0?1:-1);else go(dx<0?1:-1);}
+    else if(ABOUT_MODE==="stack")place();};
+  stage.addEventListener("pointerup",end);stage.addEventListener("pointercancel",end);
+  $("next").addEventListener("click",()=>go(1));$("prev").addEventListener("click",()=>go(-1));
+  stage.addEventListener("keydown",e=>{if(e.key==="ArrowRight"){e.preventDefault();go(1)}if(e.key==="ArrowLeft"){e.preventDefault();go(-1)}});
+  stage.className="stage m-"+ABOUT_MODE;place(true);
+}
+
+/* Každé zvýrazněné místo si samo střídá barvy z palety, každé ve vlastním tempu. */
+function startColors(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  [[".status",2600],["#hero-title",3400],["#about-big",4200],["#contact-title",3000],[".btn",3800],[".mail",4600]].forEach(([sel,ms],k)=>{
+    document.querySelectorAll(sel).forEach((el,j)=>{let i=(k*2+j)%PALETA.length;el.style.setProperty("--accent",PALETA[i]);
+      setInterval(()=>{i=(i+1)%PALETA.length;el.style.setProperty("--accent",PALETA[i]);},ms+j*500);});
+  });
+}
+</script>
 </body>
 </html>
