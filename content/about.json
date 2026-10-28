@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "photo": "assets/photos/o-mne-1.jpg",
+      "alt": "Anna Bašková, portrét",
+      "text": "Vedu marketingové projekty a *točím UGC pro značky.*"
+    },
+    {
+      "photo": "assets/photos/o-mne-2.jpg",
+      "alt": "Anna na kole",
+      "text": "Většinu volného času trávím sportem. Právě při něm si *čistím hlavu* a vymýšlím koncepty pro značky."
+    },
+    {
+      "photo": "assets/photos/o-mne-3.jpg",
+      "alt": "Anna na horách",
+      "text": "Obsah zasazuju do svého *běžného dne.* Produkty ukazuju při tréninku, na cestách i doma."
+    },
+    {
+      "photo": "assets/photos/o-mne-4.jpg",
+      "alt": "Anna na lyžích v čepici",
+      "text": "Miluju pohyb, miluju hory a miluju natáčení. Nejradši mám, když můžu zkombinovat *všechno dohromady!*"
+    },
+    {
+      "photo": "assets/photos/o-mne-5.jpg",
+      "alt": "Anna s media visačkou na módní přehlídce",
+      "text": "Tři měsíce jsem dokumentovala proces vzniku kolekce Michaela Kováčika až po *přehlídku v Bratislavě.*"
+    },
+    {
+      "photo": "assets/photos/o-mne-6.jpg",
+      "alt": "Anna s notebookem v pohybu",
+      "text": "Mám background v marketingu a řízení kampaní. Vím, co má video přinést *v číslech* i kde v cestě zákazníka má své místo."
+    }
+  ],
+  "facts": [
+    {
+      "value": "5 let",
+      "label": "v marketingu a produkci"
+    },
+    {
+      "value": "13+",
+      "label": "značek a projektů"
+    },
+    {
+      "value": "CZ / EN",
+      "label": "tvorba"
+    }
+  ]
+}

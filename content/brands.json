@@ -1,17 +1,69 @@
 {
   "items": [
-    { "name": "Verra", "file": "assets/logos/verra.png" },
-    { "name": "Purity Vision", "file": "assets/logos/purity-vision.svg" },
-    { "name": "Sebamed", "file": "assets/logos/sebamed.svg" },
-    { "name": "heroine", "file": "assets/logos/heroine.svg" },
-    { "name": "Korff", "file": "assets/logos/korff.png" },
-    { "name": "Škoda", "file": "assets/logos/skoda.svg" },
-    { "name": "Allwyn", "file": "assets/logos/allwyn.svg" },
-    { "name": "Reserved", "file": "assets/logos/reserved.svg" },
-    { "name": "Sanctuary Spa", "file": "assets/logos/sanctuary-spa.svg" },
-    { "name": "Matějovský", "file": "assets/logos/matejovsky.svg" },
-    { "name": "Ecce Vita", "file": "assets/logos/eccevita.svg" },
-    { "name": "Matcha Bebes", "file": "assets/logos/matchabebes.png" },
-    { "name": "InSync", "file": "assets/logos/insync.png" }
+    {
+      "name": "Verra",
+      "file": "assets/logos/verra.png",
+      "via_heroine": false
+    },
+    {
+      "name": "Purity Vision",
+      "file": "assets/logos/purity-vision.svg",
+      "via_heroine": false
+    },
+    {
+      "name": "Sebamed",
+      "file": "assets/logos/sebamed.svg",
+      "via_heroine": false
+    },
+    {
+      "name": "heroine",
+      "file": "assets/logos/heroine.svg",
+      "via_heroine": false
+    },
+    {
+      "name": "Korff",
+      "file": "assets/logos/korff.png",
+      "via_heroine": false
+    },
+    {
+      "name": "Škoda",
+      "file": "assets/logos/skoda.svg",
+      "via_heroine": true
+    },
+    {
+      "name": "Allwyn",
+      "file": "assets/logos/allwyn.svg",
+      "via_heroine": true
+    },
+    {
+      "name": "Reserved",
+      "file": "assets/logos/reserved.svg",
+      "via_heroine": false
+    },
+    {
+      "name": "Sanctuary Spa",
+      "file": "assets/logos/sanctuary-spa.svg",
+      "via_heroine": false
+    },
+    {
+      "name": "Matějovský",
+      "file": "assets/logos/matejovsky.svg",
+      "via_heroine": true
+    },
+    {
+      "name": "Ecce Vita",
+      "file": "assets/logos/eccevita.svg",
+      "via_heroine": true
+    },
+    {
+      "name": "Matcha Bebes",
+      "file": "assets/logos/matchabebes.png",
+      "via_heroine": true
+    },
+    {
+      "name": "InSync",
+      "file": "assets/logos/insync.png",
+      "via_heroine": false
+    }
   ]
 }
