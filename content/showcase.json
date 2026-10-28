@@ -57,11 +57,11 @@
       "category": "travel"
     },
     {
-      "file": "assets/videos/sanctuary-spa.mp4",
-      "poster": "assets/posters/sanctuary-spa.jpg",
-      "brand": "Flawless Beauty",
-      "format_cs": "Aesthetic Skincare",
-      "format_en": "Aesthetic Skincare",
+      "file": "assets/videos/sanctuary-spa-v2.mp4",
+      "poster": "assets/posters/sanctuary-spa-v2.jpg",
+      "brand": "Sanctuary Spa",
+      "format_cs": "Večerní rituál",
+      "format_en": "Evening Ritual",
       "category": "beauty"
     },
     {
