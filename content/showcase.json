@@ -25,6 +25,14 @@
       "category": "beauty"
     },
     {
+      "file": "assets/videos/purity-vision-mesickovy-krem.mp4",
+      "poster": "assets/posters/purity-vision-mesickovy-krem.jpg",
+      "brand": "Purity Vision",
+      "format_cs": "Skincare rutina",
+      "format_en": "Skincare Routine",
+      "category": "beauty"
+    },
+    {
       "file": "assets/videos/heroine-matejovsky.mp4",
       "poster": "assets/posters/heroine-matejovsky.jpg",
       "brand": "heroine × Matějovský",
@@ -55,22 +63,6 @@
       "format_cs": "Apartment Tour",
       "format_en": "Apartment Tour",
       "category": "travel"
-    },
-    {
-      "file": "assets/videos/purity-vision-mesickovy-krem.mp4",
-      "poster": "assets/posters/purity-vision-mesickovy-krem.jpg",
-      "brand": "Purity Vision",
-      "format_cs": "Skincare rutina",
-      "format_en": "Skincare Routine",
-      "category": "beauty"
-    },
-    {
-      "file": "assets/videos/byd-salon.mp4",
-      "poster": "assets/posters/byd-salon.jpg",
-      "brand": "BYD",
-      "format_cs": "Event Recap",
-      "format_en": "Event Recap",
-      "category": "event"
     },
     {
       "file": "assets/videos/sanctuary-spa-v2.mp4",
