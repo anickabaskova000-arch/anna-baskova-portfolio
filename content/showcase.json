@@ -41,6 +41,14 @@
       "category": "wellness"
     },
     {
+      "file": "assets/videos/matejovsky-povleceni.mp4",
+      "poster": "assets/posters/matejovsky-povleceni.jpg",
+      "brand": "Matějovský",
+      "format_cs": "Unboxing & home rutina",
+      "format_en": "Unboxing & Home Routine",
+      "category": "wellness"
+    },
+    {
       "file": "assets/videos/silkin.mp4",
       "poster": "assets/posters/silkin.jpg",
       "brand": "Silkin",
@@ -63,6 +71,22 @@
       "format_cs": "Apartment Tour",
       "format_en": "Apartment Tour",
       "category": "travel"
+    },
+    {
+      "file": "assets/videos/kakaw-co.mp4",
+      "poster": "assets/posters/kakaw-co.jpg",
+      "brand": "Kakaw Co+",
+      "format_cs": "Cozy rutina",
+      "format_en": "Cozy Routine",
+      "category": "wellness"
+    },
+    {
+      "file": "assets/videos/byd-salon.mp4",
+      "poster": "assets/posters/byd-salon.jpg",
+      "brand": "BYD",
+      "format_cs": "Event Recap",
+      "format_en": "Event Recap",
+      "category": "event"
     },
     {
       "file": "assets/videos/sanctuary-spa-v2.mp4",
